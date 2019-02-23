@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<title>Light actuated drawing.</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+
+##Light actuated drawing machine.
+
+###Arduino prototype.
+
+Built an Arduino prototype that responds to light using a phtotransistor.
+The phototransistor signal increases with increasing light level.
+A solenoid is attached, and powered through a MOS FET (add link to MOSFET PAGE).
+A potentiometer is added, and the code activates the solenoid whenever the light signal is greater than
+the potentiometer signal.  This allows adjustment of threshold without reprogramming.
+
+[The Arduino code](./light_pen_02/light_pen_02.ino)
+
+[movie](./light_pen_small.mov)
+
+![pic](Ard_setup.jpg)
+![pic](Ard_circuitboard.jpg)
+
+Pictures of setup for the Arduino prototype.
+
+![pic](setup.jpg)
+
+A schematic of the setup for the light-activated electromagnet.  The microcontroller program compares the two analog
+input voltages.  When the light sensor signal is greater than the potentiometer signal, the output voltage is made
+high, and the magnet is activated.
+
+![pic](photo_trans.jpg)
+![pic](pot.jpg)
+
+Closeups of [phototransistor](../../Sensors/Light/Photodetectors/index.html) and potentiometer.  (link to phototransistor page.)
+Long leg of phototransistor goes
+to lower voltage side.  Resistor is 10kOhms.  Sensitivity increases for larger
+resistor value.  Signal is connected to A0 of the Arduino with the yellow wire.
+For the potentiometer (need link here), the ground ad 5V lines are black and red, respectively, and
+the signal is connected to the Arduino A1 pin with the green wire (the wiper).
+
+![pic](light_board.jpg)
+![pic](light_pen.jpg)
+
+Eagle [files](light_pen_02.zip)
+
+Here is a more compact iteration of the device.  This board was made in the lab, but the small Arduino boards (micro and nano)
+can also be used to make more compact and durable projects.
+
+
+![pic](red_drawing.jpg)
+[movie](red_shadow.mov)
+
+Here the device is mapping out the light level in the shadow of a wood piece.
+
+
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>

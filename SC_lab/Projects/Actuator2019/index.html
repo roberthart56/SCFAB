@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>McKibben Actuator</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+
+###Actuator
+
+In January 2019, Victoria Shen and Rob Hart worked with Axel Kilian at MIT, who has developed a practical method for
+making McKibben actuators from bicycle innertubes and plastic cable jacket webbing.  Below are photographs from the construction of three
+actuators in the MIT architecture shop.
+
+[References](./references) from Axel, including some sources of hardware.
+
+![pic](./axel/axel_delrin.jpg)
+![pic](./axel/axel_tap.jpg)
+
+Delrin end-piece, bored for tap threads, shaped to hold hose-clamped rubber tube and
+plastic braid.
+
+![pic](./axel/axel_tape.jpg)
+![pic](./axel/axel_trim.jpg)
+
+Methods for taping delrin endpiece, taping and trimming sleeve.
+
+![pic](./axel/axel_finished.jpg)
+![pic](./axel/axel_control.jpg)
+
+Finished actuator.  Control box, including pressure sensor.
+
+![pic](./axel/axel_pneumatics.jpg)
+
+Axel's plenum for testing devices.
+
+
+<br>
+<br>
+<br>
+###Demonstration of actuator.
+
+[program for attiny45 microcontroller](valve.c) and [makefile](hello.45.make)
+
+[Eagle files](./Valve_driver.zip)
+Note that these files need rework: 1. Footprint for power socket not correct. 2.  Cround trace needs to extend to regulator.
+
+![pic](pneumatics.jpg)
+![pic](mckibben.jpg)
+  [movie](./McKibben_480.mov)
+
+Circuitboard for controlling solenoid valves.  Runs on 8.4V with 5V regulator for microcontroller
+(attiny 45).  Two solenoids (MOSFET switched).  One button for fill, one for vent.  Uses a small
+tank with regulator.
+
+Pneumatics:  lower left, out.  Upper left, in.  Right, vent.  Middle, to be used for pressure sensor.
+
+
+
+</xmp>
+<script src="./../../strapdown/strapdown.js"></script>
+</html>
