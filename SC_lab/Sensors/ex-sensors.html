@@ -1,0 +1,181 @@
+<html>
+<head>
+
+    <title>Intro to sensors </title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='./../HartMar2016.css' type='text/css'>
+
+</head>
+
+  <body>
+<h1>Sensors </h1>
+<section>
+    <h2>Temperature</h2>
+    <a href="../VIS2223_info_2018/index.html"> Link</a> to details on temperature sensors.</p>
+</section>
+
+<section>
+    <h2>Voltage Divider</h2>
+<p>Many sensors act as resistors that change their resistance as a function of the property measured.  </p>
+<p>Remember that the voltage across a resistor
+is given by Ohm's Law:  &Delta;V = (current)* resistance.  </p>
+<p>When two resistors are connected in series as shown, the voltage Vout between them
+is somewhere between 0V and 5V, with the exact value given by the equation below:</p>
+
+        <center><img src='./Voltage_div.png' width="400px" ></center>
+
+          <a href="./AnalogReadSerial.ino"> Use analog read program</a> with Vout connected to A0 pin.</p>
+            <p>A potentiometer allows a continuous variation of voltage.  It can be used as a sensor for position or rotation.</p>
+
+
+
+</section>
+
+
+<section>
+    <h2>Light: Photoresistor.</h2>
+
+
+        <center><img src='./photores01.jpg' width="400px" ></center>
+          <p>A photoresistor changes its resistance as a function of light.  As it receives more light
+            its resistance decreases, and the voltage at the point labeled A0 decreases
+            In the first Arduino workshop in class, we used this configuration, called a voltage divider, measuring the voltage at A0
+          while changing the amount of light received by the photoresistor.  Any of the analog inputs A0 - A5,
+          could be used.  <a href="./AnalogReadSerial.ino"> Here</a> is sample code using this configuration.</p>
+        <center><img src='./photores02.jpg' width="600px" ></center>
+        <p>Instead of using an external voltage divider, you can set up a "pullup" resistor internal to the microcontroller chip
+          by using "pinMode(A0, INPUT_PULLUP)" in the setup function.  This makes the situation shown above, where the value at A0
+          is near 5V in the dark, and approaches 0 when the photoresistor is illuminated.
+           <a href="./simple_light.ino"> Here</a> is sample code using this configuration.</p>
+
+
+
+    <h2>Light: Phototransistor.</h2>
+<p>A phototransistor functions similarly to a photoresistor.  Rather than act as a fixed resistor, the photransistor conducts
+more or less current as a function of light level.  In some cases they are more sensitive than
+photoresistors.  We have phototransistors that are sensitive in the visible and in the near infrared.</p>
+
+</section>
+<section>
+    <h2>Magnetic Field</h2>
+</section>
+<section>
+    <h2>Buttons and switches</h2>
+</section>
+<section>
+    <h2>Sonar distance.</h2>
+    <p>Sonar modules detect distance by timing the echo of a sound pulse.</p>
+    <img src='./Sonar_distance.jpg' width="400px" >
+</section>
+
+<section>
+    <h2>Acceleration.</h2>
+</section>
+
+<section>
+    <h2>Piezoelectric element for force, vibration, sound.</h2>
+    <p>Below is shown a piezoelectric disc, and its connections to Arduino.
+      The 1MOhm resistor keeps the average voltage level near 3.3V.  Use the voltage that is generated as the disc flexes to detec vibration, sound, force.  Notice that <thead>
+        voltage is transient - the level returns to 3.3 V after a fraction of a second.  For steady state measurement of force, try capacitance sensing.</p>
+    <img src='./Piezo.png' width="400px" >
+      <img src='./Piezo.jpg' width="400px" >
+</section>
+
+<section>
+    <h2>Microphone for sound.</h2>
+</section>
+
+<section>
+    <h2>Pyroelectric detector for motion.</h2>
+    <p>Infrared detectors give a signal when motion is detected.</p>
+    <img src='./IR_motion.jpg' width="400px" >
+</section>
+
+<section>
+    <h2>Capacitance.(proximity, force, pressure, tilt. )</h2>
+    <center><img src='./cap01.jpg' width="400px" ></center>
+    <p>This is the configuration used for capacitance sensing with the Arduino.  The pin on the left (7 in this example)
+      is used to charge the plate, through the resistor.  The pin on the right (5 in this example) senses the change in voltage as the plate charges up.
+    The closer the grounded object is to the plate, the larger the capacitance, and the longer it takes to charge. The
+      time for charging (in arbitrary units) is the number that is reported by the sensing function.  To use this sensor, load the Capacitive
+      Sensing Library. In the Arduino IDE, use "sketch > Include Libraries > Manage Libraries".
+      <a href='http://playground.arduino.cc/Main/CapacitiveSensor?from=Main.CapSense'>Documentation is here. </a></p>
+
+      <p><a href="./CapacitiveTouch"> Here</a> is the sample code for Capactive Sensing that works for the configuration shown above.  The resistor R is usually 1 to 10 Mega-ohm.  The larger
+      resistance makes the sensor more sensitive.</p>
+    <center><img src='./cap02.jpg' width="400px" ></center>
+      <p>As shown above, the capacitive sensor can be used to measure position, force, tilt, airspeed, and more.</p>
+
+</section>
+
+
+
+<section>
+    <h2>Communication using infrared emitter and detector</h2>
+      <p><img src='./ir_emitter.png' width="600px" ></p>
+      <p>Board layout for infrared emitter. Signal lead is attached to 5V to run the LED continuosly, or to
+        a digital pin (12 in this picture).</p>
+      <p><a href="./transmit_IR.ino"> Here</a> is an Arduino sketch to pulse the IR LED.<p>
+
+      <img src='./ir_receiver.png' width="600px" ></p>
+      <p>Board layout for infrared detector (aka receiver). Signal lead is attached to 5V to run the LED continuosly, or to
+        a digital pin (12 in this picture).</p>
+        <p>First set up transmit and receive boards with LED continuously on.  Find the signal, and use it to detect objects
+          interrupting the beam.  <a href="./receive_IR.ino"> Here</a> is an Arduino sketch to read the signal.<p>
+    <p>Next, see how far you can communicate.  It may help to pulse the transmitted signal.  </p>
+  </section>
+
+  <section>
+    <h2>Communication using Radio modules (433 MHz)</h2>
+      <p><img src='./rf_transmitter.png' width="400px" ><img src='./transmitter_module.png' width="400px" ><</p>
+      <p>Board layout for the Radio Frequency (RF) transmit module. </p>
+      <p><a href="./transmit_RF_02.ino"> Here</a> is an Arduino sketch to pulse the transmitted RF signal.  Signal lead
+        goes to Pin10 on the Arduino.<p>
+
+      <img src='./rf_receiver.png' width="400px" ><img src='./receiver_module.png' width="400px" ><</p>
+      <p>Setup for the RF receiver module.  Signal wire (gray) goes to PIN 8.  There is an LED between PIN11 and GND.</p>
+        <p>Solder antennas to both modules. Set the two boards up close together.  The LED on the receive board should flash twice per
+          second if radio connection is successful.  See how far apart you can transmit.<a href="./receive_RF_02.ino"> Here</a> is an Arduino sketch to read the signal.<p>
+
+
+
+
+</section>
+
+<section>
+    <h2>Proximity using infrared LED and detector.</h2>
+    <p><img src='./prox_ir01.jpg' width="400px" ><img src='./prox_ir02.jpg' width="400px" ></p>
+    <p><img src='./prox_ir03.jpg' width="400px" ><img src='./prox_ir04.jpg' width="400px" ></p>
+    <p>
+      <a href='http://ense'>Spec sheet for LED </a><a href='http://ense'>Spec sheet for phototransistor </a></p>
+
+
+
+</section>
+
+<section>
+    <h2>Wind:  fluid flow.</h2>
+</section>
+
+<section>
+    <h2>empty</h2>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>

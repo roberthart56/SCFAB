@@ -1,0 +1,47 @@
+<html>
+<head>
+
+    <title>Intro to sensors </title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='./../../../HartMar2016.css' type='text/css'>
+
+</head>
+
+  <body>
+<h1>Sensors </h1>
+
+
+
+<section>
+    <h2>Light: Photoresistor.</h2>
+
+
+        <center><img src='./photores01.jpg' width="400px" ></center>
+          <p>A photoresistor changes its resistance as a function of light.  As it receives more light
+            its resistance decreases, and the voltage at the point labeled A0 decreases.  Any of the analog inputs A0 - A5,
+          could be used.
+
+          <a href="./AnalogReadSerial.ino"> Here</a> is sample code using this configuration.</p>
+
+        <center><img src='./photores02.jpg' width="600px" ></center>
+
+        <p>Instead of using an external voltage divider, you can set up a "pullup" resistor internal to the microcontroller chip
+          by using "pinMode(A0, INPUT_PULLUP)" in the setup function.  This makes the situation shown above, where the value at A0
+          is near 5V in the dark, and approaches 0 when the photoresistor is illuminated.
+           <a href="./simple_light.ino"> Here</a> is sample code using this configuration.</p>
+</section>
+
+<section>
+    <h2>Light: Phototransistor.</h2>
+<center><img src='./photo_trans.png' width="300px" ></center>
+
+
+<p>A phototransistor functions similarly to a photoresistor.  Rather than act as a fixed resistor, the photransistor conducts
+more or less current as a function of light level.  In some cases they are more sensitive than
+photoresistors.  We have phototransistors that are sensitive in the visible and in the near infrared.</p>
+
+</section>
+
+
+  </body>
