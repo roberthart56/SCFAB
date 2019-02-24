@@ -1,0 +1,46 @@
+<html>
+<head>
+
+    <title>Arduino Code Examples </title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='./../HartMar2016.css' type='text/css'>
+
+</head>
+
+  <body>
+
+<section>
+    <h2>Arduino Code Examples</h2>
+<p><a href="./LED_driver01.ino">LED_driver01.ino</a> is code for turning and LED on and off with digitalWrite.</p>
+<p><a href="./LED_driver_02.ino">LED_driver_02.ino</a> is code for controlling intensity of LED with analogWrite.</p>
+<p><a href="./LED_driver_with_for_loop.ino">LED_driver_with_for_loop.ino</a> demonstrates the use of a for loop.</p>
+<p><a href="./Button_pullup.ino">Button_pullup.ino</a> Turns on LED in response to button.  Uses input pullup.</p>
+<p><a href="./analogwrite/analogwrite.ino">analogwrite.ino</a>
+<p><a href="./dcmotor1/dcmotor1.ino">dcmotor1.ino</a>
+<p><a href="./dcmotor2/dcmotor2.ino">dcmotor2.ino</a>
+<p><a href="./digitalwrite/digitalwrite.ino">digitalwrite.ino</a>
+<p><a href="./tone1/tone1.ino">tone1.ino</a>
+<p><a href="./tone2/tone2.ino">tone2.ino</a>
+
+<br>
+<br>
+<p><a href="./Read_and_save.ino">Read_and_save.ino</a> <ul>
+
+
+<li>Analog reads ten data points, stores the values in an array.  When button is pressed
+Arduino sends the values through serial.  Values can be received by computer software.  One way is to use the Arduino serial monitor to receive
+data and cut and paste into a spreadsheet.  Button is simply connected to digital pin 7 and to ground. The input pullup resistor is internal
+to the microprocessor, and keeps the level HIGH until the button is pressed.</li>
+  <li>This program stores data in RAM (data memory), of which there is 2kBytes in the Arduino.  This means that up to 1000 two-byte integers could be stored.
+  Actually, since RAM is used for storage of other variables in your program, the space is more limited.  Also, RAM data disappears when
+the device is reset or turned off.  For more permanent storage, use program memory or EEPROM memory.
+Check the Arduino Reference for details.  See also this  <a href='https://cdn-learn.adafruit.com/downloads/pdf/memories-of-an-arduino.pdf'>tutorial.</a>
+</li></p>
+</ul>
+
+
+</section>
+
+
+  </body>
