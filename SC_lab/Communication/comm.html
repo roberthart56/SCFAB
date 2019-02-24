@@ -1,0 +1,97 @@
+<html>
+<head>
+
+    <title>Communication=</title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='./../HartMar2016.css' type='text/css'>
+
+</head>
+
+  <body>
+<h1>Communication</h1>
+
+
+
+<section>
+    <h2>Communication using infrared emitter and detector</h2>
+      <p><img src='./ir_emitter.png' width="600px" ></p>
+      <p>Board layout for infrared emitter. Signal lead is attached to 5V to run the LED continuosly, or to
+        a digital pin (12 in this picture).</p>
+      <p><a href="./transmit_IR.ino"> Here</a> is an Arduino sketch to pulse the IR LED.<p>
+
+      <img src='./ir_receiver.png' width="600px" ></p>
+      <p>Board layout for infrared detector (aka receiver). Signal lead is attached to A0.</p>
+        <p>First set up transmit and receive boards with LED continuously on.  Find the signal, and use it to detect objects
+          interrupting the beam.  <a href="./receive_IR.ino"> Here</a> is an Arduino sketch to read the signal.<p>
+    <p>Next, see how far you can communicate.  It may help to pulse the transmitted signal.  </p>
+</section>
+
+  <section>
+    <h2>Communication using Radio modules (433 MHz)</h2>
+    <p></p>
+    <p>These little modules are a good choice for short (~50 feet?) distances, unidirectional communication, and low data rates. Very simple to use.</p>
+      <p><img src='./rf_transmitter.png' width="400px" ><img src='./transmitter_module.png' width="400px" ><</p>
+      <p>Board layout for the Radio Frequency (RF) transmit module. </p>
+      <p><a href="./transmit_RF_02.ino"> Here</a> is an Arduino sketch to pulse the transmitted RF signal.  Signal lead
+        goes to Pin10 on the Arduino.<p>
+
+      <img src='./rf_receiver.png' width="400px" ><img src='./receiver_module.png' width="400px" ><</p>
+      <p>Setup for the RF receiver module.  Signal wire (gray) goes to PIN 8.  There is an LED between PIN11 and GND.</p>
+        <p>Solder antennas to both modules. Set the two boards up close together.  Once the transmit board is programmed, the LED on the receive board should flash twice per
+          second if radio connection is successful.  See how far apart you can transmit.<a href="./receive_RF_02.ino"> Here</a> is an Arduino sketch to read the signal.
+        The sketches for sending and receiving only communicate "on" and "off".  It is possible to send more data, for example,
+      by connecting the modules to the RX and TX pins of the respective Arduinos and using them as a "serial bridge".</p>
+</section>
+
+
+
+
+<section>
+<h2>Communication using nRF24l01 radios</h2>
+<p></p>
+<p>These modules can be used for longer distances (~100 m, up to 1 km depenging on antenna) and are good for higher data rates and two-way communication.
+They are more complicated to use, but there are Arduino libraries for operating them.  </p>
+
+  <p>Pictures and examples will follow here.</p>
+</section>
+
+
+<section>
+<h2>Communication using Bluetooth modules</h2>
+<p></p>
+<p>Several modules available, for communicating with bluetooth devices such as computers, phones, and other bluetooth modules.  These can be
+pretty straightforward to use. </p>
+  <p>Pictures and examples will follow here. </p>
+</section>
+
+
+
+<section>
+<h2>Communication using Wireless internet modules: </h2>
+<h2> ESP8266 (Adafruit Huzzah) and the Photon.</h2>
+<p></p>
+<p>Pictured below, the Adafruit Huzzah board, which incorporates the ESP8266 wifi chip.  The board has a microprocessor
+with input and output pins, capable of analog read, together with a wireless internet module.  It can be programmed from
+the Arduino environment.  Many programming examples are available.  It connects with the Harvard wireless if the MAC address
+is registed with HUIT.</p>
+
+
+  <ul>
+    <p><img src='./ESP8266Huzzah.jpg' width="600px" ></p>
+    <li><a href="https://github.com/esp8266/Arduino/blob/master/doc/esp8266wifi/readme.md#quick-start">Reference and examples for Arduino and ESP8266.</a>
+
+  </ul>
+<p>Pictured below, The "Photon" from Particle.io.  The board also has a microprocessor
+with input and output pins, capable of analog read, together with a wireless internet module.  It is programmed
+and operated from "the cloud".  It is reasonably easy to use. It connects with the Harvard wireless if the MAC address
+is registed with HUIT - see instructions below for doing this.</p>
+<p><img src='./photon.jpg' width="600px" ></p>
+  <ul>
+    <li><a href="./Photon_Harvard_wifi.pdf">Jonah's document on connecting Photon to Harvard Wireless</a>
+    <li><a href="https://docs.particle.io/guide/getting-started/start/photon/">Getting started</a>
+  </ul>
+</section>
+
+
+  </body>
