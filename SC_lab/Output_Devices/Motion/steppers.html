@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Stepper Motors</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+##[Stepper motors](https://learn.adafruit.com/all-about-stepper-motors/types-of-steppers)
+
+###Bipolar Stepper motors.
+
+![pic](steppers.jpg)
+![pic](stepper_drivers.jpg)
+
+
+Above are three stepper motors.  They run with four leads, and can be driven bi-directionally with two [h-bridges](./../h_bridge/index.html)
+, stepper motor control
+chips or stepper motor control modules.  Some of these drivers are shown above.  . (Add code using Arduino stepper library?)
+
+
+![pic](bipolar_stepper_driver01.jpg)
+![pic](bipolar_stepper_driver02.jpg)
+
+Here is a method for running a bipolar stepper from the double-h-bridge modules that we have.  On the left, the Arduino, with motor
+leads on pins 6,7,8,and 9 (yellow, orange, white, gray).  The board is plugged into a 9V power supply (upper right side of board.)  The red wire is plugged
+into Vin, which sends the 9V directly to the motor driver module. Black wire goes to ground.
+
+The same six wires plug into the module as shown in the right hand picture:  Red and black in the middle and the four leads
+from the digital out pins go to the two sides.
+
+On the output side of the module (bottom) the green/black and blue/red wires from the stepper are plugged into the two outputs.
+The Arduino code used to drive can be found in the Arduino examples in the menu of the application.
+
+
+###Unipolar stepper motors.
+
+![pic](./stepper01.jpg)
+![pic](./stepper02.jpg)
+![pic](./unipolar_gear_stepper.jpg)
+
+Above is a unipolar stepper (geared) with a driver module.  "Unipolar" means that each coil of the motor receives
+current only in one direction, unlike the bipolar steppers discussed above.
+We have a few [modules](https://www.amazon.com/gp/product/B01CP18J4A/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
+consisting of four FETs, which can drive these motors or other unipolar stepper motors
+(or any four devices requiring current in one direction).  In the picture, the four signal leads,
+attached to four digital pins of the microcontroller,
+come in to the board in the upper left.  The power and ground connections are attached on the lower side, and the
+motor is connected through the connector in the middle of the board.
+
+[Arduino code to run a unipolar stepper in one direction.](./Unipolar_driver.ino)
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>

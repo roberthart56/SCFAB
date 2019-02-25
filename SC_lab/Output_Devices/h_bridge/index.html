@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>H-Bridge for bi-directional currrent control</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+
+###H-Bridge
+
+<b>Controlling positive and negative current.</b>
+
+  - DC motors are driven by supplying a voltage to the leads, and will reverse if the voltage is reversed.  The pins
+of the Arduino can only supply 40 mA of current, not enough to power most motors.
+A motor driver is used when you want to run a motor with more current, for example the current
+that might be supplied from an external power supply through the "vin" pin, but still control the motor
+with a digital output pin.  If you only need to run a motor in one direction, a single [FET](../FET/index.html) will
+suffice.  However, if you need to be able to run the current (and the mnotor) in both directions, you'll need something like an
+[h-bridge](https://en.wikipedia.org/wiki/H_bridge).  An h-bridge can be built from components, purchased as a chip, or as a module.
+
+  - The h-bridge [module](http://www.mpja.com/H-Bridge-Power-Driver-Dual-Channel-L9110/productinfo/31596+MP) that we have
+currently in the bins is pictured below. It can provide 800 mA to each of two motors, and can run them in either direction.
+
+
+- The input wires are connected on the lower edge of the board:  in this picture red to "vin", black to ground,
+and gray and white digital pins to control clockwise and counterclocwise respectively.  The motor runs when the input
+pin is at a low voltage and stops when the pin is brought high or disconnected.
+
+- The analogWrite function can be used to control the motor between 0 (fully on) and 255 (fully off).
+- This board can be used to provide
+ current to other output devices - for example to speakers.  One of these boards can be used to
+ run a bipolar stepper motor.
+
+    ![pic](./hbridge01.jpg)
+    ![pic](./hbridge02.jpg)
+
+    <p><a href="./Variable_Motor_driver.ino">Here</a> is code to run a motor at a variable speed in one direction.</p>
+      <p><a href="./Bidirectional_Motor_driver.ino">Here</a> is code to run a motor alternating direction.</p>
+
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>

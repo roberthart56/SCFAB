@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Solenoids and other actuators</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+
+###Solenoids (electromagnets)
+
+![pic](./organ_magnet.jpg)
+[movie](./organ_magnet.mov)
+
+Here is one of many types of electromagnetic solenoid actuators.  They usually need more
+ current than the microcontroller pins can supply,
+so we use an [FET](./../FET/index.html) driver. The current can be provided by:
+  - The 5V power pin on the Arduino board - not good for more than 100 to a few 100 mA.
+  - An external power supply, accessed through the "vin" pin of the Arduino - still only good for ~ 1 Ampere.
+  - An external power supply, with positive lead going directly to the FET drain.  Now you are limited only by the
+    capabilities of the FET!
+
+###Linear actuators
+
+####Lead screws.
+
+![pic](./leadscrews.jpg)
+
+Leadscrews convert rotary to linear motion.  The screw threads engage with a nut,
+which travels a fixed linear distance for each rotation of the motor.  Here are two stepper motors
+with lead screws. This is the typical way that 3D printers and computer controlled cutting machines work.
+
+####[Linear motors]
+
+[From Sam Calish and Jake Reed, 2018 MIT](http://fab.cba.mit.edu/classes/865.18/motion/linear/index.html)
+
+
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>

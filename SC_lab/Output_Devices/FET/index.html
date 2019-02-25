@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Using an FET to control current</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+
+
+###FET (Field Effect Transistor)
+
+![pic](fet.jpg)
+![fet_pic](fet-pic.jpg)
+
+An FET is useful when you need to control a current larger than ~40 mA (0.040 Amperes) with a microcontroller.
+
+  - The microcontroller pin is attached to the gate of the transistor.  When the gate voltage is above about 2 Volts relative to ground, the transistor
+counducts current.  When the gate voltage is lower than that, the transistor blocks the flow of current, and can withstand a large power supply voltage.
+It requires almost no current from the pin attached to the gate to control a large current flowing from
+drain to source of the FET.
+
+  - The load can be turned off and on just by switching the pin at the gate between LOW and HIGH.  The load, for instance
+  a motor, can usually be controlled betwen full 'on' and full 'off' by using pulse width modulation (PWM).  In the Arduino
+  code, this is done with the function analogWrite().  See the Arduino reference for details.
+
+  - The current can be provided by:
+    - The 5V power pin on the Arduino board - not good for more than 100 - few 100 mA.
+    - An external power supply, accessed through the "vin" pin of the Arduino - still only good for ~ 1 Ampere.
+    - An external power supply, with positive lead going directly to the FET drain.  Now you are limited only by the
+      capabilities of the FET!
+
+- The FET that we have in stock, P55NF06L, can conduct up to 55 amps in the "on" state, and in the "off" state can withstand
+up to 60 Volts.  Note that many FETs require more than  2-3 Volts on the gate to turn on - this one is well-suited to the low
+voltage applications that we have.
+
+- Pictured here is an n-type MOSFET (Metal oxide - silicon Field Effect Transistor).  They also come in p-type,  which turn on when the gate is at a lower
+voltage than the source.
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>

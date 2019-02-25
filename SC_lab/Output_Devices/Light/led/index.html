@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>LED (Light emitting diodes)</title>
+
+<xmp theme="bootstrap" style="display:none;">
+
+
+##Light Emitting Diode (LED)
+
+An LED is a semiconductor device that emits light when a current passes through it.  Most LEDs emit light in a small range of wavelenghts,
+so that they have a characteristic color.  We have LEDs from infrared (~890 nm) through ultraviolet (~400 nm wavelength).  A specially deisgned "white" LED
+emits light over the whole visible spectrum, and appears colorless to our vision.
+
+Most of our LEDS dissipate little power - a few tens of millwatts.  More powerful (and cheap) LEDs are available now, in commercial lighting, and also
+in individual devices.
+
+
+<img src='./LED.jpg' width="200px" ><img src='./LEDsymbol.jpg' width="400px" >
+
+
+An LED is shown above.  The long leg must be at a more positive voltage than the shorter lead in order for the
+device to emit light.  The electronic symbol is shown on the right.  The positive terminal is called the anode, and the
+negative (lower in this picture) terminal the cathode.
+In the symbol, the arrow points in the direction that current flows during
+usual operation of the diode.
+
+<a href="./LED_driver01.ino">Here</a>
+is a code for writing to LED with digitalWrite - full on or full off.
+
+<a href="./LED_driver02.ino">Here</a> is code for controlling intensity of LED with analogWrite.
+
+
+
+###RGB (red, green, blue) LEDs
+
+![pic](rgb.png)
+![pic](rgb_config.png)
+Above is the four-legged RGB LED that we have.  Diagrams from the [datasheet](http://www.kingbrightusa.com/images/catalog/SPEC/WP154A4SUREQBFZGC.pdf)
+show details of the configuration.  The three LEDs within this package have a common cathode (negative terminal).  The longest lead is
+the cathode.  Not all RGB LEDs have this arrangement - for each type of RGB that you encounter, you will have to ascertain the arrangement of the
+leads by testing or referring to the datasheet.
+
+###LED [strips.](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=led+strip)
+
+###LED arrays.  [Charlieplexing](https://en.wikipedia.org/wiki/Charlieplexing)
+is a way that you can control N*(N-1) LEDs with
+only N microcontroller ouputs.  [Here's an example](http://academy.cba.mit.edu/classes/output_devices/array/hello.array.44.mp4) from "How to Make (Almost) Anything"
+
+###POV (persistence of vision) LED arrays. [example](https://learn.adafruit.com/bike-wheel-pov-display/overview) and simpler [example](https://maker.pro/arduino/projects/arduino-pov-display)
+
+
+
+
+
+</xmp>
+
+
+<script src="./../../../strapdown/strapdown.js"></script>
+</html>
