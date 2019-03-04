@@ -1,4 +1,4 @@
-// Pins
+/*Read in a 10-bit value on pin A0, put a HIGH or LOW digital output on pin A1*/
 int sensorPin = A0;
 int outputPin = A1;
 
