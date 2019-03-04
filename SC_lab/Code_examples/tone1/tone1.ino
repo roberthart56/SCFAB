@@ -1,3 +1,4 @@
+/*Simple program to put a looped tone to a speaker and data to the serial port*/
 int i=0;
   
 void setup() 
