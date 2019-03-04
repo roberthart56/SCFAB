@@ -1,3 +1,5 @@
+/* Example code to output a sequence of frequencies from 200 to 2000Hz using the tone() function*/
+
 int i=200;
   
 void setup() 
