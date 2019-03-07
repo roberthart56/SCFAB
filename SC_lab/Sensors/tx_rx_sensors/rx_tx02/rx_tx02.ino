@@ -2,10 +2,14 @@
 //rx_tx02  Robert Hart Mar 2019.
 //  Program to use transmit-receive across space between two conductors.
 //  One conductor attached to pin4, one to A0
+//
+//  Optionally, two resistors (1 MOhm or greater) can be placed between 5V and GND, with
+//  the signal connected between them so that the steady-state voltage is 2.5 Volts.
+//
 //  Signal varies with electric field coupling between conductors, and can
 //  be used to measure many things related to position, overlap, and intervening material
 //  between the two conductors.
-//  
+//
 
 
 
@@ -21,7 +25,7 @@ Serial.begin(9600);
 }
 
 void loop() {
- 
+
  sum = 0;
 
  for (int i = 0; i < N_samples; i++){
@@ -36,6 +40,6 @@ void loop() {
 Serial.println(sum);
 //delay(100);
 
-  
- 
+
+
 }
