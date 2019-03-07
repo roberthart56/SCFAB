@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<title>Capacitive Touch</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+###Capacitance.(proximity, force, pressure, tilt.)
+
+![pic](./cap01.png)
+
+This is the configuration used for capacitance sensing with the Arduino.  The pin on the left (7 in this example)
+    is used to charge the plate, through the resistor.  The pin on the right (5 in this example) senses the change in voltage as the plate charges up.
+  The closer the grounded object is to the plate, the larger the capacitance, and the longer it takes to charge. The
+    time for charging (in arbitrary units) is the number that is reported by the sensing function.  To use this sensor, load the Capacitive
+    Sensing Library. In the Arduino IDE, use "sketch > Include Libraries > Manage Libraries".
+
+[Dpcumentation is here](http://playground.arduino.cc/Main/CapacitiveSensor?from=Main.CapSense)
+
+<a href="./CapacitiveTouch"> Here</a> is the sample code for Capactive Sensing that works for the configuration shown above.  The resistor R is usually 1 to 10 Mega-ohm.  The larger
+resistance makes the sensor more sensitive.
+
+![pic](./cap02a.png)
+
+As shown above, the capacitive sensor can be used to measure position, force, tilt, airspeed, and more.
+
+</xmp>
+
+
+<script src="./../strapdown/strapdown.js"></script>
+</html>
