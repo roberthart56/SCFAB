@@ -1,4 +1,22 @@
-/*Read in a 10-bit value on pin A0, put a HIGH or LOW digital output on pin A1*/
+int i=200;
+  
+void setup() 
+{
+  Serial.begin(115200);
+  DDRD=255;
+}
+
+void loop() 
+{
+      int input = analogRead(A0);
+      int val = map(input, 0, 1023, 0, 255);
+      Serial.print (val);
+      Serial.println ();
+      PORTD=val;
+}
+
+/*
+// Pins
 int sensorPin = A0;
 int outputPin = A1;
 
@@ -25,4 +43,4 @@ void loop() {
   // Wait
   delay(200);
 
-}
+}*/
