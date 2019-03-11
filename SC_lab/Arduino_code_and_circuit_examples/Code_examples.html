@@ -1,87 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Arduino Code Examples </title>
+    <title>Ardutxt Code Examples </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./../HartMar2016.css" type="text/css">
   </head>
   <body>
     <section>
-      <h2>Arduino Code Examples</h2>
-      <a href="https://www.arduino.cc/reference/en/"> Arduino Reference</a>
-      - Information on all the basic Arduino functions - great resource
-      to peruse and get an idea of what the Arduino can do even without
+      <h2>Ardutxt Code Examples</h2>
+      <a href="https://www.ardutxt.cc/reference/en/"> Ardutxt Reference</a>
+      - Information on all the basic Ardutxt functions - great resource
+      to peruse and get an idea of what the Ardutxt can do even without
       external libraries.<br>
-      <p><a href="./AnalogReadSerial_N_ave/AnalogReadSerial_N_ave.ino">Analog
-          input with averaging.</a>
-      </p>
-      <p><a href="./LED_driver01.ino">LED_driver01.ino</a> is code for
+      <p><a href="./AnalogReadSerial_N_ave/AnalogReadSerial_N_ave.txt">Analog
+
+
+          input with averaging.</a> </p>
+      <p><a href="./LED_driver01.txt">LED_driver01.txt</a> is code for
         turning and LED on and off with digitalWrite.</p>
-      <p><a href="./LED_driver_02.ino">LED_driver_02.ino</a> is code for
+      <p><a href="./LED_driver_02.txt">LED_driver_02.txt</a> is code for
         controlling intensity of LED with analogWrite.</p>
-      <p><a href="./LED_driver_with_for_loop.ino">LED_driver_with_for_loop.ino</a>
+      <p><a href="./LED_driver_with_for_loop.txt">LED_driver_with_for_loop.txt</a>
         demonstrates the use of a for loop.</p>
-      <p><a href="./Button_pullup.ino">Button_pullup.ino</a> Turns on
+      <p><a href="./Button_pullup.txt">Button_pullup.txt</a> Turns on
         LED in response to button. Uses input pullup.<br>
       </p>
       <p><a href="LCD_Potentiometer_Speaker/index.html">LCD_Potentiometer_Speaker</a>
         How to set up a 16x2 LCD and display input ADC data and Output a
         sound with tone() and map().<br>
       </p>
-      <!-- <p><a href="./analogwrite/analogwrite.ino">analogwrite.ino</a></p>-->
-      <!-- <p><a href="./digitalwrite/digitalwrite.ino">digitalwrite.ino</a></p>-->
+      <!-- <p><a href="./analogwrite/analogwrite.txt">analogwrite.txt</a></p>-->
+      <!-- <p><a href="./digitalwrite/digitalwrite.txt">digitalwrite.txt</a></p>-->
       <p><a
-href="./tone_function_moving_frequency_output/tone_function_moving_frequency_output.ino">tone()</a>
+href="./tone_function_moving_frequency_output/tone_function_moving_frequency_output.txt">tone()</a>
         Example using the tone() function to output a range of
         increasing/decreasing frequencies to a speaker.<br>
       </p>
-      <p><a href="./rx_tx02/rx_tx02.ino">rx_tx02.ino</a> Capacitance
+      <p><a href="./rx_tx02/rx_tx02.txt">rx_tx02.txt</a> Capacitance
         transmit-receive code. See also <a
 href="http://fab.cba.mit.edu/classes/863.18/Harvard/people/robhart/adc_tutorial/">tutorial</a>
-        from "How to Make (Almost) Anything 2018"
-        <br>
+        from "How to Make (Almost) Anything 2018" <br>
       </p>
-      <p><a href="./sound02/sound02.ino">Program calculating a running
+      <p><a href="./sound02/sound02.txt">Program calculating a running
           average of sound intensity from a microphone.</a> <a
           href="./../Sensors/Sound_input/index.html"><br>
-          Details and pictures.</a>
-      </p>
-      <p><a href="./sound03/sound03.ino">Program using a function to get
-          time-averaged sound intensity from a microphone. This
-          is a more useful version for analysis of sound.</a> <a
+          Details and pictures.</a> </p>
+      <p><a href="./sound03/sound03.txt">Program using a function to get
+          time-averaged sound intensity from a microphone. This is a
+          more useful version for analysis of sound.</a> <a
           href="./../Sensors/Sound_input/index.html"> <br>
-          Details and pictures.</a>
-        <br>
+          Details and pictures.</a> <br>
       </p>
       <p><a href="./Spyros_Feb_26.zip"> Spyros's examples from workshops
-          Feb. 26 and 27, 2019 for VIS 2233.</a>
-      </p>
-      <p><a href="./Read_and_save/Read_and_save.ino">Read_and_save.ino</a>
+          Feb. 26 and 27, 2019 for VIS 2233.</a> </p>
+      <p><a href="./Read_and_save/Read_and_save.txt">Read_and_save.txt</a>
       </p>
       <ul>
         <li>Analog reads ten data points, stores the values in an array.
-          When button is pressed
-          Arduino sends the values through serial. Values can be
-          received by computer software. One way is to use the Arduino
-          serial monitor to receive
-          data and cut and paste into a spreadsheet. Button is simply
-          connected to digital pin 7 and to ground. The input pullup
-          resistor is internal
-          to the microprocessor, and keeps the level HIGH until the
-          button is pressed.</li>
+          When button is pressed Ardutxt sends the values through
+          serial. Values can be received by computer software. One way
+          is to use the Ardutxt serial monitor to receive data and cut
+          and paste into a spreadsheet. Button is simply connected to
+          digital pin 7 and to ground. The input pullup resistor is
+          internal to the microprocessor, and keeps the level HIGH until
+          the button is pressed.</li>
         <li>This program stores data in RAM (data memory), of which
-          there is 2kBytes in the Arduino. This means that up to 1000
+          there is 2kBytes in the Ardutxt. This means that up to 1000
           two-byte integers could be stored. Actually, since RAM is used
           for storage of other variables in your program, the space is
-          more limited. Also, RAM data disappears when
-          the device is reset or turned off. For more permanent storage,
-          use program memory or EEPROM memory.
-          Check the Arduino Reference for details. See also this <a
-href="https://cdn-learn.adafruit.com/downloads/pdf/memories-of-an-arduino.pdf">tutorial.</a>
+          more limited. Also, RAM data disappears when the device is
+          reset or turned off. For more permanent storage, use program
+          memory or EEPROM memory. Check the Ardutxt Reference for
+          details. See also this <a
+href="https://cdn-learn.adafruit.com/downloads/pdf/memories-of-an-ardutxt.pdf">tutorial.</a>
         </li>
-        <p></p>
       </ul>
     </section>
   </body>
