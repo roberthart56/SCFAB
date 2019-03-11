@@ -24,7 +24,9 @@ chips or stepper motor control modules.  Some of these drivers are shown above.
 
 Here is a method for running a bipolar stepper from the double-h-bridge modules that we have.  On the left, the Arduino, with motor
 leads on pins 6,7,8,and 9 (yellow, orange, white, gray).  The board is plugged into a 9V power supply (upper right side of board.)  The red wire is plugged
-into Vin, which sends the 9V directly to the motor driver module. Black wire goes to ground.
+into Vin, which sends the 9V directly to the motor driver module. If you need more than ~1A, you'll need to connect
+the power supply directly to the motor driver module, not through the Vin pin.  In that case, power the Arduino
+separately.  Black wire goes to ground.
 
 The same six wires plug into the module as shown in the right hand picture:  Red and black in the middle and the four leads
 from the digital out pins go to the two sides.
