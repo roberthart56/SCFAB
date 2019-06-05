@@ -5,13 +5,10 @@
 <xmp theme="bootstrap" style="display:none;">
 <br>
 
-<b>Electronics basics.</b>
+####Electronics basics.
 
-  - <b>[Intro by Lara Tomholt](Lara_Tomholt_Workshop.pdf)</b>
 
-  - <b>[More introductory material.](https://tourlomousis.pages.cba.mit.edu/fabclass-recitation-electronics/basic_concepts/index.html)</b>
-
-  - Voltage and current. [Protoboard (breadboard) circuits.](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard)
+  -  Voltage and current. [Protoboard (breadboard) circuits.](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard)
   Current flows through a circuit; voltage is measured across a circuit element (like a resistor), and is the energy lost per unit charge as the current flows through the circuit element.
   Metal, as that in wires, has little resistance, and voltage does not drop very much as current flows through wires.
 
@@ -21,15 +18,26 @@
   In the figures above, the circuit schematic on the left represents the physical situation on the right.
   Create this circuit with your Arduino and breadboard, and power the Arduino from your computer or another USB power socket.
 
+---
+
+
   ![pic](multimeter.jpg)
 
-  - Multimeter.  Now use your multimeter to measure the voltage across the resistor.
+  -  Multimeter.  Now use your multimeter to measure the voltage across the resistor.
 
   - Ohm's law.Use Ohm's law to calculate the current flowing through
   the resistor.
 
-  Disconnect your circuit, and use your multimeter (on the appropriate scale) to measure a resistance
-  and to check a connection using the "beep" function.
+---
+
+  ![pic](led_circuit.jpg)
+
+  -  Calculating current through an LED.  An LED does not have the simple relation between voltage and current that a resistor does (Ohm's law
+  does not work for diodes).  To learn what current is flowing through the LED, you need to use the fact that the current flowing through the resistor is
+  the same as that flowing through the LED.  Then measure the voltage across the resistor and use Ohm's Law to find the current.
+  Build the circuit shown above, and calculate the current flowing through the circuit.
+
+---
 
   ![pic](symbols.jpg)
   ![pic](colorcode.png)
@@ -38,30 +46,40 @@
   A diode only allows current to flow in one direction.  The arrow points in the direction of the flow.  The resistor color code is
   explained on the right-hand figure.
 
-  ![pic](led_circuit.jpg)
-
-  - Calculating current through an LED.  An LED does not have the simple relation between voltage and current that a resistor does (Ohm's law
-  does not work for diodes).  To learn what current is flowing through the LED, you need to use the fact that the current flowing through the resistor is
-  the same as that flowing through the LED.  Then measure the voltage across the resistor and use Ohm's Law to find the current.
-  Build the circuit shown above, and calculate the current flowing through the circuit.
+---
 
   ![pic](volt_div.jpg)
 
   - Voltage divider.  Here is a voltage divider, which forms the basis for many sensors such as the photoresistor.  Build this circuit
   with resistors, and measure voltages.  Does it make sense to you?
 
+---
+
     ![pic](pot.jpg)
 
   - Potentiometers.  A potentiometer is a voltage divider with a movable contact.  It can be used to provide a variable voltage, or act
   as a variable resistance.
 
-  - [Arduino basics](./../Arduino/arduino_projects_book.pdf)
-    - Install Arduino IDE.
-    - Load and run the "blink" program
-    - alter the "blink" program.
-    - Measure a voltage with the Arduino.
-    - Build a voltage divider circuit using the photoresistor as one of the resistors.  Use the Arduino to measure light.  See the [sensor](../Sensors.html)
-    page for details and a sample program.
+---
+
+####Other resources for electronics.
+
+- <b>[Intro by Lara Tomholt](Lara_Tomholt_Workshop.pdf)</b>
+
+- <b>[More introductory material.](https://tourlomousis.pages.cba.mit.edu/fabclass-recitation-electronics/basic_concepts/index.html)</b>
+
+
+
+####Arduino Basics
+
+  - [Arduino intro project book](./../Arduino/arduino_projects_book.pdf)
+  - Install Arduino IDE.
+  - Load and run the "blink" program
+  - alter the "blink" program.
+  - Explore digital output - use the scope.
+  - Explore digital input - Use a button.
+  - Next step, program button to turn on output.
+
 
 
 
