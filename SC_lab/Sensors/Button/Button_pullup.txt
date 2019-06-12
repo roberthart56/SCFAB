@@ -1,0 +1,46 @@
+/*
+  Button
+
+ Turns on and off a light emitting diode(LED) connected to pin A0 (used as a digital output),
+ when pressing a pushbutton attached to pin 12.  Requires setting digital input as having internal hardware pullup.
+
+
+ The circuit:
+ * LED attached from pin A0 to ground
+ * pushbutton attached to pin 12 and ground.
+
+
+
+ Modified from:
+ http://www.arduino.cc/en/Tutorial/Button
+ */
+
+// constants won't change. They're used here to
+// set pin numbers:
+const int buttonPin = 12;     // the number of the pushbutton pin
+const int ledPin = A0;      // the number of the LED pin
+
+// variables will change:
+int buttonState = 0;         // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize the pushbutton pin as an input, using input pullup:
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is LOW:
+  if (buttonState == LOW) {
+    // turn LED on:
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(ledPin, LOW);
+  }
+}
