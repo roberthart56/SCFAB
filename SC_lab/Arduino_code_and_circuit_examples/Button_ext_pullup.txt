@@ -7,7 +7,7 @@
 
  The circuit:
  * LED attached from pin 13 to ground
- * pushbutton attached to pin 12 and ground.
+ * pushbutton attached to pin 12 and ground, 10k pullup resistor also attached to pin 12.
 
 
 

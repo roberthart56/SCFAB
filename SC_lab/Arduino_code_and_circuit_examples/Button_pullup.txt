@@ -1,8 +1,8 @@
 /*
   Button
 
- Turns on and off a light emitting diode(LED) connected to pin A0 (used as a digital output), 
- when pressing a pushbutton attached to pin 12.
+ Turns on and off a light emitting diode(LED) connected to pin A0 (used as a digital output),
+ when pressing a pushbutton attached to pin 12.  Requires setting digital input as having internal hardware pullup.
 
 
  The circuit:
@@ -10,7 +10,7 @@
  * pushbutton attached to pin 12 and ground.
 
 
- 
+
  Modified from:
  http://www.arduino.cc/en/Tutorial/Button
  */
