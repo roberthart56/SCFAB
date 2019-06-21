@@ -1,0 +1,22 @@
+
+int ouput_pin = A1;   //output is controlled through A1 pin.
+int sensor_pin = A0;  // light sensor (phototransistor) signal on A0.  Phototransistor collector to 5V.
+                      // Emitter through 10kOhm resistor to ground.
+
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(ouput_pin, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input
+  int sensorValue = analogRead(sensor_pin);
+  // print out the value, for diagnostic purposes.
+  Serial.println(sensorValue);
+  if (sensorValue < 50) {digitalWrite(output_pin, HIGH);}
+  else{digitalWrite(output_pin, LOW);}
+}
