@@ -22,7 +22,7 @@ Serial.begin(9600);
 }
 
 
-long tx_rx(){         //Function to execute rx_tx algorithm and return a value 
+long tx_rx(){         //Function to execute rx_tx algorithm and return a value
                       //that depends on coupling of two electrodes.
                       //Value returned is a long integer.
   int read_high;
