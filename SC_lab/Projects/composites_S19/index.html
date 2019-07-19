@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>Composite Workflow, Summer 2019</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+##Composite making.
+
+###What it is.
+
+![pic](intro.jpg)
+
+###Compression and extension.  Composite in bending.
+
+![pic](bending.jpg)
+
+###How it is made.
+
+![pic](assembly.jpg)
+
+###Modelling and exporting.
+
+Model a 3D object in Fusion. [(file here)](./Composite01.v2.f3d) and export an [STL file.](./Body4.stl)
+
+
+###Process for toolpath creation.
+
+![pic](rough_preview.jpg)
+![pic](rough_foam.jpg)
+
+Preview and actual rough cut in foam of bowl shape.
+
+Procedure to insert stl into V-carve program to create toolpath.
+
+  - Open V-carve.
+  - New file.
+  - Set up material, in inches or mm.
+  - Import 3D
+    - Set scale
+    - Adjust position of base plane in model.
+  - Set up roughing toolpath.
+    - Adjust model height in material.
+    - Select tool.  Choose stepover.
+    - Use preview to check, and adjust cutting area as needed.
+  - Set up finishing toolpath.
+    - Select tool.  Maybe reduce stepover.
+    = Check preview and adjust if needed.
+  - Save toolpaths.
+  - Mount foam and zero the cutter in x,y,and z.
+  - Run toolpaths.
+
+###After finishing cuts in foam.
+
+![pic](fine_foam.jpg)
+
+
+
+</xmp>
+
+
+<script src="./../../../strapdown/strapdown.js"></script>
+</html>
