@@ -13,33 +13,42 @@
 ![pic](single_motor_bb.png)
 ![pic](single_motor_schem.png)
 
-Arduino Uno and breadboard.  Fritzing Schematic.
+Pictured above is the circuit and schematic used to drive a motor with an Arduino Uno.  An n-type MOSFET (Field effect transistor)
+is used to switch current to the motor using low-current logic level signals from the Arduino, attached to the transistor's gate pin.
+I used the large n-type Feild Effect Transistor (FET).  This large transistor was chosen because it is easier to see how it
+works in the circuit.  The smaller IRLD024 FET in the inventory would work as well, but its legs need
+to be bent to fit in the protoboard, and the order of its pins is different.  See pictures below.
+The schematic is generated from fritzing.com.
 
 
 ![pic](Sketch_schem.jpg)
 
- Sketched schematic.  Use large n-type Feild Effect Transistor (FET).  This large transistor
-was chosen bercause it is easier to see how it fits.  The smaller FET in the inventory would work as well, but its legs need
-to be bent to fit in the protoboard, and the order of its pins is different.  See details on the [FET page](https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/FET/index.html)
+ Above is a sketched schematic.
 
 ![pic](single_motor_board.png)
 
-Plan for soldering components to protoboard. [Inkscape svg](./sparkfun_board.svg) of dot pattern.
+To make this project in a smaller, fully soldered form, I chose the Arduino nano, and a small protoboard
+from Sparkfun.  The holes for soldering are arranged in a grid, shown schematically above.  To plan the soldering,
+I sketch the paths of wires, the location of components and connectors, and show where the pins of the Arduino will end up.
+Here is an [Inkscape svg file](./sparkfun_board.svg) of the dot pattern.
 
 ![pic](soldered_top.jpg)
 ![pic](soldered_bottom.jpg)
 
 
-Next, show photo of board with components soldered.
+Above is the board with wires, components and connectors soldered.
 
 ![pic](./assembled_1.jpg)
 
 
-Next, add the Arduino.
+Above, the Arduino nano has been added.
 
 ![pic](./assembled_2.jpg)
 
-Next show use of only half board.
+In this case, I only need half the board.  I made a smaller version by cutting the board in half and soldering
+the Arduino nano to the bottom side rather than the top.
+
+### Using the smaller IRLD024 n-channel MOSFET.
 
 ![pic](./IRLD024_bent.jpg)
 ![pic](./IRLD024_protoboard.jpg)
@@ -47,7 +56,10 @@ Next show use of only half board.
 ![pic](./IRLD024_datasheet.png)
 
 
-Now show how to use IRLD024 n-mosfet on protoboard.
+
+The figures above show one way to use the IRLD024 n-mosfet on the protoboard.  It was necessary to bend on of the pins to access three different
+columns.  It is also possible to use this FET in the middle of the board, with its legs on the two different sides of the board,
+stretching across the "valley".
 
 </xmp>
 
