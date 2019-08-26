@@ -1,5 +1,5 @@
 
-//rx_tx02  Robert Hart Mar 2019.
+//rx_tx01  Robert Hart Mar 2019.
 //  Program to use transmit-receive across space between two conductors.
 //  One conductor attached to pin4, one to A0
 //
@@ -25,14 +25,14 @@ Serial.begin(9600);
 
 void loop() {
 
- 
+
    digitalWrite(4,HIGH);              //Step the voltage high on conductor 1.
    read_high = analogRead(A0);        //Measure response of conductor 2.
    delayMicroseconds(100);            //Delay to reach steady state.
    digitalWrite(4,LOW);               //Step the voltage to zero on conductor 1.
    read_low = analogRead(A0);         //Measure response of conductor 2.
    diff = read_high - read_low;       //desired answer is the difference between high and low.
-   
+
 Serial.println(diff);
 //delay(100);
 
