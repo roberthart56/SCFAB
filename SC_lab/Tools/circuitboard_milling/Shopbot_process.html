@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Shopbot_process for cicuitboards</title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='../../HartMar2016.css' type='text/css'>
+
+</head>
+  <body>
+    <h1>Cutting Circuitboards on the Shopbot - basic process</h1>
+    <section>
+
+      <p><b>Safety Information</b></p>
+        <ul>
+          <li><a href='./Shopbot_training.html'> <b>Training checklist</b></a></li>
+          <li> <b>Machine-specific safety concerns.</b></li>
+            <ol>
+              <li>Before running the spindle, put <b>shield</b> in place.</li>
+              <li>Ensure correct z-zero so that tools do not break due to too-deep cuts.</li>
+            </ol>
+
+        </ul>
+
+      <ul>
+        <li><b>Using fab modules</b></li>
+          <ol>
+            <li>Load settings file</li>
+            <li>Load png file</li>
+            <li>Choose output format "ShopBot" (sbp)</li>
+            <li>Choose process for PCB traces</li>
+            <li>Check parameters, calculate, and save</li>
+          </ol>
+
+
+      <p></p>
+
+        <li><b>Running the Shopbot</b></li>
+          <ol>
+            <li> Remove the shield.</li>
+            <li> Attach the board to appropriate surface with double tape. </li>
+            <li> Turn on Red switch and remove key/wrench from spindle switch.</li>
+            <li> Open the ShopBot software.</li>
+            <li> Raise head and insert 1/64" tool bit(insert high - almost all the shaft in the collet.) </li>
+            <li> With hands out of the way, open yellow pad and define zero in x, y, and z, using the blue "zero axes" button.</li>
+            <li> Move the spindle head to the middle of the board, where you will zero the z-axis.</li>
+            <li> Loosen tool bit and move it to the board, holding it down as you finger-tighten the collet.</li>
+            <li> Tighten the collet with the wrenches.</li>
+            <li> Using the yellow keypad, carefully reduce the gap between toolbit and surface to zero, using shims.</li>
+            <li> Define zero in z, using the blue "zero axes" button.</li>
+            <li> Close the yellow keypad.</li>
+            <li> Make sure spindle control is on and set for maximum speed.</li>
+            <li> Put the shield in place</li>
+            <li> Run the file that you generated in fab modules, using the green "Cut Part" button and following the dialog boxes.</li>
+            <li> When the job completes, use yellow keypad to move the head up and out.  Vacuum dust and check traces.</li>
+            <li> Change to the 1/32" bit for cutting the outline, again inserting it far into the collet.</li>
+            <li> Zero the z, as in 6-10 above</li>
+            <li>Replace the shield.</li>
+            <li>Close the yellow keypad and run the outline file.</li>
+            <li>When job is done, use the yellow keypad to move the head out of the way, remove the shield, and vacuum up the dust.</li>
+
+
+
+          </ol>
+
+      </ul>
+
+    </section>
+  </body>

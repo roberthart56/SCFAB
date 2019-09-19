@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Roland SRM-20 process for cicuitboards</title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='../../HartMar2016.css' type='text/css'>
+
+</head>
+  <body>
+    <h1>Cutting Circuitboards on the Roland SRM-20 - basic process</h1>
+    <section>
+
+
+      <p><b>Run modserver (if it is not running already).</b></p>
+        <ol>
+          <li>On the Windows Desktop, double-click the shortcut "start mods"</li>
+
+          <li>A command window will appear, with the text
+            "listening for connection from client address 127.0.0.1 on server port 1234"</li>
+        </ol>
+
+
+
+
+      <p><b>Open fab mods.</b></p>
+        <ol>
+          <li>Open the webpage on the desktop to run the local mods program:  "PCB_Harvard_SRM20"</li>
+          <li>You should see "socket opened" in the WebSocket device window.</li>
+          <li>Machine should respond to the "move to origin" and "move to home" keys.</li>
+        </ol>
+
+        <p><b>Place a circuitboard blank on the sacrificial layer.</b></p>
+        <ol>
+          <li>Clean both circuitboard back and sac. layer.</li>
+          <li>Cover the back of the blank double-stick tape, no overlaps or creases.</li>
+        </ol>
+
+      <p><b>Insert the tool and zero it.</b></p>
+        <ol>
+          <li>Hit "move to home" to bring spindle up. </li>
+          <li>Put 1/64" bit in collet (insert high - almost all the shaft in the collet)  </li>
+          <li>Hit "move to origin".  Adjust x,y,and z to as needed.   </li>
+          <li>Loosen the toolbit screw, let the tool rest on the board and then tighten its screw.</li>
+        </ol>
+
+
+
+        <p><b>Run traces file. </b></p>
+          <ol>
+          <li>Select png file for traces.</li>
+          <li>Select defaults for traces.</li>
+          <li>Calculate.</li>
+          <li>Send file to device.</li>
+        </ol>
+
+        <p><b>Run outline file. </b></p>
+      <ol>
+        <li>Change to 1/32" bit.  Leave bit high in collet so that it does not crash into bed when zeroing.</li>
+        <li>Go to the origin.  As before, move the tool to the board surface to set the z-zero.</li>
+        <li>Select defaults for outline</li>
+        <li>Calculate</li>
+        <li>Send file to device.</li>
+      </ol>
+
+      <p><b>When the machine finishes running, wait ~5 seconds before opening shield.  If you open too soon, communication is lost.
+       In that case, turn off SRM20 and turn it on again.  Communication should re-establish.</b></p>
+
+
+
+
+
+
+
+    </section>
+  </body>

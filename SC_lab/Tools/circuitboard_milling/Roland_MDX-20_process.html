@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Roland Modela MDX-20 cicuitboards</title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='../../HartMar2016.css' type='text/css'>
+
+</head>
+  <body>
+    <h1>Cutting Circuitboards on the Roland MDX-20 (Modela)- basic process</h1>
+    <section>
+
+
+      <p><b>Safety Information</b></p>
+        <ul>
+          <li><a href='./Modela_training.html'> <b>Training checklist</b></a></li>
+          <li> <b>Machine-specific safety concerns.</b></li>
+            <ol>
+              <li>Before running the spindle, make sure <b>hands</b> are out of the workspace and <b>shield</b> is in place.</li>
+              <li>Ensure correct z-zero so that tools do not break due to too-deep cuts.</li>
+            </ol>
+
+        </ul>
+
+
+
+      <p><b>Running mods server (if it is not running already).</b></p>
+        <ol>
+          <li>Open a terminal window</li>
+          <li>type:  "start_mods_server"</li>
+          <li>The program should respond, "listening for ..... port 1234"</li>
+        </ol>
+
+
+
+
+      <p><b>Using fab modules</b></p>
+      <ol>
+          <li>Open fab modules by double-clicking the icon on the desktop for the file Modela_PCB.html.</li>
+        <li>You should see "serial port opened" in the WebSocket print window.</li>
+        <li>Hit "move home and stop" to bring spindle up and table forward. </li>
+      </ol>
+
+      <p><b>Place a circuitboard blank on the sacrificial layer.</b></p>
+      <ol>
+          <li>Clean both circuitboard back and sac. layer.</li>
+          <li>Cover the back of the blank double-stick tape, no overlaps or creases.</li>
+          <li>Press down on table firmly, assuring no gaps and no wiggle.</li>
+      </ol>
+
+
+        <p><b>Insert the tool and zero it.</b></p>
+          <ol>
+
+            <li>Put 1/64" bit in collet (insert high - almost all the shaft in the collet)  </li>
+            <li>Hit "move to origin".  </li>
+            <li>Use up and down keys on Modela so that spindle is within 5mm of its minimum "z" position.</li>
+            <li>Adjust x and y as needed.   </li>
+            <li>Loosen the toolbit screw, let the tool rest on the board and then tighten its screw.</li>
+          </ol>
+
+
+          <p><b>Run traces file. </b></p>
+          <ol>
+            <li>Select png file for traces</li>
+            <li>Select defaults for traces</li>
+            <li>Calculate.</li>
+            <li>Send file.</li>
+          </ol>
+
+
+          <p><b>Run outline file. </b></p>
+        <ol>
+          <li>Change to 1/32" bit.  Leave bit high in collet so that it does not crash into bed when zeroing.</li>
+          <li>Go to the origin.  As before, move the tool to the board surface to set the z-zero.</li>
+          <li>Select png file for outline.</li>
+          <li>Select defaults for outline.</li>
+          <li>Calculate.</li>
+          <li>Send file to printer.</li>
+
+        </ol>
+
+
+
+
+
+
+
+        <p><b>To Cancel</b></p>
+          <ol>
+            <li>Press "cancel"</li>
+            <li>When the tool stops travelling, press "move home and stop".</li>
+            <li>Sometimes it is necessary to flush the Modela's data buffer by pressing "down" and "up" simultaneously in the VIEW mode.
+            </li>
+          </ol>
+
+
+
+
+
+    </section>
+  </body>
