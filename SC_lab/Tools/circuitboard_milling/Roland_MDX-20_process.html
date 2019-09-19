@@ -31,6 +31,9 @@
           <li>Open a terminal window</li>
           <li>type:  "start_mods_server"</li>
           <li>The program should respond, "listening for ..... port 1234"</li>
+          <li>If you get an error message indicating that a process is already going on, go to the
+          Mac Activity Monitor, search for a process containing the name "Node", and terminate it.
+        Then repeat the "start_mods_server" command.</li>
         </ol>
 
 
@@ -40,7 +43,7 @@
       <ol>
           <li>Open fab modules by double-clicking the icon on the desktop for the file Modela_PCB.html.</li>
         <li>You should see "serial port opened" in the WebSocket print window.</li>
-        <li>Hit "move home and stop" to bring spindle up and table forward. </li>
+        <li>If necessary, hit "move home and stop" to bring spindle up and table forward. </li>
       </ol>
 
       <p><b>Place a circuitboard blank on the sacrificial layer.</b></p>
@@ -50,6 +53,8 @@
           <li>Press down on table firmly, assuring no gaps and no wiggle.</li>
       </ol>
 
+        <p><b>The VIEW button</b> toggles the machine between a "view" mode, in which the bed is forward and the spindle
+        raised (view light on) and the mode in which the machine is receptive to serial commands (view light off). </p> 
 
         <p><b>Insert the tool and zero it.</b></p>
           <ol>
@@ -78,22 +83,17 @@
           <li>Select png file for outline.</li>
           <li>Select defaults for outline.</li>
           <li>Calculate.</li>
-          <li>Send file to printer.</li>
+          <li>Send file.</li>
 
         </ol>
 
 
 
 
-
-
-
         <p><b>To Cancel</b></p>
           <ol>
-            <li>Press "cancel"</li>
-            <li>When the tool stops travelling, press "move home and stop".</li>
-            <li>Sometimes it is necessary to flush the Modela's data buffer by pressing "down" and "up" simultaneously in the VIEW mode.
-            </li>
+            <li>hit "VIEW"</li>
+            <li>Flush the Modela's data buffer by pressing "down" and "up" simultaneously while in the VIEW mode.</li>
           </ol>
 
 
