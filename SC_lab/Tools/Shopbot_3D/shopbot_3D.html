@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Shopbot procedures - 3D toolpaths on Desktop Shopbot</title>
+    <meta charset='utf-8'>
+
+    <link rel='stylesheet' href='../../HartMar2016.css' type='text/css'>
+
+</head>
+  <body>
+    <h1>Shopbot Procedures - Desktop Shopbot.</h1>
+    <section>
+      <h2>Safety Guidelines</h2>
+
+    <ol>
+      <li>Wear eye and ear protection.</li>
+      <li>Closed-toe shoes.</li>
+      <li>No loose hair or clothing.</li>
+      <li>Never reach into area with moving tools.</li>
+      <li>Know how to stop machine before you start it.</li>
+      <li>Never work alone or when tired.</li>
+    </ol>
+    </section>
+
+    <section>
+      <h2>Creating 3D Toolpaths in VCarve. (Shopbot-provided software)</h2>
+
+    <ol>
+
+      <li>Measure material</li>
+      <li>Open software, choose “new file”.</li>
+      <li>Material setup</li>
+      <li>Using "Drawing" tab, import stl file.</li>
+      <li>Define position of model in material.</li>
+      <li>Create roughing toolpath (following are suggestions for wax).</li>
+        <ul>
+        	<li>tool - 1/8”</li>
+        	<li>spindle speed 18000 rpm</li>
+        	<li>2 in/sec</li>
+        	<li>cut depth per pass 0.125”</li>
+          <li>stepover 50%.</li>
+        </ul>
+      <li>Create finishing toolpath</li>
+        <ul>
+        	<li>Choose tool.</li>
+        	<li>spindle speed 18000 rpm</li>
+        	<li>Decrease stepover as needed.</li>
+        	<li>If needed, make additional pass at 90 degrees to first pass.</li>
+        </ul>
+<li>Save toolpaths.</li>
+    </ol>
+    </section>
+
+    <section>
+      <h2>Running a toolpath file on the Shopbot Desktop Machine.</h2>
+
+    <ol>
+
+      <li>Attach material to bed.</li>
+      <li>Insert the appropriate bit.</li>
+      <li>Zero the bit in x, y, and z.</li>
+      <li>Make sure spindle is turned on and speed set as desired (speed is in rev. per second)</li>
+      <li>Do an air cut.</li>
+        <ul>
+          <li>move z-zero up.</li>
+          <li>run file</li>
+
+        </ul>
+<li>Cut part</li>
+<ul>
+  <li>Return z-zero to real zero.  Check.</li>
+  <li>run file</li>
+  <li>Spindle turns on when you press "OK" - make  sure spindle control on shopbot desktop is on.</li>
+</ul>
+    </ol>
+
+    </section>
+  </body>
+<p></p><p></p><p></p>
