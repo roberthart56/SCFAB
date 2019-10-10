@@ -1,73 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
+<title>Procedures for Shopbot Design and cutting.</title>
 
-    <title>Shopbot procedures</title>
-    <meta charset='utf-8'>
+<xmp theme="bootstrap" style="display:none;">
+<br>
 
-    <link rel='stylesheet' href='../../HartMar2016.css' type='text/css'>
 
-</head>
-  <body>
-    <h1>Shopbot Procedures</h1>
-    <section>
-      <h2>Safety Guidelines</h2>
 
-    <ol>
-      <li>Wear eye and ear protection.</li>
-      <li>Closed-toe shoes.</li>
-      <li>No loose hair or clothing.</li>
-      <li>Never reach into area with moving tools.</li>
-      <li>Know how to stop machine before you start it.</li>
-      <li>Never work alone or when tired.</li>
-    </ol>
-    </section>
+##Shopbot Procedures
 
-    <section>
-      <h2>Creating a Toolpath in VCarve. (Shopbot-provided software)</h2>
+###Safety Guidelines
 
-    <ol>
 
-      <li>Measure material</li>
-      <li>Open software, choose “new file”.</li>
-      <li>Material setup</li>
-      <li>Import vector or draw vector.</li>
-      <li>Create toolpath (following are suggestions for OSB).</li>
-        <ul>
-        	<li>tool - 1/8”</li>
-        	<li>spindle speed 18000 rpm</li>
-        	<li>3 in/sec</li>
-        	<li>cut depth per pass 0.2”</li>
-        	<li>tabs can be 0.5” wide by 0.1” thick.</li>
-        </ul>
-<li>Save toolpath(s).</li>
-    </ol>
-    </section>
+  - Wear eye and ear protection.
+  - Closed-toe shoes.
+  - No loose hair or clothing.
+  - Never reach into area with moving tools.
+  - Know how to stop machine before you start it.
+  - Never work alone or when tired.
 
-    <section>
-      <h2>Running a shopbot toolpath file.</h2>
 
-    <ol>
+###Creating a Toolpath in Aspire. (Shopbot-provided software)
 
-      <li>Attach material to bed.</li>
+This software is available on three Windows computers in the lab:  The computer connected to the laser cutter, the vinyl cutter computer, and the windows machine in the circuitboard milling room.
+ You may also arrange to install it on your own (Windows) machine - contact Rob.
+
+
+  <ol>
+    <li>Design in 2D cad software of your choice.  Optionally add holes for material hold-down and "dogbone" relief features.
+      Export as DXF.
+    <li>Measure material</li>
+    <li>Open Aspire software, choose “new file”.</li>
+    <li>Material setup</li>
+      <ul>
+        <li>Enter material x and y size.</li>
+        <li>Enter material thickness.</li>
+      </ul>
+
+    <li>Import vector or draw vector.</li>
+    <li>Add holes for material hold-down.</li>
+    <li>Add slot relief where needed (e.g. "dogbone fillet")</li>
+    <li>Where needed, remove extra vectors, close vectors, clean up.</li>
+    <li>Create toolpath </li>
+
+      <ul>
+
+        <li>Hole toolpath for material hold-down</li>
+        <li>Select vectors and create profile toolpath for cutout.</li>
+        <li>Choose tool, cut depth, and other parameters (following are suggestions for OSB).</li>
+          <ul>
+            <li>tool - 1/8”</li>
+            <li>spindle speed 18000 rpm</li>
+            <li>3 in/sec</li>
+            <li>cut depth per pass 0.2”</li>
+          </ul>
+      	<li>Create tabs.  Reasonable size is 0.4” wide by 0.1” thick.</li>
+        <li>Preview  all toolpaths to make sure tool will not encounter screws.</li>
+      </ul>
+<li>Save toolpath(s) as Shopbot (inch) format with "sbp" extension.</li>
+  </ol>
+
+
+
+###Running a shopbot toolpath file.
+<ol>
+      <li>Place material on the bed.</li>
       <li>Insert the appropriate bit.</li>
       <li>Zero the bit in x, y, and z.</li>
-      <li>Make sure spindle control window is open (Tools menu)</li>
+      <li>Make sure spindle control window is open (Tools menu) or, on Shopbot Desktop machine, that spindle is on.</li>
       <li>Do an air cut.</li>
         <ul>
           <li>move z-zero up.</li>
-          <li>run file</li>
-          <li>turn spindle on.</li>
+          <li>run files</li>
         </ul>
 <li>Cut part</li>
-<ul>
-  <li>Return z-zero to real zero.  Check.</li>
-  <li>run file</li>
-  <li>Turn dust collector on</li>
-  <li>turn spindle on</li>
-</ul>
-    </ol>
+  <ul>
+    <li>Spindle on.</li>
+    <li>Return z-zero to real zero.  Check.</li>
+    <li>run hole file</li>
+    <li>Screw down material.</li>
+    <li>Adjust z-zero.</li>
+    <li>Run cut files.</li>
+  </ul>
+  </xmp>
 
-    </section>
-  </body>
-<p></p><p></p><p></p>
+
+  <script src="./../../strapdown/strapdown.js"></script>
+  </html>
