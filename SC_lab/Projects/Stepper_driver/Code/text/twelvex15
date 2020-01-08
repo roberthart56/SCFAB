@@ -1,0 +1,5 @@
+1f 2f 1f 2f 1f 2f 1f af 1f af 1f af 9f af 9f af 9f af 9f 2f 9f 2f 9f 2f   //square
+1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f 1f 2f   //up
+1f af 1f af 1f af 1f af 1f af 1f af 1f af 1f af 1f af 1f af 1f af 1f af   //right
+9f af 9f af 9f af 9f af 9f af 9f af 9f af 9f af 9f af 9f af 9f af 9f af   //down
+9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f 9f 2f   //left
