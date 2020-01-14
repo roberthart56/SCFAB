@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>ATSAM Boards</title>
+
+<xmp theme="journal" style="display:none;">
+<br>
+
+###Loading the Arduino Core bootloader on the SAMD11 14-pin chip.
+
+Instructions [here](https://gitlab.cba.mit.edu/pub/hello-world/atsamd11/tree/master/bootloader) from Eric, posted in the 2019 HTMAA class
+repository.  Hope this is public.
+
+[Mattair GitHub repository:](https://github.com/mattairtech/ArduinoCore-samd) https://github.com/mattairtech/ArduinoCore-samd
+
+Under [Variants](https://github.com/mattairtech/ArduinoCore-samd/tree/master/variants/Generic_D11C14A),
+information about D11 Arduino in particular:
+
+
+###Diagram of D11 board:
+
+![pic0](ATSAM11_pinout.png)
+
+### Pictures of board and programmer setup.
+![pic1](Board_with_header.png)
+
+Shows connections to board:
+
+  - red. 3.3V VCC  (not actually connected in this picture.  If it were, LED on header board would light)
+  - black gnd
+  - yellow DIO
+  - orange CLK
+  - green RST
+
+
+![pic2](Board_with_programmer.png)
+
+Shows the direction for the ATMEL ICE programmer cable connector.  (Use SAM port on programmer)
+
+
+
+</xmp>
+
+
+<script src="./../../../../strapdown/strapdown.js"></script>
+</html>
