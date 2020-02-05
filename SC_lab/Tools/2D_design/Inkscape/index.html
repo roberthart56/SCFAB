@@ -3,55 +3,72 @@
 <head>
   <title>Inkscape tips and procedures.</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="./style.css" rel="stylesheet">
-   
 </head>
 <body>
 
-<h2>General tips.</h2>
-	
-<h1>    <a href='./Archive.zip'>Tutorial</a> </h1>
 
-<h2>Procedure for turning a sketch into a vector file.</h2>
+ <h1>Inkscape tips and procedures. </h1> 
 
-<figure>
-  <p><img  src="./paddle_sketch.png"  alt="S">
-  <figcaption>Import bitmap of sketch into Inkscape.  </figcaption>
-</figure>
+<h3>Here is a detailed <a href='./Archive.zip'>Tutorial</a>, starting from the basics, by Mark Crutch.  </h3>
 
-<figure>
-  <p><img  src="./paddle_traced.png"  alt="S">
-  <figcaption>Path -> Trace Bitmap.  Open dialog box, make any adjustments needed, and hit "OK". </figcaption>
-</figure>
+<p><h3>Here are the steps for converting a bitmap picture (for instance of a drawing) into a vector format in Inkscape.   </h3></p>
 
-<figure>
-  <p><img  src="./paddle_lines.png"  alt="S">
-  <figcaption>Select and isolate vector paths.  Remove fill color, add line color</figcaption>
-</figure>
-
-<figure>
-  <p><img src="./paddle_outline.png"  alt="S">
-  <figcaption>Break apart and delete the extra segments and the inside trace of the original line.   </figcaption>
-</figure>
-
-<figure>
-  <p><img  src="./paddle_smoothed.png" alt="S">
-  <figcaption>Smooth.  Export as dxf file.</figcaption>
-</figure>
+<div class="container-fluid bg-3 text-center">
 
 
+  <div class="row">
 
+    <div class="col-sm-4">
+     <figure>
+      <img  src="./paddle_sketch.png"  alt="S">
+      <figcaption>1.  Import bitmap of sketch into Inkscape.  </figcaption>
+    </figure>
+     
+    </div>
 
- 
+    <div class="col-sm-4">
+     <figure>
+      <img  src="./paddle_traced.png"  alt="S">
+      <figcaption>2.  Path -> Trace Bitmap.  Open dialog box, make any adjustments needed, and hit "OK"
+      Now you can select the vector paths that you created and move them so that you can see them. (or just delete the bitmap).  In this picture, the vectors are on the left and the original bitap on the right.  </figcaption>
+    </figure>
+    </div>
+
+    <div class="col-sm-4">
+     <figure>
+      <img  src="./paddle_lines.png"   alt="S">
+      <figcaption>3.  Select the vector paths.  Remove fill color, make lines visible by giving them a color.   </figcaption>
+    </figure>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+     <figure>
+      <img  src="./paddle_outline.png"  alt="S">
+      <figcaption>4.  Break apart the paths (Path -> Break Apart) and delete the extra segments and the inside trace of the original line.   </figcaption>
+    </figure>
+    </div>
+
+    <div class="col-sm-4">
+     <figure>
+      <img  src="./paddle_smoothed.png" alt="S">
+      <figcaption>5.  Path -> Smooth.  Repeat as needed. Export as dxf file. </figcaption>
+    </figure>
+    </div>
+
+    
+  </div>
+
+</div>
   
+</div>
 
 </body>
 </html>
-
-<!-- 
-https://www.w3.org/Style/Examples/007/figures.en.html  is the source of the html/css ideas for figures and images.  
-
-
-
- -->
