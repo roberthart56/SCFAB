@@ -6,42 +6,52 @@
 
 <br>
 
-###Loading the Arduino Core bootloader on the SAMD11 14-pin chip.
+### Breakout board designed by Ben Brown.
 
-Instructions [here](https://gitlab.cba.mit.edu/pub/hello-world/atsamd11/tree/master/bootloader) from Eric, posted in the 2019 HTMAA class
-repository.  Hope this is public.
+We ordered 100 boards to breakout the pins of the ATSAMD11C14 for breadboarding.
 
-[Mattair GitHub repository:](https://github.com/mattairtech/ArduinoCore-samd) https://github.com/mattairtech/ArduinoCore-samd
+![pic1](board.jpg)
 
-Under [Variants](https://github.com/mattairtech/ArduinoCore-samd/tree/master/variants/Generic_D11C14A),
-information about D11 Arduino in particular:
+Here is the board.
+
+![pic1](programming01.jpg)
+
+This is how you program it using the ATMEL ICE programmer and the 10-pin header.  Note the orientation of the cable.
+
+1.  Install Open OCD.
+2.  Download and unzip [this directory]().
+3.  In a command window, navigate to the directory.
+4.  Attach the ATMEL ICE programer as in the picture.
+5.  Type "openocd".
 
 
-###Diagram of D11 board:
+![pic1](programming02.jpg)
 
-![pic0](ATSAM11_pinout.png)
+This is an alternative way to program, not using the header.
 
-### Pictures of board and programmer setup.
-![pic1](Board_with_header.png)
 
-[Eagle schematic](./ATSAM11_01.sch)
-[Eagle board](./ATSAM11_01.brd)
 
-Shows connections to board:
+![pic1](D11_breakout_layout_rev3.png)
 
-  - red. 3.3V VCC  (not actually connected in this picture.  If it were, LED on header board would light)
-  - black gnd
-  - yellow DIO
-  - orange CLK
-  - green RST
+Here's a diagram of the layout.
 
-Link to Neil's example to give programmer header connections:
-[http://academy.cba.mit.edu/classes/embedded_programming/D11D/hello.D11D.echo.png]
-(http://academy.cba.mit.edu/classes/embedded_programming/D11D/hello.D11D.echo.png)
 
-![pic2](board_with_programmer.png)
+![pic1](ATSAM11_pinout.png)
 
-Shows the direction for the ATMEL ICE programmer cable connector.  (Use SAM port on programmer)
+
+And a diagram of pin functions and notes about the Mattair Arduino core.
+
+###Arduino IDE support for this board.  See the Mattair Github page [here](https://github.com/mattairtech/ArduinoCore-samd)
+
+
+- In the Arduino IDE, click File->Preferences.
+- Click the button next to Additional Boards Manager URLs.
+- Add https://www.mattairtech.com/software/arduino/package_MattairTech_index.json.
+- Save preferences, then open the Boards Manager.
+- Install the Arduino SAMD Boards package. Use version 1.6.2 or higher.
+- Install the MattairTech SAM D|L|C Core for Arduino package.
+- Close Boards Manager, then click Tools->Board->(choose board).
+- Select the MCU with the now visible Tools->Microcontroller menu (if present).
 
 
 
