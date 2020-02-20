@@ -1,0 +1,27 @@
+/*
+ Arduino code.
+ Robert Hart 2/21/20.
+ Button between button_pin and ground.
+ LED and resistor in series attached to led_pin.
+ LED turns on when button is pushed.
+*/
+const int led_pin = 2;        //this is a constant value that will not change in the program.
+const int button_pin = 7;
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize pins.
+  pinMode(led_pin, OUTPUT);           //  LED pin is an output.
+  pinMode(button_pin, INPUT_PULLUP);  // button pin is an input with input pullupmactivated so that it is normally HIGH unless pulled to ground (LOW).
+}
+
+// the loop function runs over and over again forever
+void loop() {
+ if (digitalRead(button_pin)){
+  digitalWrite(led_pin, LOW);
+  }         //end if
+ else{
+  digitalWrite(led_pin, HIGH);
+  }        // end else
+ 
+}         // end loop

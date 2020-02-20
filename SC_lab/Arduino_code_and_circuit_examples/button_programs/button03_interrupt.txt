@@ -1,0 +1,21 @@
+const int led_pin = 2;        //this is a constant value that will not change in the program.
+const int button_pin = 7;
+volatile boolean led_state = true;  //this is a variable that keeps track of led state.  It is either true or false.
+
+void setup() 
+{
+  pinMode(led_pin, OUTPUT);
+  pinMode(button_pin, INPUT_PULLUP);
+  //create interrupt when button pin is pushed.
+  attachInterrupt(digitalPinToInterrupt(button_pin), ALL_ON_ISR, FALLING);
+}
+void loop() 
+{
+
+digitalWrite(led_pin, led_state);  
+}
+
+void ALL_ON_ISR()
+{
+ led_state = !(led_state);
+}

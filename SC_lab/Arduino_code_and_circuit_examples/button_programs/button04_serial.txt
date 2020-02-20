@@ -1,0 +1,24 @@
+/*
+ Arduino code.
+ Robert Hart 2/21/20.
+ Button between button_pin and ground.
+ button is normally  HIGH.  When button is pushed, goes LOW.
+*/
+const int button_pin = 7;
+
+boolean button_state = true;
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize pin.
+   pinMode(button_pin, INPUT_PULLUP);  // button pin is an input with input pullupmactivated so that it is normally HIGH unless pulled to ground (LOW).
+  Serial.begin(115200);      //begin serial.  For the native USB boards, like the ItsyBitsy, the value in the function can be '0'
+  
+}
+
+// the loop function runs over and over again forever
+void loop() {
+ button_state = digitalRead(button_pin);
+ Serial.println(button_state);
+ delay(200);
+}
