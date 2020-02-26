@@ -17,7 +17,7 @@
 
   - Here's how it works:
 
-    - transmit (tx) pin is made alternately high (5V) and low (0V).
+    - transmit (tx) pin is made alternately high (5V or 3.3V) and low (0V).  Note that the figures show the number for 5V boards.  For 3V boards (like the ATSAM-based Adafruit boards) the highes voltgae is 3.3V.
     - This charges and discharges the tx electrode.
     - On the rx electrode there is a small 'blip' up or down as the tx pin toggles.
     - These blips are measured by the Arduino analog input (ADC), and "low" subracted from "high" (see figure).
@@ -26,9 +26,8 @@
 
    ![picture](./figs/txrx_schematic.jpg)
 
-   Above is a sketch of the setup for tx-rx sensing.  The (optional) resistors between 5V and GND make the signal stabler.  The input
-   to the ADC is attached to the point halfway betwen 5V and ground, and is therefore at 2.5 volts, except for the transient
-   blips that occur at the tx electrode changes voltage.  These resistors should be equal and greater than 1 Mega Ohm.
+   Above is a sketch of the setup for tx-rx sensing.  The (optional) resistors between 5V(3.3V) and GND make the signal stabler.  The input
+   to the ADC is attached to the point halfway betwen 5V(3.3V) and ground, and is therefore at 2.5(1.2) volts, except for the transient blips that occur at the tx electrode changes voltage.  These resistors should be equal, and should have values of 1 Mega Ohm or larger.
 
 
 Below are pictures of two copper electrodes (tape on circuitboard material) attached with

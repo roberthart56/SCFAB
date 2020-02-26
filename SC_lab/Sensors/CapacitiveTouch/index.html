@@ -7,18 +7,23 @@
 
 ###Capacitance using the Arduino Capacitive Sensing Library.
 
+This capacitance method, based on Arduino Capacitive Sensing library, can be used with most boards that support the Arduino IDE.  For the Adafruit ItsyBitsy, do not use pin 5, but any other digital pin is OK.  Also note that for the ATSAM-based boards, the high voltage is 3.3 rather than 5V.  
+
 ![pic](./cap01.png)
 
 This is the configuration used for capacitance sensing with the Arduino.  The pin on the left (7 in this example)
     is used to charge the plate, through the resistor.  The pin on the right (5 in this example) senses the change in voltage as the plate charges up.
   The closer the grounded object is to the plate, the larger the capacitance, and the longer it takes to charge. The
-    time for charging (in arbitrary units) is the number that is reported by the sensing function.  To use this sensor, load the Capacitive
-    Sensing Library. In the Arduino IDE, use "sketch > Include Libraries > Manage Libraries".
+    time for charging (in arbitrary units) is the number that is reported by the sensing function.  
+
+ To use this sensor, load the latest version of the Capacitive Sensing Library. Download it [here](https://github.com/PaulStoffregen/CapacitiveSensor).  Download the zip, extract the directory, and copy it to:   /Documents/Arduino/hardware/libraries/ or /Documents/Arduino/libraries/ (varies from one installation to another).  
+
+ In the Arduino IDE, use "sketch > Include Libraries > Manage Libraries".
 
 [Dpcumentation is here](http://playground.arduino.cc/Main/CapacitiveSensor?from=Main.CapSense)
 
 <a href="./CapacitiveTouch.txt"> Here</a> is the sample code for Capactive Sensing that works for the configuration shown above.  The resistor R is usually 1 to 10 Mega-ohm.  The larger
-resistance makes the sensor more sensitive.
+resistance makes the sensor more sensitive.  Change the pin numbers to reflect your board.
 
 ![pic](./cap02a.png)
 
