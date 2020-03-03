@@ -7,8 +7,8 @@ int Aminus = 14;
 int Bplus = 8;
 int Bminus = 5;
 
-//int step_pin = 2;
-//int dir_pin = 4;
+int led1_pin = 2;
+int led2_pin = 4;
 uint16_t step_count = 0;
 
 void setup() {
@@ -17,8 +17,11 @@ void setup() {
   pinMode(Aminus, OUTPUT);
   pinMode(Bplus, OUTPUT);
   pinMode(Bminus, OUTPUT);
-  //pinMode(step_pin, INPUT_PULLDOWN);
-  //pinMode(dir_pin, INPUT_PULLDOWN);
+  pinMode(led1_pin, OUTPUT);
+  pinMode(led2_pin, OUTPUT);
+
+  digitalWrite(led1_pin, HIGH);
+  digitalWrite(led2_pin, HIGH);
 }
 
 void pulse_0(){
