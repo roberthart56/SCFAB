@@ -1,6 +1,6 @@
 #include <CapacitiveSensor.h>
 
-CapacitiveSensor Sensor = CapacitiveSensor(7,5);
+CapacitiveSensor Sensor = CapacitiveSensor(7,9);
 
 
 
@@ -12,11 +12,8 @@ void setup() {
 }
 
 void loop() {
-  long sensorValue = Sensor.capacitiveSensor(300);
-  Serial.println(sensorValue);
- // if (sensorValue > 100) analogWrite(11,100);
-  //else analogWrite(11,0);
-  delay(10);
+  long sensorValue = Sensor.capacitiveSensor(1000);			//Change the number of samples to get the required timing and sensitivity.
+  //delay(10);
 
 
 
