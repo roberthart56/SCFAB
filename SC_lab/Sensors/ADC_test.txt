@@ -4,7 +4,8 @@
 
 void setup(){
   
-  analogReadResolution(12);
+  //analogReadResolution(12);
+  Serial.begin(115200);
 }
 
 
@@ -21,7 +22,7 @@ void loop() {
 
   Serial.print("Time: ");
   Serial.print( float (endTime-startTime)/1000.0 );
-  Serial.print(" ms");
+  Serial.print(" microeconds");
   Serial.print("\n");
   Serial.print("Last value: ");
   Serial.print(sensorValue);
