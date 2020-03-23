@@ -1,0 +1,18 @@
+/* Code to run motor with analogWrite.
+ * 
+ * 
+ */
+
+
+
+void setup() {
+  //empty - not necessary to set up a pin as output for anaolg write.
+  
+}
+
+void loop() {
+ analogWrite(7, 100);
+ delay(500);
+ analogWrite(7, 200);
+ delay(500);
+}
