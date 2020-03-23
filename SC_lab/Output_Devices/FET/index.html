@@ -9,8 +9,10 @@
 
 ###FET (Field Effect Transistor)
 
-![pic](fet.jpg)
-![fet_pic](fet-pic.jpg)
+![pic](FET.jpg)
+![fet_pic](FET+itsy.jpg)
+![fet_detail](FET_detail.jpg)
+
 
 An FET is useful when you need to control a current larger than ~20 mA (0.020 Amperes) with a microcontroller.
 
@@ -24,8 +26,8 @@ drain to source of the FET.
   code, this is done with the function analogWrite().  See the Arduino reference for details.
 
   - The current can be provided by:
-    - The 5V power pin on the Arduino board - not good for more than 100 - few 100 mA.
-    - An external power supply, accessed through the "vin" pin of the Arduino - still only good for ~ 1 Ampere.
+    - The 5V power pin on the Microcontroller board - not good for more than a few 100 mA.
+    - An external power supply, accessed through the "vin" pin on some boards - still only good for ~ 1 Ampere.
     - An external power supply, with positive lead going directly to the motor, and returning from
     the motor to the FET drain.  Now you are limited only by the capabilities of the FET!
 
