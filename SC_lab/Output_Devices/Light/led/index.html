@@ -40,6 +40,16 @@ show details of the configuration.  The three LEDs within this package have a co
 the cathode.  Not all RGB LEDs have this arrangement - for each type of RGB that you encounter, you will have to ascertain the arrangement of the
 leads by testing or referring to the datasheet.
 
+![pic](rgb_led_ckt.jpg)
+![pic](rgb_led_pic.jpg)
+
+Above is an example of a circuit to drive an RGB LED.  The three inputs are connected to three separate digital pins of the microcontroller.  If you want to be able to control the intensity of each color, make sure that these pins are capable of PWM (see the pinout diagram for your microcontroller.)  The resistors limit the current throgh each LED in the usual way.  You may find that the blue LED is less intense - it requires a greater voltage drop than the less energetic green and red.  To equalize intensity, you may reduce the resistor value for the blue (and maybe the green) LED relative to the red.  Note that the resistors shown here are 1k Ohm (brown, black, red).  Refer to the [resistor color code](https://www.arrow.com/en/research-and-events/articles/resistor-color-code) to decipher resistor values for the color-banded resistors.
+
+![pic](Vanna_vessel.jpg)
+![pic](Vanna08.jpg)
+
+The picture above shows a project that Rob and Daniel did in the summer of 2019 at the [Haystack](https://www.haystack-mtn.org/) Fablab with ceramic artist Vanna Ramirez.  We sorked with Vanna to install four RGB LED modules, together with microcontrollers and battery, (see right-hand photo) in her pot, which has several translucent porcelain bubbles.  The software slowly cycles the LEDs through the possible ranges of color, over a time of tens of minutes.  Details, pictures and code on Rob's [Haystack 2019 repository](https://roberthart56.github.io/haystack2019_hart/). Here is a short [video](vanna_compressed_01.mp4).
+
 ###LED [strips.](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=led+strip)
 
 ###LED arrays.  [Charlieplexing](https://en.wikipedia.org/wiki/Charlieplexing)
