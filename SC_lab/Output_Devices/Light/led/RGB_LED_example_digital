@@ -1,0 +1,41 @@
+
+/*
+ * Simple code for controlling a common-cathode RGB LED.
+ * Anodes are connected through resistors to digital ouput pins.
+ * Common cathode is connected to ground.  Individual LEDs are on when 
+ * the corresponding pin is HIGH.
+ * 
+ * The other type, common-anode RGB LED, is controlled by connecting
+ * each cathode to an I/O pin, in which case the LED is on when the
+ * corresponding piun is LOW.
+ */
+
+const int red = A3;
+const int blue = A4;
+const int green = A5;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+}
+
+void loop() {
+     
+  digitalWrite(red, HIGH);      //red on
+  delay(1000);
+  digitalWrite(red, LOW);       
+  digitalWrite(green, HIGH);    //green on
+  delay(1000);
+  digitalWrite(green, LOW);
+  digitalWrite(blue, HIGH);     //blue on
+  delay(1000);
+  digitalWrite(red, HIGH);      //turn all on
+  digitalWrite(green, HIGH);
+  delay(1000);
+  digitalWrite(red, LOW);     //turn all off
+  digitalWrite(green, LOW);   
+  digitalWrite(blue, LOW); 
+
+
+}
