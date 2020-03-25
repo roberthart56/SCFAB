@@ -6,6 +6,29 @@
 
 <br>
 
+
+
+# Programming with the Arduino IDE
+
+You have to do a little setup to get the Arduino IDE to talk to your board.
+
+1. Go to Arduino > Preferences, and click on the button next to "Additional Boards Manager URLs"
+2. Add `https://www.mattairtech.com/software/arduino/package_MattairTech_index.json`
+3. Go to Tools > Board > Boards Manager
+4. Search for "Mattair", and install the "MattairTech SAM D|L|C Core for Arduino" package
+
+That's all the installation necessary. To talk with your board, make sure you select the right board
+from the boards menu (`GenericD11C14A`), and USBtinyISP for the programmer.
+
+The original documentation is available here
+[source](https://github.com/mattairtech/ArduinoCore-samd/blob/master/README.md) (scroll way down, or
+seearch for "Installation").
+
+
+###Diagram of D11 board:
+
+![pic0](ATSAM11_pinout.png)
+
 ###Loading the Arduino Core bootloader on the SAMD11 14-pin chip.
 
 Instructions [here](https://gitlab.cba.mit.edu/pub/hello-world/atsamd11/tree/master/bootloader) from Eric, posted in the 2019 HTMAA class
@@ -14,12 +37,7 @@ repository.  Hope this is public.
 [Mattair GitHub repository:](https://github.com/mattairtech/ArduinoCore-samd) https://github.com/mattairtech/ArduinoCore-samd
 
 Under [Variants](https://github.com/mattairtech/ArduinoCore-samd/tree/master/variants/Generic_D11C14A),
-information about D11 Arduino in particular:
-
-
-###Diagram of D11 board:
-
-![pic0](ATSAM11_pinout.png)
+information about D11 Arduino in particular
 
 ### Pictures of board and programmer setup.
 ![pic1](Board_with_header.png)

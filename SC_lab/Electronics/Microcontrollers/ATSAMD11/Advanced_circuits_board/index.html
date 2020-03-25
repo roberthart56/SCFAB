@@ -14,6 +14,35 @@ We ordered 100 boards to breakout the pins of the ATSAMD11C14 for breadboarding.
 
 Here is the board.
 
+###Arduino IDE support for this board.  See the Mattair Github page [here](https://github.com/mattairtech/ArduinoCore-samd)
+
+
+- In the Arduino IDE, click File->Preferences.
+- Click the button next to Additional Boards Manager URLs.
+- Add https://www.mattairtech.com/software/arduino/package_MattairTech_index.json.
+- Save preferences, then open the Boards Manager.
+- Install the Arduino SAMD Boards package. Use version 1.6.2 or higher.
+- Install the MattairTech SAM D|L|C Core for Arduino package.
+- Close Boards Manager, then click Tools->Board->(choose board).
+- Select the MCU with the now visible Tools->Microcontroller menu (if present).
+
+
+###Pin diagram for ATSAMD11 chip.  
+
+Note the names in Arduino IDE are  given in the columns nearest the chip:  Call them "5,8,9,.... etc"
+
+![pic1](./ATSAM11_pinout.png)
+
+
+Diagram of pin functions and notes about the Mattair Arduino core.
+
+
+
+
+###Loading the bootloader 
+
+(Students who have been given the board will not have to do this, we hope.)
+
 ![pic1](./programming01.jpg)
 
 This is how you program it using the ATMEL ICE programmer and the 10-pin header.  Note the orientation of the cable.
@@ -36,22 +65,6 @@ This is an alternative way to program, not using the header.
 Here's a diagram of the layout.
 
 
-![pic1](./ATSAM11_pinout.png)
-
-
-And a diagram of pin functions and notes about the Mattair Arduino core.
-
-###Arduino IDE support for this board.  See the Mattair Github page [here](https://github.com/mattairtech/ArduinoCore-samd)
-
-
-- In the Arduino IDE, click File->Preferences.
-- Click the button next to Additional Boards Manager URLs.
-- Add https://www.mattairtech.com/software/arduino/package_MattairTech_index.json.
-- Save preferences, then open the Boards Manager.
-- Install the Arduino SAMD Boards package. Use version 1.6.2 or higher.
-- Install the MattairTech SAM D|L|C Core for Arduino package.
-- Close Boards Manager, then click Tools->Board->(choose board).
-- Select the MCU with the now visible Tools->Microcontroller menu (if present).
 
 
 
