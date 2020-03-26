@@ -1,0 +1,37 @@
+/*
+ Bidirectional motor driver uses the dual H-bridge driver module.
+ Inputs to the module on pins 9 and 10.
+ VCC on the driver module connected to Vin on the Arduino board.
+ GND on the module to GND on the Arduino.
+
+ Driver channels are fully on when inputs are LOW.
+ If you need variable speed, use analogWrite.
+ 
+ 
+  This example code is in the public domain.
+*/
+
+
+const int fwd = 8;		//Choose your digital IO pins as appropriate to your board.
+const int bwd = 9;
+
+void setup() {
+  pinMode(fwd, OUTPUT); //set pin  as an output pin.
+  pinMode(bwd, OUTPUT); //set pin   as an output pin.
+
+}
+
+
+
+void loop() {
+  
+digitalWrite(fwd, HIGH);  //  Turn off forward input.
+digitalWrite(bwd, LOW);   // Turn on motor backwards.  
+delay(500);
+
+digitalWrite(bwd, HIGH);  //  Turn off backward input.
+analogWrite(fwd, LOW);   // Turn on motor forward.
+ delay(500);
+
+  
+}

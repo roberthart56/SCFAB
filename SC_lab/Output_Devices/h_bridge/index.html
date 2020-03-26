@@ -22,21 +22,26 @@ suffice.  However, if you need to be able to run the current (and the mnotor) in
   - The h-bridge [module](http://www.mpja.com/H-Bridge-Power-Driver-Dual-Channel-L9110/productinfo/31596+MP) that we have
 currently in the bins is pictured below. It can provide 800 mA to each of two motors, and can run them in either direction.
 
-
-- The input wires are connected on the lower edge of the board:  in this picture red to "vin", black to ground,
-and gray and white digital pins to control clockwise and counterclocwise respectively.  The motor runs when the input
-pin is at a low voltage and stops when the pin is brought high or disconnected.
-
-- The analogWrite function can be used to control the motor between 0 (fully on) and 255 (fully off).
 - This board can be used to provide
  current to other output devices - for example to speakers.  One of these boards can be used to
  run a bipolar stepper motor.
 
+###Tutorial - steps in connecting a motor to the h-bridge module.
+
+ 1. Attach a power supply to the GND and VCC pins of the module.  You may want to use female-female socket wires.
+ 2. Attach motor leads to the output connectors, using a small screwdriver to clamp leads into connectors.
+ 3. Attach two leads to the appropriate signal pins on left or right (eg, B-1A and B-1B).  White and gray in the image below.
+ 4. Verify the motor turns clockwise or counterclockwise respectively, when you ground the signal leads.  When the voltage on the signal pins is high (3.3V) the motor is off in that direction.
+ 5. Attach the signal leads to microcontroller pins and control direction and speed.  When you use analogWrite, remeber that OFF=255 and ON=0.  See the code examples.
+
     ![pic](./hbridge01.jpg)
     ![pic](./hbridge02.jpg)
 
-    <p><a href="./Variable_Motor_driver.ino">Here</a> is code to run a motor at a variable speed in one direction.</p>
-      <p><a href="./Bidirectional_Motor_driver.ino">Here</a> is code to run a motor alternating direction.</p>
+	 <p><a href="./Bidirectional_Motor_driver.txt">Here</a> is code to run a motor alternating direction.</p>
+    <p><a href="./Variable_motor_driver.txt">Here</a> is code to run a motor at a variable speed in one direction.</p>
+    <p><a href="./Analog_input_Motor_driver.txt">Here</a> is code to run a motor at a variable speed as a function of analog input.</p>
+  
+
 
 
 </xmp>
