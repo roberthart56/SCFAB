@@ -43,14 +43,21 @@ currently in the bins is pictured below. It can provide 800 mA to each of two mo
   
 ###Running a stepper motor with the h-bridge module.
 
-![pic](./bipolar_stepper_driver.jpg)
+![pic](./itsy+mod01.jpg)
+![pic](./itsy+mod02.jpg)
+![pic](./itsy+mod03.jpg)
 
-[here](./stepper_oneStepAtATime.txt) is the example program downloaded from the Arduino IDE examples, for driving a stepper motor.  To use this program with the h-bridge module:
 
- 1. Connect the four pins of your mcrocontroller board to B-1A, B-1B, A-1A, and A-1B pins of the h-bridge module.
- 2. Connect your motor leads to the ouput terminals.  You need to identify pairs of leads that are connected to the same coil.  Use your multimeter to find pairs of wires that have a resistance of a few ohms between them.  Connect each pair to one of the output connectors.  The order of the two wires does not matter - reversing the wires just changes the direction of rotation.
- 3. Connect power and ground to the h-bridge module.  Use the 9V power supply.                                                              
- 4. Run the program.  The stepper library should be a part of the Arduino IDE already. 
+ 1. Connect the four pins of your microcontroller board to B-1A, B-1B, A-1A, and A-1B pins of the h-bridge module. orange-yellow-green-blue in this picture.<br>
+ 2. Connect your motor leads to the ouput terminals.  For the motors you have the pairs for each connector should be black/green and red/blue.  If you measure the resistance from one of these pairs to the other, you should get about 30 Ohms.  (Check this to make sure you are connecting correctly).  The order within each pair does not matter.  Reversing the wires just makes the motor step the other direction.<br>
+ 3. Connect power and ground to the h-bridge module.  Use the 9V power supply and the barrel connector.  In the pictures above ground is black, 9V is red.  You cannot power the Itsy bitsy with 9V. (But if you have an UNO clone like the Adafruit Metro328, you can plug the power supply into the connector on the board, and use VIN to supply motor power).         <br>                                                     
+ 4. Run the program.  <br>
+
+ ###Programs for stepper motors.
+
+ [here](./itsy_stepper_library_example.txt) is the example program downloaded from the Arduino IDE examples, for driving a stepper motor. It uses the Stepper library, which should be a part of the Arduino IDE already.  If it is not, use the Library Manager under Sketch>Include Library to install it. 
+
+  [here](./stepper_no_library.txt) is an alternative approach that uses a function in the code rather than a library function.  It steps a motor at 100 steps per second, or about 1/2 revolution per second.
 
 </xmp>
 

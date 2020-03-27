@@ -1,0 +1,72 @@
+/*
+Stepper program.  Steps at 100 steps per second.  Functions are all self-contained.
+ 
+*/
+int Aplus = 11;
+int Aminus = 10;
+int Bplus = 9;
+int Bminus = 7;
+
+//int led1_pin = 2;
+//int led2_pin = 4;
+uint16_t step_count = 0;
+
+void setup() {
+  Serial.begin(0);
+  pinMode(Aplus, OUTPUT);
+  pinMode(Aminus, OUTPUT);
+  pinMode(Bplus, OUTPUT);
+  pinMode(Bminus, OUTPUT);
+  //pinMode(led1_pin, OUTPUT);
+  //pinMode(led2_pin, OUTPUT);
+
+  //digitalWrite(led1_pin, 0);
+  //digitalWrite(led2_pin, 0);
+}
+
+void pulse_0(){
+  digitalWrite(Aplus,0);
+  digitalWrite(Bplus,0);
+}
+
+void pulse_1(){
+  digitalWrite(Aminus,0);
+  digitalWrite(Bplus,0);
+}
+
+void pulse_2(){
+  digitalWrite(Aminus,0);
+  digitalWrite(Bminus,0);
+}
+
+void pulse_3(){
+  digitalWrite(Aplus,0);
+  digitalWrite(Bminus,0);
+}
+
+void all_off() {
+  digitalWrite(Aplus,1);
+  digitalWrite(Aminus,1);
+  digitalWrite(Bplus,1);
+  digitalWrite(Bminus,1);
+}
+
+void loop() {
+  
+  
+  
+  all_off();                          //turn off coils before sending new step.
+
+ step_count++;
+  
+  
+  step_count = step_count%4;
+  Serial.println(step_count); 
+  
+  if (step_count == 0) pulse_0();
+  if (step_count == 1) pulse_1();
+  if (step_count == 2) pulse_2();
+  if (step_count == 3) pulse_3();  
+  delay(10);
+  
+ }
