@@ -9,9 +9,6 @@ Return to [Output Devices](./../output.html)
 
 ###stepper motor board with ATSAMD11.
 
-
-####What it is.
-
 This is a circuitboard designed by Ben Brown here at Harvard, with:
 
  1. An SAMD11 microcontroller with USB connection for programming and providing logic power.  Details for programming this micro are [here.](https://roberthart56.github.io/SCFAB/SC_lab/Electronics/Microcontrollers/ATSAMD11/Advanced_circuits_board/index.html)
@@ -26,6 +23,19 @@ This is a circuitboard designed by Ben Brown here at Harvard, with:
 ![pic](./SAMD11_stepper.jpg)
 
 Below is the pinout diagram for this board.
+
+Signal | Microcontroller pin
+------------- | -------------
+LED1 (blue)  | 2
+LED2 (red)  | 4
+Motor A+  | 15
+Motor A- | 14
+Motor B+  | 8
+Motor B-  | 5
+2x2 hdr, pin 1  | ground
+2x2 hdr, pin 2  | 5V in, no direct connection to micro.
+2x2 hdr, pin 3   | 30 (TX1)
+2x2 hdr, pin 4  | 31 (RX1)
 
 Link to schematic
 link to board
