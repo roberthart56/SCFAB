@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>Double h-bridge stepper motor board with ATSAMD11.</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+Return to [Output Devices](./../output.html)
+
+###stepper motor board with ATSAMD11.
+
+
+####What it is.
+
+This is a circuitboard designed by Ben Brown here at Harvard, with:
+
+ 1. An SAMD11 microcontroller with USB connection for programming and providing logic power.  Details for programming this micro are [here.](https://roberthart56.github.io/SCFAB/SC_lab/Electronics/Microcontrollers/ATSAMD11/Advanced_circuits_board/index.html)
+ 2. Two [h-bridges](https://www.allegromicro.com/~/media/Files/Datasheets/A4950-Datasheet.ashx).  These are the chips just above the middle in this picture.
+ 3. Two LEDs  for code diagnostics.
+ 4. A 2x2 header that brings out pins 31 and 30 appearing in this picture on the bottom of the board, to the left of the micro-USB connector.  These two pins can be used for general purpose digital input/output, and can serve as serial communication pins when you want to communicate between microcontroller boards.  More on that on another page!
+
+ You can program the SAMD11 to drive the stepper, or other motors.  The 2x2 header gives you a convenient way to network this board with other boards, to make a multi-axis machine, for example.
+
+
+
+![pic](./SAMD11_stepper.jpg)
+
+Below is the pinout diagram for this board.
+
+Link to schematic
+link to board
+
+
+
+
+</xmp>
+
+
+<script src="./../../strapdown/strapdown.js"></script>
+</html>
