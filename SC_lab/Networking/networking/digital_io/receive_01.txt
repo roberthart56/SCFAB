@@ -1,3 +1,7 @@
+//Code to move a servomotor in response to a change in input pin.
+//Use as a simple example of receiving for a wired network 3/30/20.  Rob Hart.
+
+
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo

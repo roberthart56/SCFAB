@@ -8,11 +8,26 @@
 [Return to Networking menu for PS70](../index.html)
 
 
-digital i/o
+A very simple example ot two boards communicating. The board on the left is programmed to write to a digital output pin in response to a button input.  The board on the right reads the voltage and responds by changing the state of an output device.  The two boards just share ground.  They must both be powered, and can share a power line.
 
 [code](./receive_01.txt) for the receiving board.
 
 [code](./transmit_01.txt) for the transmitting board.
+
+
+###Schematic of this example.
+
+![pic](wired_sketch.jpg)
+
+###Video.  
+
+ATSAMD11 board on left, powered through computer USB; ItshyBitsy on right, powered by rechargeable battery.
+
+<video width="300" height="541" controls>
+		<source src="wired_01.mp4" type="video/mp4">
+	</video>
+
+
 
 
 
