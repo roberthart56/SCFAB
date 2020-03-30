@@ -1,0 +1,24 @@
+//Code to transmit
+//Microcontroller has a button input and a digital output.
+//The digital output can be connected to a digital input of a receiving microcontroller to make a simple network.
+
+
+const int out_pin = 14;
+const int button_pin = 2;
+
+void setup() {
+  pinMode(button_pin, INPUT_PULLUP);  
+  pinMode(out_pin, OUTPUT);   			
+  
+}
+
+void loop() {
+  if (digitalRead(button_pin)) {
+  digitalWrite(out_pin, HIGH);
+  }
+
+  else {
+  digitalWrite(out_pin, LOW);
+  }
+
+}
