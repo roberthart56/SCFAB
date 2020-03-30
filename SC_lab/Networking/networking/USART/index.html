@@ -12,15 +12,21 @@
 The universal asynchronous receiver-transmitter (UART) takes bytes of data and transmits the individual bits in a sequential fashion. (Direct quote from the [wikipedia page](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)).  A byte is eight bits, corresponding to numbers between 0 and 255 in base ten.
 More resources:
 
- - lklkj
- - oijoij
- - oijoij
+ - UART tutorial
+ - 
+ - Other communication protocols include
+
 
 ###Example using two boards.
 
 A simple example of two boards communicating by UART serial protocol (only one way in this example.) The board on the left is programmed to write to a digital output pin in response to a button input.  The board on the right reads the voltage and responds by changing the state of an output device.  The two boards must share ground.  They must both be powered, and can share a power line.
 
-You can extend this example to let communication happen both ways.  Just connect RX of the left one to TX of the right one, and progam them to have a conversation.
+In the current example, we have not added much capability beyond the [simple servo driver](https://nathanmelenbrink.github.io/ps70/08_output/servo.html), and it may not be obvious that this accomplishes anything.  It can be extended to do a great deal:
+
+  - You can extend this example to let communication happen both ways.  Just connect RX of the left one to TX of the right one, and progam them to have a conversation.
+  - You can add many devices in a network using a single UART bus, and give them addresses.
+  - It allows you to make your project more modular.
+  - It is now ~one short step to adding radio or internet communication between boards.
 
 [code](./usart_rx.txt) for the receiving board.  While using the UART on the board, you can independently use the USB serial, as done in this code.  This is very useful for troubleshooting and diagnosing as you write code.  Just connect a computer and use the Arduino Serial monitor.
 
@@ -36,7 +42,7 @@ You can extend this example to let communication happen both ways.  Just connect
 ![pic](trans_uart.jpg)
 ![pic](itsy_uart.jpg)
 
-ATSAMD11 board on left, powered through computer USB; ItsyBitsy on right, powered by connecting the 5V pin from the left-hand board to the BAT pin of the right-hand board.  Be careful - the SAM-based boards run on 3.3V and can be damaged by connecting 5V to pins other than VHI, USB, and BAT.
+[ATSAMD11 board](https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/SAMD11_stepper/index.html) on left, powered through computer USB; ItsyBitsy on right, powered by connecting the 5V pin from the left-hand board to the BAT pin of the right-hand board.  Be careful - the SAM-based boards run on 3.3V and can be damaged by connecting 5V to pins other than VHI, USB, and BAT.
 
 
 ###Video.  
