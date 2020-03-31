@@ -22,7 +22,7 @@ Here is the board.
 
 For more complete information, see the Mattair Github page [here](https://github.com/mattairtech/ArduinoCore-samd)
 
-
+- Make sure that you have the most recent Arduino version.
 - In the Arduino IDE, click File->Preferences.
 - Click the button next to Additional Boards Manager URLs.
 - Add https://www.mattairtech.com/software/arduino/package_MattairTech_index.json.
@@ -32,11 +32,12 @@ For more complete information, see the Mattair Github page [here](https://github
 - Close Boards Manager, then click Tools->Board->(choose board).
 - Select the MCU with the now visible Tools->Microcontroller menu (if present).
 
-You should now be able to program this board in the Arduino IDE.  
+You should now be able to program this board in the Arduino IDE (upgrade if needed.)
 
  - The board appears in the list of boards under MattairTech SAM boards as a "Generic D11C14A".  
  - Under "Tools>Ports" you should find it as a "MattairTech Xeno Mini".  
  - Under Tools>Serial configuration, you should make sure that "ONE_UART_NO_WIRE_ONE_SPI" is chosen.
+ - Program loading can take several seconds. Do not despair too early.
 
 
 ###Pin diagram for ATSAMD11 chip.  
