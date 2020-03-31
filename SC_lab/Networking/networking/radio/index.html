@@ -4,15 +4,22 @@
 
 <xmp theme="bootstrap" style="display:none;">
 
+[Return to PS70 Networking menu](../index.html)
+
+###Step-by-step instructions for radio connection.
+
  <b>1. Install library for this radio through the Arduino Libary Manager:  "RF24 by TMRh20"</b>
 
- <b>2. Connect female/male wires to radio chip as </b>
+ <b>2. Connect female/male wires to radio chip as shown below. </b>
 
  <b>3. Connect wires to microcontroller pins, following the table below, or the instructions [here](http://tmrh20.github.io/RF24/) </b>
 
   <b>4. Load the appropriate send and receive sketches.  Check for success using the Arduino Serial Monitor. </b>
 
 ###Pin connection for radios
+
+![pic](radio_pinout.jpg)
+![pic](radio_pic.jpg)
 
 ###Pin connections to microcontroller
 
@@ -30,11 +37,14 @@ Pin on radio |D11 board |ItsyBitsy D51 board
 [For other boards, follow connection instructions](http://tmrh20.github.io/RF24/) from Github site for the RF24 library.
 
 
+![pic](d11_conn.jpg)
+![pic](itsy_conn.jpg)
+
 ###Code
 
-[transmit code ](./simple_xmit_Itsy.txt).  For ItsyBitsy M4 board.  Change CE and CS pins for use tiwh other boards.
+[Transmit code ](./simple_xmit_Itsy.txt).  For ItsyBitsy M4 board.  Change CE and CS pins for use with other boards.
 
-[receive code for SAMD11 board](./simple_rec_SAMD11.txt).  Pin numbers appropriate for ATDSAMD11 M0 board.  Change for other boards.
+[Receive code](./simple_rec_SAMD11.txt).  Pin numbers appropriate for ATDSAMD11 M0 board.  Change for other boards.
 
 ###Notes
 
