@@ -18,4 +18,5 @@ void loop() {
   Serial.println(buttonState);
   digitalWrite(out_pin, buttonState);
   delay(10);
+  }
 
