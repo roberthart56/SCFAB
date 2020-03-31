@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html>
-<title>Using an FET to control current</title>
+<title>Board to board communication using nRF24L01 radio</title>
 
 <xmp theme="bootstrap" style="display:none;">
 
+ <b>1. Install library for this radio through the Arduino Libary Manager:  "RF24 by TMRh20"</b>
+
+ <b>2. Connect female/male wires to radio chip as </b>
+
+ <b>3. Connect wires to microcontroller pins, following the table below, or the instructions [here](http://tmrh20.github.io/RF24/) </b>
+
+  <b>4. Load the appropriate send and receive sketches.  Check for success using the Arduino Serial Monitor. </b>
+
+###Pin connection for radios
+
+###Pin connections to microcontroller
 
 
-
-
-col1 |D11 board
+Pin on radio |D11 board |ItsyBitsy D51 board
 ------------- | -------------
-1  GND| GND
-2  VCC| 3V3
-3  CE| pin 8
-4  CS or SS| pin 15
-5  SCK| pin 5
-6  MOSI| pin 4
-7 MISO| pin 14
+1  GND| GND|GND
+2  VCC| 3V3|3V3
+3  CE| pin 8|pin 7
+4  CS or SS| pin 15 (=SS)|pin 9
+5  SCK| pin 5|SCK
+6  MOSI| pin 4|MO (=MOSI)
+7 MISO| pin 14|MI (=MISO)
+
+[For other boards, follow connection instructions](http://tmrh20.github.io/RF24/) from Github site for the RF24 library.
 
 
+###Code
 
-[receive code for SAMD11 board](./rimple_rec_SAMD11.txt)
+[transmit code ](./simple_xmit_Itsy.txt).  For ItsyBitsy M4 board.  Change CE and CS pins for use tiwh other boards.
 
-[receive code for SAMD11 board](./simple_rec_SAMD11.txt)
+[receive code for SAMD11 board](./simple_rec_SAMD11.txt).  Pin numbers appropriate for ATDSAMD11 M0 board.  Change for other boards.
 
-Set serial config to ONE_UART_NO_WIRE_ONE_SPI
+###Notes
+
+For SAMD11 Mattair board, Set serial config to ONE_UART_NO_WIRE_ONE_SPI.
+
+
 
 
 </xmp>
