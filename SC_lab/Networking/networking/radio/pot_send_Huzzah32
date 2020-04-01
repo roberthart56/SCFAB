@@ -3,7 +3,7 @@
 *
 *For Huzzah ESP32 from adafruit
 * CE:  pin 32
-* CSN or SS: pin 14 
+* CSN os SS: pin 14 
 * Updated: Dec 2014 by TMRh20. Simplified Mar 2019 RMH.
 */
 
@@ -43,7 +43,7 @@ Serial.println("Now sending");
   Serial.println(F("failed"));
    }
         
-data = (analogRead(A2))/4;
+data = (analogRead(A2))/16;   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
   //data++;
 Serial.print("Sent ");
 Serial.println(data);
