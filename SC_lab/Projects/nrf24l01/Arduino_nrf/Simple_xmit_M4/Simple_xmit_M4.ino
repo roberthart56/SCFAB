@@ -9,13 +9,13 @@
 #include "RF24.h"
 
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
-RF24 radio(7,9);
+RF24 radio(32,14);
 
 byte addresses[][6] = {"1Node","2Node"};
 byte data = 0; 
 
 void setup() {
-  Serial.begin(0);
+  Serial.begin(115200);
   Serial.println("RF24example:  Simple tx");
   
   radio.begin();
