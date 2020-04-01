@@ -6,6 +6,12 @@
 
 [Return to PS70 Networking menu](../index.html)
 
+<video width="500" height="300" controls>
+		<source src="Arms_trimmed.mp4" type="video/mp4">
+	</video>
+
+![pic](radio_sketch.jpg)
+
 ###Step-by-step instructions for radio connection.
 
  <b>1. Install library for this radio through the Arduino Libary Manager:  "RF24 by TMRh20"</b>
@@ -42,11 +48,11 @@ Pin on radio |D11 board |ItsyBitsy D51 board|Adafruit ESP32 Feather
 
 ###Code
 
-[Transmit code ](./simple_xmit_Itsy.txt).  For ItsyBitsy M4 board.  Change CE and CS pins for use with other boards.
+[Transmit code ](./simple_xmit_SAMD11.txt).  For SAMD11 board.  Change CE and CS pins for use with other boards.
 
-[Receive code](./simple_rec_SAMD11.txt).  Pin numbers appropriate for ATDSAMD11 M0 board.  Change for other boards.
+[Receive code](./simple_rec_Itsy.txt).  Pins chosen for ItsyBitsy M4 board.  Change CE and CS for other boards.
 
-<b>Notes:  For SAMD11 Mattair board, Set serial config to ONE_UART_NO_WIRE_ONE_SPI.</b>
+<b>Note:  For SAMD11 Mattair board, Set serial config to ONE_UART_NO_WIRE_ONE_SPI.</b>
 
 ###Serial output
 
@@ -55,7 +61,20 @@ Below is a screen showing the serial outputs (through USB from each microcontrol
 ![pic](serial_screen.png)
 
 
+###Example using potentiometer (send) and servo (receive)
 
+![pic](pot_send.jpg)
+![pic](servo_rec.jpg)
+
+[Transmit code for sending from potentiometer board. ](./pot_send_SAMD11.txt)  For SAMD11 board.  Change CE and CS pins for use with other boards.  This code is actually almost too big for the SAMD11.  Better to use Huzzah or other board.
+
+[Receive code for servo board.](./servo_rec_Itsy.txt)  Pins chosen for ItsyBitsy M4 board.  Change CE and CS for other boards.
+
+###Video of receiver servo.  (transmitter in the next room)
+
+<video width="500" height="300" controls>
+		<source src="radio_servo.mp4" type="video/mp4">
+	</video>
 
 
 

@@ -1,15 +1,18 @@
 
 /*
 * Simple sketch for nRF24L01+ radios.  Transmit side.
-* 
+* If using SAMD11, 
+* CE:  pin 8
+* CSN (SS): pin 15 
+* Analog read on pin 2
 * Updated: Dec 2014 by TMRh20. Simplified Mar 2019 RMH.
 */
 
 #include <SPI.h>
 #include "RF24.h"
 
-/* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
-RF24 radio(7,8);
+/* Hardware configuration: Set up nRF24L01 radio on SPI bus plus CE and CS */
+RF24 radio(8,15);
 
 byte addresses[][6] = {"1Node","2Node"};
 byte data = 0; 
@@ -35,7 +38,7 @@ void loop() {
   
 Serial.println("Now sending");
 
-  data = (analogRead(A0))/4;
+  data = (analogRead(2))/4;
                            
    if (!radio.write( &data, 1 )){
      Serial.println(F("failed"));
@@ -50,4 +53,3 @@ Serial.println(data);
 delay(100);
 
 } // loop end
-
