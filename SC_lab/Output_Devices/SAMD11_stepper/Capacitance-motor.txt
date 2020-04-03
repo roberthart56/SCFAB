@@ -1,0 +1,38 @@
+/*
+Stepper program.  USART sends number of steps.  Steps at a constant rate.
+*/
+int motor_speed;
+int Aplus = 15;
+int Aminus = 14;
+
+void setup() {
+  Serial1.begin(9600);
+  Serial.begin(0);
+ 
+}
+
+
+
+void loop() {
+  
+  while (!Serial1.available()){
+  }
+
+  
+  int rec_byte =  Serial1.read();
+
+Serial.println(rec_byte);
+if (rec_byte >= 128){
+  motor_speed = (rec_byte-128)*2;
+  analogWrite(Aminus,0);
+  analogWrite(Aplus, motor_speed);
+  }
+  
+else {
+  motor_speed = (128-rec_byte)*2;
+  analogWrite(Aplus,0);
+  analogWrite(Aminus, motor_speed);
+  }
+
+
+ }
