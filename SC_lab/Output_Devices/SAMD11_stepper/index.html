@@ -49,12 +49,27 @@ Motor B-  | 5
 
 ###Example
 
-<video width="500" height="300" controls>
+This is an example of using UART to communicate to the motor driver board.  Only one of the h-bridges is used in this example.
+
+![pic](./cap_ex_sketch.jpg)
+
+In this example, a microcontroller board (Board 1) is attached to a capacitive sensor.  The capacitive signal is converted to a range of 0-255 and sent via UART to the Stepper board.  The connection to the stepper board is through the 2x2 header, with:
+
+ - ground on pin 1  (connect the grounds of Board 1 and the motor board)
+ - 5V on pin 2 (This is used to power the board - there is a regulator on the otor board that supplies the 3.3V that the microcontroller needs)
+ - TX from Board 1  on pin 4 (which is RX for the motor board)
+
+In response to the sent byte (0-255) the motor board drives a DC motor in two directions.   In the example, numbers below 128 correspond to one direction and over 128 to the other direction.  
+
+[code for motor control board](Capacitance-motor.txt)
+
+[code for cpacitive board](capacitance_code.txt)
+
+<video width="300" height="500" controls>
 		<source src="capac_motor.mp4" type="video/mp4">
 	</video>
 
-[code for motor control board](Capacitance-motor.txt)
-[code for cpacitive board](capacitance_code.txt)
+
 
 
 </xmp>
