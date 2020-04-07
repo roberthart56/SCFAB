@@ -19,20 +19,20 @@
 	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
 
 	<script>
-	/ Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBx5ojQ_vp4zf2MDRaiRa2mYRrRz_hdoFI",
-    authDomain: "esp32-led01.firebaseapp.com",
-    databaseURL: "https://esp32-led01.firebaseio.com",
-    projectId: "esp32-led01",
-    storageBucket: "esp32-led01.appspot.com",
-    messagingSenderId: "950269251042",
-    appId: "1:950269251042:web:eae6906d2b9ae1825d3dbb",
-    measurementId: "G-Z4NSLHTWEV"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+	// Your web app's Firebase configuration
+	const firebaseConfig = {
+  apiKey: "AIzaSyBx5ojQ_vp4zf2MDRaiRa2mYRrRz_hdoFI",
+  authDomain: "esp32-led01.firebaseapp.com",
+  databaseURL: "https://esp32-led01.firebaseio.com",
+  projectId: "esp32-led01",
+  storageBucket: "esp32-led01.appspot.com",
+  messagingSenderId: "950269251042",
+  appId: "1:950269251042:web:eae6906d2b9ae1825d3dbb",
+  measurementId: "G-Z4NSLHTWEV"
+};
+	
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
 
 	// Get a database reference to our blog
 	var ref = firebase.database().ref("/");
