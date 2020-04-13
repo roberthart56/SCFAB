@@ -1,0 +1,25 @@
+//
+// hello.D11C.serial.ino
+//
+// D11C USB serial bridge
+//
+// Neil Gershenfeld 11/30/19
+//
+// This work may be reproduced, modified, distributed,
+// performed, and displayed for any purpose, but must
+// acknowledge this project. Copyright is retained and
+// must be preserved. The work is provided as is; no
+// warranty is provided, and users accept all liability.
+//
+
+void setup() {
+   Serial.begin(0);
+   Serial1.begin(230400);
+   }
+
+void loop() {
+   if (Serial.available())
+      Serial1.print((char) Serial.read());
+   if (Serial1.available())
+      Serial.print((char) Serial1.read());
+   }

@@ -1,0 +1,21 @@
+void setup() {
+    Serial.begin(9600);
+    Serial.setTimeout(20);
+    
+    while (!Serial) {
+    ; \
+    }
+    Serial.println("<Arduino is ready>");
+}
+
+void loop() {
+    
+    while (Serial.available() > 0) {
+      String a = Serial.readString();
+      //Serial.println(a);
+      int i= a.toInt();
+      Serial.println(i);
+      
+    }
+    
+}

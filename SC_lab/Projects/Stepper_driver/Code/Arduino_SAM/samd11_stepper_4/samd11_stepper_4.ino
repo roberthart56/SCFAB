@@ -1,0 +1,137 @@
+/*
+April, 2020.  Rob Hart.  samd11_stepper_3
+Program to drive stepper using two bytes.
+First byte contains address.  adrress can be 241-255
+Second byte gives sign and number of steps.
+In second byte, use 0-240, mapping to -120 to 120 steps.
+In this program, step time is fixed.
+
+*/
+int Aplus = 15;   //corresponds to h-bridge input pin +
+int Aminus = 14;   //corresponds to h-bridge input pin -
+int Bplus = 8;   //corresponds to h-bridge input pin +
+int Bminus = 5;   //corresponds to h-bridge input pin -
+int LED_G = 4;    //LEDs are attached to pins to give a visual indication of direction and step
+int LED_R = 2;
+
+int step_num = 1;
+uint16_t step_count = 0;      //number of steps since program began.
+uint8_t pulse_count = 0;     //The variable with range 0-3 that determines which motor state to
+uint8_t rec_byte = 0;         //The byte received from USART
+bool active = true;           //set to true when address is received.
+bool direction = true;        //True corresponds to incrementing pulse count.
+uint8_t address = 255;      //This value is unique to a given board. Ranges 241-255.
+//uint8_t address =254;      //This value is unique to a given board. Ranges 241-255.
+
+void setup() {
+  Serial1.begin(230400);
+  SerialUSB.begin(0);
+  pinMode(Aplus, OUTPUT);
+  pinMode(Aminus, OUTPUT);
+  pinMode(Bplus, OUTPUT);
+  pinMode(Bminus, OUTPUT);
+  pinMode(LED_G, OUTPUT);
+  pinMode(LED_R, OUTPUT);
+
+}
+
+/*
+The following functions energise the windings, in order defined as positive stepping
+*/
+void pulse_0(){
+  digitalWrite(Aplus,HIGH);
+  digitalWrite(Bplus,HIGH);
+}
+
+void pulse_1(){
+  digitalWrite(Aminus,HIGH);
+  digitalWrite(Bplus,HIGH);
+}
+
+void pulse_2(){
+  digitalWrite(Aminus,HIGH);
+  digitalWrite(Bminus,HIGH);
+}
+
+void pulse_3(){
+  digitalWrite(Aplus,HIGH);
+  digitalWrite(Bminus,HIGH);
+}
+/*
+The following function turns off all windings.
+*/
+void all_off() {
+  digitalWrite(Aplus,LOW);
+  digitalWrite(Aminus,LOW);
+  digitalWrite(Bplus,LOW);
+  digitalWrite(Bminus,LOW);
+}
+
+//
+//The function below steps once, using the global variables direction, step_count, and pulse_count.
+// 
+
+void step_motor(){              
+   
+  if (direction) step_count++;
+        else step_count--;
+  
+        pulse_count = step_count%4;       //use the modulo function to keep track of which motor state to use.
+  
+        SerialUSB.println(step_count);    //print out overall step count.
+  
+        all_off();
+        delayMicroseconds(10);
+  
+        if (pulse_count == 0) pulse_0();
+        if (pulse_count == 1) pulse_1();
+        if (pulse_count == 2) pulse_2();
+        if (pulse_count == 3) pulse_3();
+  
+        delayMicroseconds(10000);      //microseconds.  This, together with unknown overhead, defines the step time.
+}   //end of step_motor function.
+
+//
+//Loop function below
+//
+
+void loop() {
+
+  while (!Serial1.available()){       //wait until serial is available.
+  }
+  
+  rec_byte =  Serial1.read();
+
+  if (rec_byte == address) { 
+    active = true;               //when active is true, the stepper will read the next byte and proceed to step.                                  
+    digitalWrite(LED_G, HIGH);   //Green LED indicates start of stepping.
+  }else{
+    active = false; 
+  }   
+
+
+  if (active == true){                  //This conditional gets the step number from the next received byte.
+      
+      while (!Serial1.available()){       //wait until serial is available.
+    }
+    
+    rec_byte =  Serial1.read();
+    
+    step_num = map(rec_byte, 0, 240, -120, 120);    //maps incoming number onto step range.
+    if (step_num <= 0) direction = false;
+    else direction = true;
+    step_num = abs (step_num);
+      
+    /*
+      The following loop steps the motor for 'step_num' steps.
+      */
+      for(int i=0; i<step_num; i++){
+      step_motor();
+      }
+      
+      digitalWrite(LED_G, LOW);    //done with stepping.
+      active = false;
+        }             // end of "active" loop.
+  
+
+ }      //end of loop() function.

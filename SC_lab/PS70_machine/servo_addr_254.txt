@@ -1,0 +1,62 @@
+/*
+April, 2020.  Rob Hart.  samd11_stepper_3
+Program to drive servo.
+expects address = 254
+next byte taken as angle.
+
+*/
+#include <ESP32Servo.h>
+//#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+
+int servo_pin = 21;   
+int LED_G = 5;    //LEDs are attached to pins to give a visual indication of direction and step
+uint8_t address =254;      //This value is unique to a given board. Ranges 241-255.
+uint8_t rec_byte = 0;         //The byte received from USART
+bool active = true;           //set to true when address is received.
+
+void setup() {
+  Serial1.begin(230400);
+  Serial.begin(0);
+  myservo.attach(servo_pin);  // attaches the servo on pin 9 to the servo object
+  pinMode(LED_G, OUTPUT);
+ 
+}
+
+
+//
+//Loop function below
+//
+
+void loop() {
+
+  while (!Serial1.available()){       //wait until serial is available.
+  }
+  
+  rec_byte =  Serial1.read();
+
+  if (rec_byte == address) { 
+    active = true;               //when active is true, the stepper will read the next byte and proceed to step.                                  
+    digitalWrite(LED_G, HIGH);   //Green LED indicates start of stepping.
+  }else{
+    active = false; 
+  }   
+
+
+  if (active == true){                  //This conditional gets the step number from the next received byte.
+      
+      while (!Serial1.available()){       //wait until serial is available.
+    }
+    
+    rec_byte =  Serial1.read();
+    int angle = map(rec_byte, 0, 240, -120, 120);
+    myservo.write(angle);
+    
+    digitalWrite(LED_G, LOW);    //done with moving.
+    active = false;
+    
+        }             // end of "active" loop.
+  
+
+ }      //end of loop() function.
