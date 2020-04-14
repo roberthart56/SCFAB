@@ -23,7 +23,7 @@ Now modify the string-to-integers code:
 
 [serial string to integer 03](./serial_string_to_int_03.txt)  Converts ASCII to integer byte and sends it to Serial1.  accepts address, then 0-240 which maps onto -120 to 120.
 
-[serial string to integer 04](./serial_string_to_int_04.txt)  Converts ASCII to integer byte.  If it is in the range -120 to 120, converts to unsigned integer and sends as a byte.  Now the sequence is:  1.  send and address.  2. send a character string between -120 and 120.  
+[serial string to integer 04](./serial_string_to_int_04.txt)  Converts ASCII to integer byte.  If it is in the range -120 to 120, converts to unsigned integer and sends as a byte.  Now the sequence is:  1.  send an address.  2. send a character string between -120 and 120.  
 
 [program to detect address and move servo](./servo_addr_254.txt)  .  This is the code used to parse address and angle.  When it receives address, 254, it takes the next byte and uses it to determine angle.  Maps to byte using the same function as the stepper.  It needs a UART byte.
 
@@ -34,7 +34,7 @@ Now modify the string-to-integers code:
 
 ###next
 
-1.  See about converting text files.
+1.  See about converting text files.  First, send text file from coolterm, parse in code as bits come in.  Use commas and /n.  
 2.  Make example of stepper driver with two digital inputs.
 3.  Document example of single-byte stepper.
 
