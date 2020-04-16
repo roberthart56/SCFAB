@@ -34,8 +34,21 @@ Now modify the string-to-integers code:
 
 ###next
 
-1.  See about converting text files.  First, send text file from coolterm, parse in code as bits come in.  Use commas and /n.  
+1.  See about converting text files.  First, send text file from coolterm, parse in code as bits come in.  Use commas and /n. 
+
+[serial string to integer 05](./serial_string_to_int_05.txt)  Converts ASCII string to integer byte array and sends array to bridge. 
+
+[serial string to integer 06](./serial_string_to_int_05.txt)  Converts ASCII string to integer byte array and sends array to bridge. Fixed number of integers.  Send four bytes at a time, with pause between to allow step time.
+
+[serial string to integer 07](./serial_string_to_int_07.txt) Reads and sends an arbitrary number of bytes in groups of four.  Can be used to send a text or csv file from coolterm.  Can also cut and paste into Arduino serial monitor send from text or spreadsheet.   
+
+[csv spreadsheet file with labels](line01.csv)
+
+
+[csv spreadsheet file with just numbers](line_numbers.csv)  can be sent as text file from Coolterm.
+
 2.  Make example of stepper driver with two digital inputs.
+
 3.  Document example of single-byte stepper.
 
 </xmp>

@@ -1,0 +1,46 @@
+
+int rec_int[100];     //byte array of numbers parsed from serial string.  Received on Serial.
+byte send_byte;         //byte to send to network through UART on Serial1
+
+void setup() {
+    Serial.begin(0);
+    Serial.setTimeout(20);
+    Serial1.begin(230400);
+    while (!Serial) {
+    ; \
+    }
+    Serial.println("<bridge is ready>");
+}
+
+void loop() {
+    int ind=0;   // index of data array  
+    
+    while (!Serial.available() ){
+      ;
+    }
+    
+    while(Serial.available()){
+       rec_int[ind] = Serial.parseInt();
+       ind++;
+       }
+
+    for (unsigned int i=0; i<ind; i += 4){
+      
+       for (int j=0; j<4; j++){
+        int k=i+j;
+        if (rec_int[k] <= 240){
+          send_byte =map (rec_int[k], -120, 120, 0, 240);   //map the range of signed inputs to an unsigned range.      
+            }     //end of if
+          else {send_byte = rec_int[k];}
+    
+        Serial1.print((char)send_byte);
+        delay(2);     //delay between bytes?
+        Serial.println(send_byte);
+        Serial.flush();
+         }  //end inner for loop
+       delay (500);
+      }     //end of outer for loop.
+   Serial.print(ind);
+   Serial.println(" bytes sent.");
+    
+}

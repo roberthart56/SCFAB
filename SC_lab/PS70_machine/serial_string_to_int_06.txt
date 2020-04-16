@@ -1,0 +1,49 @@
+const int n_comm = 4;  //number of commands
+int x[4 * n_comm];
+byte send_byte;
+
+void setup() {
+    Serial.begin(0);
+    Serial.setTimeout(20);
+    Serial1.begin(230400);
+    while (!Serial) {
+    ; \
+    }
+    Serial.println("<bridge is ready>");
+}
+
+void loop() {
+    while (!Serial.available() ){
+      ;
+    }
+      
+      for (unsigned int i=0; i< 4 * n_comm; i++){
+        x[i] = Serial.parseInt();
+        
+        //Serial.print(str);
+        //Serial.print("i[");
+        //Serial.print(i);
+        //Serial.print("]= ");
+        //Serial.println(x[i]);
+        }
+      Serial.flush();
+     
+
+    for (unsigned int i=0; i< 4*n_comm; i += 4){
+      
+       for (int j=0; j<4; j++){
+        int k=i+j;
+        if (x[k] <= 240){
+          send_byte =map (x[k], -120, 120, 0, 240);   //map the range of signed inputs to an unsigned range.      
+            }     //end of if
+          else {send_byte = x[k];}
+    
+        Serial1.print((char)send_byte);
+        delay(2);     //delay between bytes?
+        Serial.println(send_byte);
+        Serial.flush();
+         }  //end inner for loop
+       delay (100);
+      }     //end of outer for loop.
+    
+}
