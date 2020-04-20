@@ -69,6 +69,8 @@ In response to the sent byte (0-255) the motor board drives a DC motor in two di
 		<source src="capac_motor.mp4" type="video/mp4">
 	</video>
 
+
+
 ###Example of sending digital levels to control a stepper driver board.
 
 This is an example of using digital levels to command a stepper board to make a single step in one or another direction.  Many commercially available stepper drivers are set up to respond in this way.  
@@ -77,13 +79,14 @@ This is an example of using digital levels to command a stepper board to make a 
 
 In this example the stepper board microcontroller is powered by 5V and ground from the controller board (on pins 1 and 2 of the 2x2 header).  The digital signals come in to pins 3 and 4 of the 2x2 header.  The motor is powered from the 9V power supply.  The ground of the power  supply attaches to the terminal as shown in the sketch.  Do not reverse!
 
-[code for control board (sends digital signal).](samd11_stepper_DIO_controller.txt)  Control board controls direction with the state of pin 9, and when pin 8 rises from LO to HIGH, the stepper board should make a step.  This is the board that would contain code for directing complex moves, or interesting freuqnecy changes. It could be programmed to respond to attached sensors, for instance.
+[code for control board (sends digital signal).](samd11_stepper_DIO_controller.txt)  Control board controls direction with the state of pin 9, and when pin 8 rises from LO to HIGH, the stepper board should make a step.  This is the board that would contain code for directing complex moves, or interesting frequency changes. It could be programmed to respond to attached sensors, for instance.
 
 [code for motor driver board](samd11_stepper_DIO.txt)  Watches for signal on the "step" input to rise, and then makes a step in one direction or another, depending on the state of the "direction" input signal.
 
 <video width="300" height="500" controls>
 		<source src="stepper_DIO.mp4" type="video/mp4">
 	</video>
+	![pic](./stepper_DIO_pic.jpg)
 
 </xmp>
 

@@ -57,10 +57,10 @@ void loop() {
   
   all_off();                          //turn off coils before sending new step.
 
- step_count++;
+ step_count++;                //step count keeps track of which step the motor is taking.
+    
   
-  
-  step_count = step_count%4;
+  step_count = step_count%4;      //this step calculates the step number modulo 4, to limit the number to 0,1,2, or 3.
   SerialUSB.println(step_count); 
   
   if (step_count == 0) pulse_0();
