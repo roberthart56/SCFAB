@@ -1,6 +1,6 @@
 /*
-Stepper program.  Input pins for direction and step.  Steps when step-pin goes high.
-Make sure that the incoming digital signal is < 3.5 volts to protect ATSAM chip.
+Stepper program to control stepper board with digital IO control.  Ouput pins:  step_comm makes motor step on rise.
+dir_comm determines motor direction.  Make sure these signals are , ~3.5 V for ATSAM motor driver boards.
 */
 
 
@@ -21,17 +21,14 @@ void setup() {
 
 void loop() {
   
-  digitalWrite(dir_comm,dir);
+    dir = !(dir);   //switch direction.
+    digitalWrite(dir_comm,dir);
+    
+    for(int i = 0; i < 50; i++){ 
+      digitalWrite(step_comm,HIGH);
+      delay(1);
+      digitalWrite(step_comm,LOW);
+      delay(20);    //delay to allow motor to step and settle.
+    }  //end i loop
 
-
-for(int i = 0; i < 100; i++){ 
-  digitalWrite(step_comm,HIGH);
-  delay(1);
-  digitalWrite(step_comm,LOW);
-  delay(30);
-}
-
-dir = !(dir);   //switch direction.
-
-
- }   //end of loop.
+ }   //end of loop function.
