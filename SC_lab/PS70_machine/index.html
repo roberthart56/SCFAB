@@ -7,49 +7,11 @@
 
 [Return to main page](../index.html)
 
-### April 13, 2020
+### April, 2020:  Demonstration machine for PS70
 
-Sort out what to do for machine week.  Maybe: Keyboard entry, or text file with list of address + number.  Write program for board(s) to respond to address and numbers by doing something.  e.g. stepper on address 255 rotates, servo on address 254 moves radially, to make drawing machine.  This could all be on same board, or two boards. 
+[documentation of development](./index_notes.html)
 
-The following codes:
-
-[simple serial bridge for SAMd11](./d11_serial_bridge.txt).  simple bridge between usb and uart.  Copied from HTMAA
-
-[program to detect address and step](./samd11_stepper_4.txt)  .  This is the code used to parse address and number of steps.  When it receives address, 255, it takes the next byte and uses it to determine steps between -120 and 120.  It needs a UART byte. 
-
-[serial string to integer 02](./serial_string_to_int_02.txt)  Converts ASCII to integer and prints it on Serial.  With this, I can send a hex value to USB on SAMD11, and the board will send the value on via usart to the attached board(s).
-
-Now modify the string-to-integers code:
-
-[serial string to integer 03](./serial_string_to_int_03.txt)  Converts ASCII to integer byte and sends it to Serial1.  accepts address, then 0-240 which maps onto -120 to 120.
-
-[serial string to integer 04](./serial_string_to_int_04.txt)  Converts ASCII to integer byte.  If it is in the range -120 to 120, converts to unsigned integer and sends as a byte.  Now the sequence is:  1.  send an address.  2. send a character string between -120 and 120.  
-
-[program to detect address and move servo](./servo_addr_254.txt)  .  This is the code used to parse address and angle.  When it receives address, 254, it takes the next byte and uses it to determine angle.  Maps to byte using the same function as the stepper.  It needs a UART byte.
-
-![sketch of prototype](sketch1.jpg)
-
-![machine01](machine01.jpg)
-![machine02](machine02.jpg)
-
-###next
-
-1.  See about converting text files.  First, send text file from coolterm, parse in code as bits come in.  Use commas and /n. 
-
-[serial string to integer 05](./serial_string_to_int_05.txt)  Converts ASCII string to integer byte array and sends array to bridge. 
-
-[serial string to integer 06](./serial_string_to_int_05.txt)  Converts ASCII string to integer byte array and sends array to bridge. Fixed number of integers.  Send four bytes at a time, with pause between to allow step time.
-
-[serial string to integer 07](./serial_string_to_int_07.txt) Reads and sends an arbitrary number of bytes in groups of four.  Can be used to send a text or csv file from coolterm.  Can also cut and paste into Arduino serial monitor send from text or spreadsheet.   
-
-[csv spreadsheet file with labels](line01.csv)
-
-
-[csv spreadsheet file with just numbers](line_numbers.csv)  can be sent as text file from Coolterm.
-
-2.  Make example of stepper driver with two digital inputs.
-
-3.  Document example of single-byte stepper.
+[Page to explain and demonstrate machine](./index_rev1.html)
 
 </xmp>
 
