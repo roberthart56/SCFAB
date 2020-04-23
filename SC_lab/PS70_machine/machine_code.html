@@ -73,7 +73,12 @@ In the remainder of this page, we'll look at some of the details of this attempt
 
 
 		<h3> Getting input from computer serial, getting numbers from the serial input strings, storing them into an array.</h3>
-
+<br>
+<ul> 
+		<li>First, make an array named 'rec_int' to store the integers from the commands.  The limit to the size of this array depends on the amount of RAM available.  This can be a limitation, but the boards that we use can store up to a few hundred integers in RAM.</li>
+		<li>  In this code, we initialize two serial ports. 'Serial' is the USB port from the computer, 'Serial1' is the UART that connects the controller to the network of actuators. </li> 
+		<li>The function 'Serial.parseInt()' is handy - it parses integers out of the stream of characters and makes intelligent guesses about separators like commas and return characters.  See the <a href='https://www.arduino.cc/reference/en'>Arduino Reference</a> for details on this and other functions having to do with serial.</li>
+</ul>
 <pre><code class="language-arduino">
 
 int rec_int[100];     //byte array of numbers parsed from serial string.  Received on Serial.
@@ -105,7 +110,15 @@ void loop() {
 
 </code></pre>
 
-		<h3> The second half of the code:  Sorting out addresses and commands, and mapping integers to unsigned bytes, and sending to actuators. </h3>
+		<h3> The second half of the contoller code:  Sorting out addresses and commands, and mapping integers to unsigned bytes, and sending to actuators. </h3><br>
+
+
+		<ul> 
+		<li>The code reads in four integers time from the array of received integers.</li>
+		<li>If the received integer is in the range 241 to 255, it is an address, and not altered. </li> 
+		<li>If the received integer is less than or equal to 240 (including possible negative values), it is mapped onto a set of values that will fit into one byte.</li>
+		<li>All four bytes are sent off to the network.</li>
+</ul>
 
 		<pre><code class="language-arduino">
 
@@ -131,8 +144,11 @@ void loop() {
 }
 
 </code></pre>
-		<h3> Code for one of the actuator boards:  the stepper driver.  Recognizing address.</h3>
-
+		<h3> Code for one of the actuator boards:  the stepper driver.  Recognizing address.</h3><br>
+<ul> 
+		<li>The actuator board reads the incoming byte on the UART.</li>
+		<li>If the byte is its address, it sets the boolean 'active' to true, so that the next byte will be read as data.</li>
+</ul>
 		<pre><code class="language-arduino">
 
 void loop() {
@@ -154,7 +170,12 @@ void loop() {
 </code></pre>
 
 
-<h3> Code for the stepper driver.  Mapping out the requested steps and the direction.</h3>
+<h3> Code for the stepper driver.  Mapping out the requested steps and the direction.</h3><br>
+<ul> 
+		<li>The driver code maps the received byte onto a number of steps.  In this case, it is just the inverse of the mapping function used by the contoller. </li>
+		<li>The signed integer is converted to a boolean 'direction' and an absoute nuber of steps, 'step_num'.</li>
+		<li>Finally, in the rest of the code not shwon here, the board steps the motor, and then returns to listening.</li>
+</ul>
 
 		<pre><code class="language-arduino">
 			
@@ -174,6 +195,10 @@ if (active == true){                  //This conditional gets the step number fr
 
 </code></pre>
 		
+<h3> So what.....</h3><br>
+
+This is an exmaple, written with a novice's mind, by a novice at machine control.  If you are interested, try it yourself, starting from a place that makes sense to you.  Or modify what is here for your purposes.
+
 	</div >
 </div>
 
