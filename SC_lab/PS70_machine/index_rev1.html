@@ -11,7 +11,7 @@
 
 ![sketch](./machine_sketch.jpg)
 
-This page describes a drawing machine with two degress of freedom, made from the Spring 2020 kit for PS70.  It illustrates some aspects common to most networked machines.
+This page describes a drawing machine with two degress of freedom, made from the Spring 2020 kit for PS70.  It illustrates some aspects common to most networked machines.  
 
 [serial string to integer 07](./serial_string_to_int_07.txt) This is the code that resides in the bridge, <b>B</b>.  Reads and sends an arbitrary number of bytes in groups of four through the UART serial pins.  This serial string is read by all of the networked boards.  Can be used to send a text or csv file from coolterm.  Can also cut and paste into Arduino serial monitor send from text or spreadsheet.   
 
@@ -20,6 +20,8 @@ This page describes a drawing machine with two degress of freedom, made from the
 [program to detect address and move servo](./servo_addr_254.txt)  .  This is the code used to parse address and angle for the servo controller, in <b>C2</b>.  When it receives address, 254, it takes the next byte and uses it to determine angle.  Maps to byte using the same function as the stepper.
 
 Note that only two addresses were used in this scheme.  If we wanted to add a pen-lifting solenoid, for example, it could correspond to a third address.  Its control could be done by one of the already-existing boards, or could be on a separate board.
+
+###For details of the code, see the [code tutorial page](./machine_code.html)
 
 <video width="1000" height="600" controls>
 		<source src="MachineDemo01_04_21.mp4" type="video/mp4">

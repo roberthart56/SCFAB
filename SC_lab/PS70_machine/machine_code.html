@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131686897-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131686897-2');
+</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>PHYSCI 70: Introduction to Digital Fabrication</title>
+<meta name="description" content="Index Page">
+<script src="../js/vendor/jquery.min.js"></script>
+<script>
+	$(function(){
+	  $("#header").load("../header.html");
+	  $("#footer").load("../footer.html");
+	});
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../js/vendor/modernizr.js"></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- FIRST ROW -->
+<div class="row">
+	<div class="large-3  columns">
+		<h3> Some comments on code for drawing machine. </h3>
+
+		
+	</div >
+
+	<div class="small-12 medium-12 large-9  columns">
+
+	<h2> The code for the controller and actuators.</h3>
+
+		<p> The drawing machine shown on these pages is a simple example of a networked machine.  We have worked with a few of these machines:  Laser cutter, 3D printer, and shopbot are the familiar examples.  In our class we have learned about programming microcontrollers for networking and control of motion - all that is necessary to make a coordinated machine.  The following are some of the features that our drawing machine shares with the fancier ones: </p>
+
+	<ul> 
+		<li>The controller accepts input in the form of text strings from the USB computer serial port.  Using standard text input means that the commands to the machine are readable, and can be created in a number of ways.  The commands can be sent as a text file, or generated as the output of  a program running on a computer, in Python or Processing, for example.  A familiar example of this is the g-code that is used for 3D printers and CNC machines like the shopbot. For example, a command for a machine to move 200 mm along the x-axis might be: "x,200".</li> 
+
+		<li> The controller that receives the serial string parses it into numbers, stores them in an array, and sends information to the network of actuators.  In sophisticated machines like our 3D printers, and the Shopbot, there can be much calculation involved in the timing of commands, and coordination between actuators and controller.  For instance, a simple move may require acceleration at the start, deceleration at the end, and information sent to the controller about the state and position of the actuators.  Our example lacks this complexity - the controller sends commands, with pauses long enough to allow the stepper and servomotor to move and settle before the next command.</li> 
+
+		<li>Each actuator recognizes its address (and ignore the other's address), maps the received number to the information needed for its move, and makes the move. In this drawing machine the network consists of two boards.  We could easily add a third board, to raise the pen, for instance.  The third board would have its own address and respond to controller commands; we sometimes refer to such a device as an "end effector".  Just as easily, we could collapse all three functions into one board, whith the addresses still used to distuinguish the three functions.</li> 
+
+	</ul>
+
+The code for this resides in the files linked below.<br><br>
+<a href='./serial_string_to_int_07.txt'>Code for controller.</a> <br>
+
+<a href='./samd11_stepper_4.txt'>Code for stepper motor driver board.</a>  <br>
+
+<a href='./servo_addr_254.txt.txt'>Code for servomotor control board.</a>  <br><br>
+
+In the remainder of this page, we'll look at some of the details of this attempt to make a simple machine:
+
+
+		<h3> Getting input from computer serial, getting numbers from the serial input strings, storing them into an array.</h3>
+
+<pre><code class="language-arduino">
+
+int rec_int[100];     //byte array of numbers parsed from serial string.  Received on Serial.
+byte send_byte;         //byte to send to network through UART on Serial1
+
+void setup() {
+    Serial.begin(0);            //This is the USB serial.  
+    Serial.setTimeout(20);
+    Serial1.begin(230400);		//This is the second serial, the UART, operating at a baud rate of 230400 bps.
+    while (!Serial) {             //Wait until Serial wakes up.
+    ; 
+    }
+
+    Serial.println("bridge is ready");
+}
+
+void loop() {
+    int ind=0;   // index of data array  
+    
+    while (!Serial.available() ){           //Loop and do nothing until there is a 
+    							//serial character received.
+      ;
+    }
+    
+    while(Serial.available()){                //Receive bytes and parse them into integers.
+       rec_int[ind] = Serial.parseInt();
+       ind++;
+       }
+
+</code></pre>
+
+		<h3> The second half of the code:  Sorting out addresses and commands, and mapping integers to unsigned bytes, and sending to actuators. </h3>
+
+		<pre><code class="language-arduino">
+
+ for (unsigned int i=0; i < ind; i += 4){
+      
+       for (int j=0; j<4; j++){                     //for loop to send four bytes at a time.
+        int k=i+j;
+        if (rec_int[k] <= 240){                             //if it is not an address, map it as a command.
+          send_byte =map (rec_int[k], -120, 120, 0, 240);   //map the range of signed inputs to an unsigned range.      
+            }     //end of if
+          else {send_byte = rec_int[k];}                  //if it is an address, send it unaltered
+    
+        Serial1.print((char)send_byte);             //send out the byte on the UART
+        delay(2);                                 //delay between bytes?
+        Serial.println(send_byte);                //send byte back to monitor to let use know what was sent
+        Serial.flush();
+         }  //end inner for loop
+       delay (200);                             //delay to let stepper and servo settle.
+      }     //end of outer for loop.
+   Serial.print(ind);                     //report back to user
+   Serial.println(" bytes sent.");          //how many bytes sent.
+    
+}
+
+</code></pre>
+		<h3> Code for one of the actuator boards:  the stepper driver.  Recognizing address.</h3>
+
+		<pre><code class="language-arduino">
+
+void loop() {
+
+  while (!Serial1.available()){       //wait until serial is available.
+  }
+  
+  rec_byte =  Serial1.read();
+
+  if (rec_byte == address) { 
+    active = true;               //when active is true, the stepper will read the next byte and proceed to step.                                  
+    digitalWrite(LED_G, HIGH);   //Green LED indicates start of stepping.
+  }else{
+    active = false; 
+  }   
+
+  //Next, if address is identified, pay attention to the following  byte.
+
+</code></pre>
+
+
+<h3> Code for the stepper driver.  Mapping out the requested steps and the direction.</h3>
+
+		<pre><code class="language-arduino">
+			
+if (active == true){                  //This conditional gets the step number from the next received byte.
+      
+      while (!Serial1.available()){       //wait until serial is available.
+    }
+    
+    rec_byte =  Serial1.read();
+    
+    step_num = map(rec_byte, 0, 240, -120, 120);    //maps incoming number onto step range.
+    if (step_num <= 0) direction = false;
+    else direction = true;
+    step_num = abs (step_num);				//now we've converted to an absolute number of steps and a direction.
+
+    //Next, step the motor....
+
+</code></pre>
+		
+	</div >
+</div>
+
+
+
+<div id="footer"></div>
+
+</body>
+</html>

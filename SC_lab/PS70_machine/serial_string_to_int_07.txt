@@ -3,44 +3,45 @@ int rec_int[100];     //byte array of numbers parsed from serial string.  Receiv
 byte send_byte;         //byte to send to network through UART on Serial1
 
 void setup() {
-    Serial.begin(0);
+    Serial.begin(0);              //This is the USB serial.  For this board, the second serial function , called Serial1, is the UART
     Serial.setTimeout(20);
     Serial1.begin(230400);
-    while (!Serial) {
-    ; \
+    while (!Serial) {             //Wait until Serial wakes up.
+    ; 
     }
+
     Serial.println("<bridge is ready>");
 }
 
 void loop() {
     int ind=0;   // index of data array  
     
-    while (!Serial.available() ){
+    while (!Serial.available() ){             //Loop and do nothing until there is a serial character received.
       ;
     }
     
-    while(Serial.available()){
+    while(Serial.available()){                //Receive bytes and parse them into integers.
        rec_int[ind] = Serial.parseInt();
        ind++;
        }
 
     for (unsigned int i=0; i<ind; i += 4){
       
-       for (int j=0; j<4; j++){
+       for (int j=0; j<4; j++){                     //for loop to send four bytes at a time.
         int k=i+j;
-        if (rec_int[k] <= 240){
+        if (rec_int[k] <= 240){                             //if it is not an address, map it as a command.
           send_byte =map (rec_int[k], -120, 120, 0, 240);   //map the range of signed inputs to an unsigned range.      
             }     //end of if
-          else {send_byte = rec_int[k];}
+          else {send_byte = rec_int[k];}                  //if it is an address, send it unaltered
     
-        Serial1.print((char)send_byte);
-        delay(2);     //delay between bytes?
-        Serial.println(send_byte);
+        Serial1.print((char)send_byte);             //send out the byte on the UART
+        delay(2);                                 //delay between bytes?
+        Serial.println(send_byte);                //send byte back to monitor to let use know what was sent
         Serial.flush();
          }  //end inner for loop
-       delay (500);
+       delay (200);                             //delay to let stepper and servo settle.
       }     //end of outer for loop.
-   Serial.print(ind);
-   Serial.println(" bytes sent.");
+   Serial.print(ind);                     //report back to user
+   Serial.println(" bytes sent.");          //how many bytes sent.
     
 }
