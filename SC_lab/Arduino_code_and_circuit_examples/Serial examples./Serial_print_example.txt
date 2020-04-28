@@ -1,0 +1,37 @@
+void setup() {
+    byte b=10;
+    char c=50;
+    int i=200;
+   
+   Serial.begin(0);
+   while (!Serial) {             //Wait until Serial wakes up.
+    ; 
+    }
+
+    Serial.print("Print byte b: ");
+    Serial.println(b);
+    Serial.println("");
+
+    
+    Serial.print("Print char c: ");
+    Serial.println(c);
+   
+    Serial.print("Print char c as a number (DEC): ");
+    Serial.println(c,DEC);
+    Serial.println("");
+    
+    Serial.print("Print int i: ");
+    Serial.println(i);
+    
+    Serial.print("Print int i as HEX: ");
+    Serial.println(i, HEX);
+  
+    Serial.print("Print int i as BINARY: ");
+    Serial.println(i, BIN);
+    Serial.println("");
+    Serial.println("");
+
+   }
+
+void loop() {       //do nothing
+   }
