@@ -7,7 +7,21 @@
 [Return to PS70 Networking menu](../index.html)
 
 
-[tutorial on ESP NOW](https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/)
+Rui Santos (random nerd) [tutorial on one-way ESP NOW](https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/).
+Well-done tutorial, sends data in the form of a structure.  Good example of how to do this.  First code below sends a single byte.
+
+ - [code for one-way byte transmit](One-way_send02.txt)
+ - [code for one-way byte receive](One-way_rec02.txt)
+ - [code for one-way packet transmit](One-way_send01.txt)
+ - [code for one-way packet receive](One-way_rec01.txt)
+
+Next, Santos doeas a [tutorial](https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/) on two-way sending.  This is completely asynchronous - the callback function for receiving puts the result in a memory location that can be accessed as needed.  The tutorial code shows how to use a commercially avaialable sensor and an OLED.  I simplified the code so that each board receives a byte, adds one, and sends it back.
+
+ -  - [code for two-way byte transmit](two-way_00.txt)
+
+
+[hello-world for ESP NOW at hackaday](https://hackaday.io/project/164132-hello-world-for-esp-now) uses a different mode of sending, in which one device broadcasts to all devices in range. 
+
 
 
 
