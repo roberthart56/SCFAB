@@ -15,7 +15,7 @@ Well-done tutorial, sends data in the form of a structure.  Good example of how 
  - [code for one-way packet transmit](One-way_send01.txt)
  - [code for one-way packet receive](One-way_rec01.txt)
 
-Next, Santos does a [tutorial](https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/) on two-way sending.  This is completely asynchronous - the callback function for receiving puts the result in a memory location that can be accessed as needed.  The tutorial code shows how to use a commercially avaialable sensor and an OLED.  I simplified the code so that each board receives a byte, adds one, and sends it back.  At some point, I expect them to get out of synch, so that subsequent readings are not different by two, but have not sween this yet.
+Next, Santos does a [tutorial](https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/) on two-way sending.  This is completely asynchronous - the callback function for receiving puts the result in a memory location that can be accessed as needed.  The tutorial code shows how to use a commercially available sensor and an OLED.  I simplified the code so that each board receives a byte, adds one, and sends it back.  At some point, I expect them to get out of synch, so that subsequent readings are not different by two, but have not seen this yet.
 
  - [code for two-way byte transmit](two-way_00.txt)
 
