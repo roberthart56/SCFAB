@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
-<title>Button</title>
+<title>Digital Accelerometers</title>
 
 <xmp theme="bootstrap" style="display:none;">
 <br>
+[Return to sensor index](../sensors.html)
 
-###Button used for a digital input.
+###Digital accelerometers.
 
-![pic](./button_config.png)
+Tests of some of the Adafruit accelerometers.
 
-Above are three button configurations that can be used for digital input to  a microcontroller.  For the right most configuration
-set the pin mode via software to include an internal  10k pullup resistor to the supply voltage.
+####ADXL343 from adafruit.
 
-[sample Arduino code using the internal pullup configuration.](./Button_pullup.txt)
+[Adafuit guide for the adxl343](https://learn.adafruit.com/adxl343-breakout-learning-guide/special-features)
 
-[sample Arduino code using the (external) pullup configuration.](./Button_ext_pullup.txt)
+[Adafruit library doc.](https://adafruit.github.io/Adafruit_ADXL343/html/class_adafruit___a_d_x_l343.html#acba8a90ba0532baae64acf67c9338c4a)
+
+Hello world for this device on the [input devices page](http://academy.cba.mit.edu/classes/input_devices/index.html) for HTMAA.  Neil gives a bit-bang program to talk to this accelerometer.
+
+
+####LIS3DH from adafruit.
+
+[Adafuit guide for the LIS3DH](https://learn.adafruit.com/adafruit-lis3dh-triple-axis-accelerometer-breakout/arduino).  This works similarly.  Seems like SPI is a good option as well.
+
+####MMA8451 from adafruit.
+
+[Adafuit guide for the mma8451](https://learn.adafruit.com/adafruit-mma8451-accelerometer-breakout/wiring-and-test).  14-bit 2g-8g.
+
+####MSA301 from adafruit.
+
+[Adafuit guide for the MSA301](https://learn.adafruit.com/msa301-triple-axis-accelerometer/overview).  This looks very good.  Simple, also well documented.  Cheap, 14 bit.  I like this one, too.  
+
+
 </xmp>
 
 
