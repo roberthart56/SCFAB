@@ -6,6 +6,7 @@
 
 [Return to PS70 Networking menu](../index.html)
 
+###Notes on Simple examples
 
 Rui Santos (random nerd) [tutorial on one-way ESP NOW](https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/).
 Well-done tutorial, sends data in the form of a structure.  Good example of how to do this.  First code below sends a single byte.
@@ -22,6 +23,13 @@ Next, Santos does a [tutorial](https://randomnerdtutorials.com/esp-now-two-way-c
 
 [hello-world for ESP NOW at hackaday](https://hackaday.io/project/164132-hello-world-for-esp-now) uses a different mode of sending, in which one device broadcasts to all devices in range. 
 
+###Morenotes
+
+Here are notes taken as I worked with ESP NOW
+
+ - ADC2 pins cannot be used while using ESPNOW. See [this article](https://github.com/espressif/arduino-esp32/issues/102) from the esp32 forum.  
+
+ Or [this](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc.html) link to the Espressif API.  ADC 1 pins are okay - that's 32-39, which, for the adafruit Huzzah, includes 32=A7,33=A9, 34=A2, 36= A4, 39=A3.
 
 
 
