@@ -1,0 +1,90 @@
+/*
+Stepper program.  June 2020.
+Steps using potentiometer input, with pot on A4, A2, A0 - convenient for plugging in to "UNO" configured board.
+Use with Adafruit Metro M0 June, 2020.
+ 
+*/
+int Aplus = 2;
+int Aminus = 3;
+int Bplus = 4;
+int Bminus = 5;
+
+const int pot_plus = A0;
+const int pot_minus = A4;
+const int pot_tap = A2;
+
+int delay_time = 5000;
+
+//int led1_pin = 2;
+//int led2_pin = 4;
+uint16_t step_count = 0;
+
+void setup() {
+  Serial.begin(0);
+  pinMode(Aplus, OUTPUT);
+  pinMode(Aminus, OUTPUT);
+  pinMode(Bplus, OUTPUT);
+  pinMode(Bminus, OUTPUT);
+  
+  pinMode(pot_plus, OUTPUT);
+  pinMode(pot_minus, OUTPUT);
+
+  digitalWrite(pot_plus, HIGH);
+  digitalWrite(pot_minus, LOW);
+  
+  
+  //pinMode(led1_pin, OUTPUT);
+  //pinMode(led2_pin, OUTPUT);
+
+  //digitalWrite(led1_pin, 0);
+  //digitalWrite(led2_pin, 0);
+}
+
+void pulse_0(){
+  digitalWrite(Aplus,0);
+  digitalWrite(Bplus,0);
+}
+
+void pulse_1(){
+  digitalWrite(Aminus,0);
+  digitalWrite(Bplus,0);
+}
+
+void pulse_2(){
+  digitalWrite(Aminus,0);
+  digitalWrite(Bminus,0);
+}
+
+void pulse_3(){
+  digitalWrite(Aplus,0);
+  digitalWrite(Bminus,0);
+}
+
+void all_off() {
+  digitalWrite(Aplus,1);
+  digitalWrite(Aminus,1);
+  digitalWrite(Bplus,1);
+  digitalWrite(Bminus,1);
+}
+
+void loop() {
+   
+  delay_time = 8*analogRead(pot_tap);
+  if (delay_time < 500) delay_time = 500;
+  Serial.println(delay_time);
+  
+  all_off();                          //turn off coils before sending new step.
+
+ step_count++;
+  
+  
+  step_count = step_count%4;
+  //Serial.println(step_count); 
+  
+  if (step_count == 0) pulse_0();
+  if (step_count == 1) pulse_1();
+  if (step_count == 2) pulse_2();
+  if (step_count == 3) pulse_3();  
+  delayMicroseconds(delay_time);
+  
+ }
