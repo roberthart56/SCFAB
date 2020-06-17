@@ -9,11 +9,17 @@
 
 
 
-###making a rotating potential surface.
+###Making a rotating potential surface.
+
+A rotating saddle-shaped surface is a physical model for a dynamic electrostatic trapping method for charged particles - a Paul (or Penning?) Trap.  I'm working with colleagues in Srping 2020 to extend this method as a demonstration of newer aspects of trapping, including asymmetric potentials.
+
+First, I needed to find a way to turn a function into sn stl for printing or machining.  I used Python, with a module that creates stl meshes from surfaces.  I wrote a program to define vetrices and triangles on a surface, and used the stl module to create the binary stl file.  Documented in the following link.
 
 [calculating an stl](../../Tools/3D_design/Calculating_stl/index.html)
 
-![saddle](Stepper_setup.jpg)
+I printed out this stl using PET-G.  Sanded to remove most rough places.  Coated with xTC360 from Reynolds - epoxy conformal coat.  
+
+
 
 ![saddle](PTEG_saddle.jpg)
 
@@ -21,7 +27,13 @@
 
 ![saddle](saddle_bottom.jpg)
 
-[Link to movie](./saddle2.mp4)
+Below is the driving setup.  Potentiometer controls speed up to about 300 RPM (5 RPS) at 9V. Tried with V up to 12V to get a bit faster.
+
+![saddle](Stepper_setup.jpg)
+
+Played a bit with styrofoam ball 100mm diam and pingping ball 40mm diam.  There is a range of speed (~120 RPM) in which either ball remains within the boundaries for several seconds, executing small orbits, and rotating around its axis.  Lower speeds are unstable, and higher less stable as well.  Reminds me of the problem of the ball on a flat rotating table, for which there are stable orbits.  It would be good to trapping of a non-rotating mass - hoping that a levitating chip of solid CO2 might work.  Ice cube has too much friction.
+
+See movie for an example:   [Link to movie](./saddle2.mp4)
 
 
 </xmp>
