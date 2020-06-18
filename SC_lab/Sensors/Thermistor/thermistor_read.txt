@@ -1,0 +1,33 @@
+
+/*
+Thermistor_read.  Robert Hart June 2020.
+Using  datasheet for 10k NTC thermistor (Digikey Part No.).  https://www.vishay.com/docs/29049/ntcle100.pdf
+with constants A and B to calculate Temperature from Resistance.
+10K resitor in series to make a simple voltage divider.
+*/
+int ThermistorPin = A0;
+int Vo;
+float R1 = 10000;
+float R2, T;
+float A = 3.354e-03;
+float B = 2.5698e-4;
+
+void setup() {
+Serial.begin(9600);
+analogReadResolution(12);                 //Using a 32-bit ATSAM microcontroller that has up to 12 bit resolution. 4095 max.
+}
+
+void loop() {
+
+  Vo = analogRead(ThermistorPin);
+  R2 = R1 * 1/(4096.0 / (float)Vo - 1.0);         //Calculate resistance of thermistor from voltage divider math.
+  T = (1.0 / (A + B*log(R2/R1) ));                 // Calculate temperature using datasheet formula.
+  T = T - 273.15;                                   //Convert from Kelvin to Celcius.
+ 
+
+  Serial.print("Temperature: "); 
+  Serial.print(T);
+  Serial.println("C"); 
+
+  delay(500);
+}
