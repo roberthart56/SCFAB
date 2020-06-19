@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title>Telephone box installation</title>
+
+<xmp theme="journal" style="display:none;">
+<br>
+
+
+### Notebook page from September 2019.  
+
+ I'd like to make an installation in two ex-payphone boxes on either side of the Davis Square Red Line entry.  A chain emerging from one box is linked via radio to the chain emerging from the other.  One retracts when the other is pulled out by a person, giving the illusion that the two chanis are connected physically.  If done right, the force can be communicated as well as the position.
+
+![pic](./sketch1.jpg)
+
+
+![pic](./Notebook.jpg)
+
+
+Now look at motor board, work on program to get and send values.
+
+analog in PB3
+serial_pin_in PB0  interrupt on this pin.
+serial_pin_out PB2
+
+###Nov. 2, 2019
+
+Modify 45.echo.interrupt.c
+
+- disable interrupt in ISR byt clearing PCI0 bit.
+- get char from serial in.
+- set up PWM for PB1, OC0B
+- set PWM duty cycle by equating OCR0B to char.
+
+###Dec 2019
+
+Work with gearmotors and pwm.  Problem encountered when gearmotors start up.  Motors draw enough current to pull down supply
+force micro to restart.  Doesn't help to add caps.  Add 10 Ohm in series.  This works to  keep micro alive, but drops some voltage and
+dissipates power.  Tried Jameco motor that works at higher voltage and has higher resistance.  Same issue.
+
+Next, separate micro power supply from motor supply.  Thought I tried this without success.  Try again.
+
+###Dec 4, 2019.
+
+Separating motor supply helps.  Power with 0-12V benchtop supply.  Power logic from 5V FTDI module.
+They still share ground on the board.  Use larger transistor to handle startup transients.  This seems to work reliably now.  If necessary,
+isolate grounds and use choke in line with motor ground (if necessary)?
+
+###Jan 12, 2020.
+
+New board.  Still have problems with startups.  Even with micro isolated, using FTDI power supply, it still resets when starting
+at a low PWM fraction from a stop.
+
+### Jan 14, 2020.
+
+Better with Jameco motor.  Problem is that the gearing makes it harder to turn by hand.  May not work for box.
+
+Reliapro 253471  5V no load 60 RPM at 0.08A  Works better.  Do a faster PWM, with 2 ms period.
+Other motor from MPJA  pn 19285 MD 5V 240 RPM no load 0.16A.
+
+See if h-bridge works better.  Yes, it does.  [Code here](./ATSAM_code/samd11_hbridge01/samd11_hbridge01.ino)
+Boyoyboy I like these sams.
+
+###Jan 16, 2020
+
+Made h-bridge board with SAMD11, with 2x2 headers for USART and ADC.  Look out!  Killed a board by using 5V FTDI.
+
+Programs for ATSAMD11 are in ATSAM_code directory.
+Most success with   ATSAM_code/samd11_hbridge_03.ino which sets motor speed accoridng to difference between setpoint
+and potentiometer reading.  When pot is connected to motor, with correct sign, feedback seeks (and overshoots) the
+setpoint.
+
+
+<h3>Week of Feb 10, 2020</h3>
+
+<p><b>Put together prototype of mechanism for holding motor, spool and potentiometer.  Laser-cut cardboard glued with wood glue. </b> </p>
+ <img src="./Prototype/parts.png" class="img-responsive margin" style="width:50%"  alt="parts">
+
+<p>Above.  Cardboard parts layout.</p>
+
+ <img src="./Prototype/proto04.jpg" class="img-responsive margin" style="width:50%"  alt="01">
+
+ <p>Above.  Final assembly.  Motor on the left, potentiometer on the right.  Ten-turn potentiometer is used as a rotary sensor. </p>
+
+ <img src="./Prototype/proto02.jpg" class="img-responsive margin" style="width:50%"  alt="02">
+ <img src="./Prototype/proto01.jpg" class="img-responsive margin" style="width:50%"  alt="03">
+
+ <p>Above.  This is the way that the spool comes together.  Tricky to get ends of the tube perpendicular to the axis.  Do this either by rotating inside laser cutter (process still needs some work) or by sawing carefully with pull saw.</p>
+
+ <img src="./Prototype/proto03.jpg" class="img-responsive margin" style="width:50%"  alt="04">
+
+  <p>Above.  Closeup of connections to motor.  Use tubing and cable ties for a flexible and stong connection.  For a "bearing" laser-cut a hole nominally the same size as the axle. </p>
+
+ <img src="./Prototype/proto05.jpg" class="img-responsive margin" style="width:50%"  alt="05">
+ 
+ <p>Above.  Use of clamps in glueing cardboard.  Three layers of cardboard are very stiff. Could sandwich foam-core in the middle for a lighter structure still as stiff.</p>
+ 
+<h3>May and June, 2020</h3>
+
+<p>May 28,2020.  Use ESP32 Huzzahboards for one-way sending ofsetpoint and motor driving.  This works, using two pots and one notor.   Extension to two-way should not be difficult, since the ESP NOW radios operate asynchronously.</p>
+
+
+  <a href='./ESP32/rec01_may28.txt'>receive code</a><br>
+  <a href='./ESP32/send01_may28.txt'>transmit code</a>
+
+Detail of improvised motor coupling.
+
+![motor couple](./motor_coupling.jpg)
+
+
+Here is the setup with ESP32 board, motor driver board, and breadboard for routing signals.  5V battery supplies the ESP32 board, 9V power supply (coming in from the right) supplies power to the motor.  
+
+![setup](./prototype.jpg)
+
+Below, a video of two spools in operation.
+
+
+  <video width="541" height="955" controls>
+  <source src="./Two_spools.mp4" type="video/mp4">
+  </video><br>
+
+
+Below is an attempt to make "art".
+
+
+<video width="541" height="955" controls>
+   <source src="./Chain_thru_box.mp4" type="video/mp4">
+  </video><br>
+
+The cardboard hardware and breadboards would not work for a long-lived installation.  However, with this version of hardware, I can still advance the project.
+
+  - Extend the code to two-way.  
+  - Work on proper feedback loops to make the two sides interact.
+
+Next, work on making the whole thing physically robust and portable.
+
+  - Make circuitboard with ESP32 and h-bridge driver.
+  - Figure out battery and work on charging process.
+  - Make motor supports from laser-cut wood or plastic.
+  - Add metal couplings.
+
+
+
+
+</xmp>
+
+
+<script src="./../../../strapdown/strapdown.js"></script>
+</html>
