@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<title>Temperature control June 2020</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+[return to Projects page](../index.html)
+
+###Project(s) involving temperature control.
+
+See [Thermistor page](./../../Sensors/Thermistor/index.html)
+
+For summer 2020, we are working with student kits that contain 100 Ohm 3 Watt resistors, and a 9V power supply.
+
+This is a recipe for heat!   9V  across 100 Ohms gives 0.8W.
+
+I'd like to make a garlic-curing chamber, which needs ~85 Celcius for ~ two months in order to make [black garlic](https://en.wikipedia.org/wiki/Black_garlic#:~:text=Black%20garlic%20is%20a%20type,that%20results%20in%20black%20cloves.)
+
+I have a vacuum thermos-type bottle.  Can I use it, or something like it to control temperature at this level?
+
+####I attached a resistor to a metal bracket using 5 mninute epoxy.
+
+Soldered.
+
+![pic1](./resistor.jpg)
+
+Heat-shrink applied.
+
+![pic1](./shrink_wrapped.jpg)
+
+Glued with thermocouple to bracket.
+
+![pic1](./heater.jpg)
+
+And here's the whole setup.
+
+![pic1](./setup.jpg)
+
+After heating up several hours, reaches 62 Celcius:
+
+![pic1](./Steady_temp.png)
+
+Turn off heat and remove the cork.
+
+![pic1](./turn_off_heat.png)
+
+I need more heat or better insulation to get up to 85C.  Might just use 2-3 100 Ohm resistors in parallel.   When I  get there:
+
+ - Write code for temperature control.
+ - Write code to save data and send it out to computer.
+ - Make sure temperature is uniform.  Use oil?  
+ - Figure out how to make a garlic container.  Plastic vacuum bag?
+ - I really don't want to commit an expensive board to this purpose for two months - needs either
+ 	- A home-made board.
+ 	- A cheap Arduino clone.
+
+
+
+</xmp>
+
+
+<script src="./../../../strapdown/strapdown.js"></script>
+</html>
