@@ -55,7 +55,15 @@ I need more heat or better insulation to get up to 85C.  Might just use 2-3 100 
  	- A home-made board.
  	- A cheap Arduino clone.
 
+###Now, about using thermistor as a flow sensor....
 
+[Earlier thoughts](https://roberthart56.github.io//projects/Thermistor_anemometry/index.html), on using a tiny thermistor, are linked.  With a small 100 Ohm thermistor, it was easy to heat up the thermistor enough so that the change in its heat dissipation with airflow can be detected.
+
+How about for this thermistor with 9V?  ~1/100 W.  How much does this thermistor heat up in air when 9V is applied.  Here are some notes:
+
+![pic](./notes_power.jpg)
+
+Slope of the temp curve at 25C is 500 Ohm per degree.  Heats up about a degree.  Could see this more easily with a bridge circuit.  Then measure differential voltage.  Can do this with SAMD21 - one way is to use the library that I found on github as an example for accessing the advanced ADC functions via registers.  This micro has capabilities of amplification, and differential inputs.  
 
 </xmp>
 
