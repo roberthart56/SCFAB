@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>Adafruit ESP32 (Huzzah)</title>
+
+<xmp theme="bootstrap" style="display:none;">
+
+<br>
+
+##Adafruit ESP32 Huzzah board.
+
+
+
+- [Adafruit page for Huzzah 32](https://www.omzlo.com/articles/programming-samd21-using-atmel-ice-with-openocd)
+
+
+ We need to configure Arduino IDE to work with the Huzzah. 
+
+ First, download and install the <a href='http://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers'> CP2104 USB Driver</a>. 
+
+ Next, add this to Preferences &gt; Additional Boards Manager URLs: 
+
+ <code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</code>. 
+
+ Finally, under Tools &gt; Boards Manager, add the "esp32" boards package. Select Adafruit ESP32 Feather as your board and select the corresponding port.
+
+<p> Note: the terms here can be confusing. <a href='https://en.wikipedia.org/wiki/ESP32'>ESP32</a> refers to a series of low-cost, low-power system-on-a-chip microcontrollers with integrated Wi-Fi and Bluetooth. Its precursor was the ESP8266 -- many tutorials will be compatible with both. <a href='https://www.adafruit.com/feather'>Feather</a> is a line of development boards from Adafruit. The <a href='https://www.adafruit.com/product/3405'>Huzzah32</a> is the specific Feather board that is built around the ESP32. </p>
+
+####More resources
+
+ - [Adafruit learning guide](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
+ - [A Starter Tutorial](https://randomnerdtutorials.com/getting-started-with-esp32/)
+ - [Espressif forum on Arduino with ESP32](https://www.esp32.com/viewforum.php?f=19)
+ - [Book by Kolban](./kolban-ESP32.pdf)
+ - There are a few things that don't translate automatically to ESP from more standard Arduino usage.  Some of these are noted in past messages on our Slack page.  
+ 
+
+
+</xmp>
+
+
+<script src="./../../../strapdown/strapdown.js"></script>
+</html>
