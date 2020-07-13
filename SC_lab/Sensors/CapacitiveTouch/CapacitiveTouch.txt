@@ -1,6 +1,6 @@
 #include <CapacitiveSensor.h>
 
-CapacitiveSensor Sensor = CapacitiveSensor(7,9);
+CapacitiveSensor Sensor = CapacitiveSensor(7,5);  //7 is charge pin.  5 is sense pin.
 
 void setup() {
   Serial.begin(9600);

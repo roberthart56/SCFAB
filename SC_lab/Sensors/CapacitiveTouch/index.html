@@ -7,7 +7,7 @@
 
 ###Capacitance using the Arduino Capacitive Sensing Library.
 
-This capacitance method, based on Arduino Capacitive Sensing library, can be used with most boards that support the Arduino IDE.  For the Adafruit ItsyBitsy, do not use pin 5, but any other digital pin is OK.  Also note that for the ATSAM-based boards, the high voltage is 3.3 rather than 5V.  
+This capacitance method, based on Arduino Capacitive Sensing library, can be used with most boards that support the Arduino IDE.
 
 ![pic](./cap01.png)
 
@@ -16,11 +16,10 @@ This is the configuration used for capacitance sensing with the Arduino.  The pi
   The closer the grounded object is to the plate, the larger the capacitance, and the longer it takes to charge. The
     time for charging (in arbitrary units) is the number that is reported by the sensing function.  
 
- <b>To use this sensor, load the latest version of the Capacitive Sensing Library. </b>  As of March 2020, the library manager in Arduino IDE does not have this latest updated version.  Use the manual method below to make sure you have the version that works with the newer boards.
+ <b>To use this sensor, load the latest version of the Capacitive Sensing Library. </b> Go to Sketch -> Include Library -> Manage Libraries.  Search for "capacitive".  Install the library "CapacitiveSensor" , latest version.
 
- <b>[Download the Arduino capacitive touch Library here](https://github.com/PaulStoffregen/CapacitiveSensor).</b>  Download the zip, extract the directory, and copy it to:   /Documents/Arduino/hardware/libraries/ or /Documents/Arduino/libraries/ (varies from one installation to another).  
  
- Your pin choice may vary, and you may use more than one sense pin for a single charging pin.  On the ItsyBitsy M4, do not use pin 5 - it is reserved for 5 volt functions.
+ Your pin choice may vary, and you may use more than one sense pin for a single charging pin.
 
 <b>[The Documentation on the Arduino Reference is here](http://playground.arduino.cc/Main/CapacitiveSensor?from=Main.CapSense)</b>.
 
@@ -28,6 +27,7 @@ This is the configuration used for capacitance sensing with the Arduino.  The pi
 resistance makes the sensor more sensitive.  Change the pin numbers to reflect your board.
 
 ![pic](./cap02a.png)
+![pic](./Capac_metro.jpg)
 
 As shown above, the capacitive sensor can be used to measure position, force, tilt, airspeed, and more.  In some cases, the other configuration for capacitance sensing, [the transmit-receive method,](./../tx_rx_sensors/index.html) gives better results.  We're not sure why or in what cases one works better than another. Try both and document your results!
 
