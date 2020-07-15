@@ -5,7 +5,7 @@ Stepper program.  Steps at 100 steps per second.  Functions are all self-contain
 int Aplus = 11;
 int Aminus = 10;
 int Bplus = 9;
-int Bminus = 7;
+int Bminus = 8;
 
 //int led1_pin = 2;
 //int led2_pin = 4;

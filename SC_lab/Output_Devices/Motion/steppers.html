@@ -6,9 +6,11 @@
 <br>
 
 
-##[Stepper motors](https://learn.adafruit.com/all-about-stepper-motors/types-of-steppers)
+##Stepper motors. [(Adafruit link.)](https://learn.adafruit.com/all-about-stepper-motors/types-of-steppers)
 
-[Machine class page on steppers](http://fab.cba.mit.edu/classes/865.18/motion/steppers/index.html)
+[MIT Machine class page on steppers](http://fab.cba.mit.edu/classes/865.18/motion/steppers/index.html)
+
+[Bipolar step sequence.](https://motion.schneider-electric.com/technology-blog/stepper-motor-basics-stable-shaft-positions/)
 
 ###Bipolar Stepper motors.
 
@@ -21,26 +23,35 @@ Above are three stepper motors.  They run with four leads, and can be driven bi-
 chips or stepper motor control modules.  Some of these drivers are shown above.
 
 
-![pic](bipolar_stepper_driver01.jpg)
-![pic](bipolar_stepper_driver02.jpg)
+![pic](metro_step.jpg)
+![pic](step_conn.jpg)
 
 Here is a method for running a bipolar stepper from the double-h-bridge modules that we have.  On the left, the Arduino, with motor
-leads on pins 6,7,8,and 9 (yellow, orange, white, gray).  The board is plugged into a 9V power supply (upper right side of board.)  The red wire is plugged
+leads on pins 8,9,10, and 11 (green, yellow, orange, brown).  Note that short yellow solid-core wires are used to connect female pins to sockets on the colored wires.  The board is plugged into a 9V power supply (lower left side of board.)  The red wire is plugged
 into Vin, which sends the 9V directly to the motor driver module. If you need more than ~1A, you'll need to connect
 the power supply directly to the motor driver module, not through the Vin pin.  In that case, power the Arduino
 separately.  Black wire goes to ground.
 
 The same six wires plug into the module as shown in the right hand picture:  Red and black in the middle and the four leads
-from the digital out pins go to the two sides.
+from the digital out pins go to the two sides.  
 
-On the output side of the module (bottom) the green/black and blue/red wires from the stepper are plugged into the two outputs.
-The Arduino code used to drive can be found in the Arduino examples in the menu of the application.
+On the output side of the module the green/black and blue/red wires from the stepper are plugged into the two outputs, using the solid-core short yellow wires.
 
 ###Programs for Bipolar stepper motors.
 
- [here](../h_bridge/itsy_stepper_library_example.txt) is the example program downloaded from the Arduino IDE examples, for driving a stepper motor. It uses the Stepper library, which should be a part of the Arduino IDE already.  If it is not, use the Library Manager under Sketch>Include Library to install it. 
+ [Here is the example program](../h_bridge/itsy_stepper_library_example.txt) downloaded from the Arduino IDE examples, for driving a stepper motor. It uses the Stepper library, which should be a part of the Arduino IDE already.  If it is not, use the Library Manager under Sketch>Include Library to install it. 
 
-  [here](../h_bridge/stepper_no_library.txt) is an alternative approach that uses a function in the code rather than a library function.  It steps a motor at 100 steps per second, or about 1/2 revolution per second.
+ This program steps only two steps per second in one direction.  How can you modify the program to:
+
+ - Move faster?
+ - Move backward?
+ - Move a certain number of steps and then stop?
+
+Check the [Arduino Stepper Library documentation](https://www.arduino.cc/en/reference/stepper) for details on using the stepper functions.  In particular, see the setSpeed(rpm) function.
+
+
+
+  [Here is an alternative approach](../h_bridge/stepper_no_library.txt)  that uses a function in the code rather than a library function.  You can add functions to this code to fully control a stepper motor at any speed in both directions.
 
 
 ###Unipolar stepper motors.
