@@ -8,7 +8,7 @@
 [Return to Networking menu for PS70](../index.html)
 
 
-A very simple example of two boards communicating. The board on the left is programmed to write to a digital output pin in response to a button input.  The board on the right reads the voltage and responds by changing the state of an output device.  The two boards just share ground.  They must both be powered, and can share a power line.
+A very simple example of two boards communicating. The board on the left is programmed to write to a digital output pin in response to a button input.  The board on the right uses a digitalread() to read the voltage and responds by changing the state of an output device.  This is an example of communicating with one bit (HIGH or LOW) at a time.  The two boards just share ground.  They must both be powered, and can share a power line.
 
 [code](./receive_01.txt) for the receiving board.
 
@@ -17,11 +17,13 @@ A very simple example of two boards communicating. The board on the left is prog
 
 ###Schematic of this example.
 
-![pic](wired_sketch.jpg)
+[Tinkercad Model](https://www.tinkercad.com/things/hIUnMXcwy7T-amazing-lappi/editel?sharecode=vtwP3RghNCQO-daC03vf5SoBe5mglupaxAMkmaYjfr0)
+
+![pic](tinker_schem.png)
 
 ###Video.  
 
-ATSAMD11 board on left, powered through computer USB; ItshyBitsy on right, powered by rechargeable battery.
+This is an example of two boards runnning this code.  A microcontroller board on left, powered through computer USB; Another microcontroller board on right, powered by rechargeable battery.  When the button is pushed, the left board sends a HIGH to the right board which moves its servo.
 
 <video width="300" height="541" controls>
 		<source src="wired_01.mp4" type="video/mp4">
