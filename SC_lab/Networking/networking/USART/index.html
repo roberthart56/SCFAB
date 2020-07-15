@@ -13,8 +13,7 @@ The universal asynchronous receiver-transmitter (UART) takes bytes of data and t
 More resources:
 
  - UART tutorial  https://learn.sparkfun.com/tutorials/serial-communication/all
- - 
- - 
+  
 
 ###Example using two boards.
 
@@ -25,26 +24,37 @@ In the current example, we have not added much capability beyond the [simple ser
   - You can extend this example to let communication happen both ways.  Just connect RX of the left one to TX of the right one, and progam them to have a conversation.
   - You can add many devices in a network using a single UART bus, and give them addresses.
   - It allows you to make your project more modular.
-  - It is now ~one short step to adding radio or internet communication between boards.
+  - It is now ~ one short step to adding radio or internet communication between boards.
 
-[code](./usart_rx.txt) for the receiving board.  While using the UART on the board, you can independently use the USB serial, as done in this code.  This is very useful for troubleshooting and diagnosing as you write code.  Just connect a computer and use the Arduino Serial monitor.
 
-[code](./usart_tx.txt) for the transmitting board.
 
 
 ###Schematic of this example.
 
-![pic](usart_sketch.jpg)
+[Link to Tinkercad Model](https://www.tinkercad.com/things/kk1prSXoe8S-ingenious-kieran/editel?sharecode=6MK0TBx0VYrYbc0tEjQxF28xK8NKFxjKRAYrD2JlKU0)
+
+![pic](uart_schematic.png)
+
+[code](./usart_tx.txt) for the transmitting board.
+
+[code](./usart_ESP32_rx.txt) for the receiving board, written for the ESP32 Huzzah board.  While using the UART (referred to as "Serial1") on the board, you can independently use the serial connected to the USB (called "Serial"), as done in this code.  This is very useful for troubleshooting and diagnosing as you write code.  Just connect a computer and use the Arduino Serial monitor.
+
+
+
 
 ###Details and connections.
 
-![pic](trans_uart.jpg)
-![pic](itsy_uart.jpg)
+Metro M0 board on upper left, powered through computer USB, reads potentiometer voltage and sends one byte through the transmit (tx) line. ESP32 board on right receives a byte (0-255) converts it to an angle (0-180 degrees) and moves the servo.  The ground pins of the two boards nust be connected for this to work!
 
-[ATSAMD11 board](https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/SAMD11_stepper/index.html) on left, powered through computer USB; ItsyBitsy on right, powered by connecting the 5V pin from the left-hand board to the BAT pin of the right-hand board.  Be careful - the SAM-based boards run on 3.3V and can be damaged by connecting 5V to pins other than VHI, USB, and BAT.
+
+![pic](uart_pic.jpg)
+
+
 
 
 ###Video.  
+
+A video of two different boards, doing the same thing, with essentially the same codes as linked above.
 
 
 <video width="1000" height="541" controls>
