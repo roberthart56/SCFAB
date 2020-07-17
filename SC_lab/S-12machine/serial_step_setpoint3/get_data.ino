@@ -9,6 +9,6 @@ while(Serial.available()){                //Receive bytes and parse them into in
    rec_int[index] = Serial.parseInt();    //save these in the rec_int array, which is a global variable.
    index++;
    }
-return index;                              //returns the number of integers received.
+return index-1;                              //returns the number of integers received.
    
 }
