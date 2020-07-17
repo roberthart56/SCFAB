@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
-<title>Kit</title>
+<title>Drawing Machine July 2020</title>
 
 <xmp theme="bootstrap" style="display:none;">
 <br>
 [Return to Lab Resources index.](../index.html)
 
-#Kits for PHYS S-12
+###Notes on drawing machine.
 
-[Passive electronics](./01_Passive_electronic.jpg)
+July 15, 2020.  Made two-stepper drawing machine with parts from the kit.
 
-[Sensors](./02_sensors.jpg)
+[Drawing machine with two steppers, July 2020.](https://youtu.be/JjpYPcKUUpI)
 
-[Output devices](./03_output.jpg)
+Plan for class:
 
-[Motors](./04_motors.jpg)
+- Show servo example for button input [Tinkercad](https://www.tinkercad.com/things/hIUnMXcwy7T-wired-network-io-pins/editel?sharecode=vtwP3RghNCQO-daC03vf5SoBe5mglupaxAMkmaYjfr0)
 
-[Boards](./05_boards.jpg)
+- stepper motor responds to I/O pin input.  Code to step one step each time the I/O pin rises.
+ - Network
+ - address
 
-[Power](./06_power.jpg)
+- servo example for one byte, on tinkercad.   Use to demo UART.  Demonstrate/talk about single byte and ASCII chars.  [tinkercad](https://www.tinkercad.com/things/2C1xWqjhOfL-powerful-borwo/editel?sharecode=-i_64yYC0v7TeIwGWku7Rxm_X6fyBYPSOyJV2EBF1CI)
 
-[Connections](07_connections./.jpg)
+- stepper motor responds to Serial command. [This sketch](./serial_step_setpoint1)  accepts a target from serial data, and moves motor until step count reaches the target.  Can  put multiple numbers in the serial send.   Motor executes in order received.  
+ - Uses while loop
+ - code to accept ASCII input from computer:  [serial parser](./parse_serial)
+ - target. Idea of setpoint.
 
-[Hardware](./08_hardware.jpg)
+- two steppers respond to ASCII characters.   [Here is the code](./serial_step_setpoint2)
+ - Serial buffer
+ - array storage
+ - use of tabs to clarify functions.
 
-[Tools](./tools.jpg)
+This can be used with spreadsheet data, for example, to plot functions.  I will try this soon.
 
 
+###Files used along the way:
 
+Here's a sketch to drive two steppers, one step at a time, with delays between steps.  Uses for loops.  This code makes a square with the setup above. [stepping two steppers](./two_steppers01)
 
+Now add serial parsing and stepper code to make sketch that steps two motors N steps in response to ASCII command:[serial_steppers](./serial_steppers01)
 
 </xmp>
 
