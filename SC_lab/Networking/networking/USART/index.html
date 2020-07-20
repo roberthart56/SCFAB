@@ -5,19 +5,25 @@
 <xmp theme="bootstrap" style="display:none;">
 <br>
 
-[Return to Networking menu for PS70](../index.html)
+[Return to Networking menu](../index.html)
 
 ###Introduction to UART.
 
 The universal asynchronous receiver-transmitter (UART) takes bytes of data and transmits the individual bits in a sequential fashion. (Direct quote from the [wikipedia page](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)).  A byte is eight bits, corresponding to numbers between 0 and 255 in base ten.
 More resources:
 
- - UART tutorial  https://learn.sparkfun.com/tutorials/serial-communication/all
+ - [ASCII table](https://www.sciencebuddies.org/science-fair-projects/references/ascii-table#asciitable) for interpreting bytes as characters.
+ - [UART tutorial](https://learn.sparkfun.com/tutorials/serial-communication/all)
+ - [SPI tutorial](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi)
+ - [I2C tutorial](https://learn.sparkfun.com/tutorials/i2c)
   
 
 ###Example using two boards.
 
-A simple example of two boards communicating by UART serial protocol (only one way in this example.) The board on the left is programmed to write to a digital output pin in response to a button input.  The board on the right reads the voltage and responds by changing the state of an output device.  The two boards must share ground.  They must both be powered, and can share a power line.
+[Link to tinkercad model for simple UART](https://www.tinkercad.com/things/2C1xWqjhOfL-serial-comm/editel?sharecode=-i_64yYC0v7TeIwGWku7Rxm_X6fyBYPSOyJV2EBF1CI).  This link allows the user to see the serial signals in a virtual oscilloscope.
+
+
+Below is a simple example that of two boards communicating by UART serial protocol (only one way in this example.) The board on the left writes a byte based on a voltage read from a potentiometer.  The two boards must share ground.  They must both be powered, and can share a power line.  The board on the right receives the byte and converts it to an angle command for the servo.
 
 In the current example, we have not added much capability beyond the [simple servo driver](https://nathanmelenbrink.github.io/ps70/08_output/servo.html), and it may not be obvious that this accomplishes anything.  It can be extended to do a great deal:
 
