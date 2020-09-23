@@ -20,7 +20,7 @@ void loop()
   
   // Display Temperature in F
  
-  Serial.print("Temp         F  ");
+  Serial.print("Temp, F  ");
   
   Serial.println(tempF);
   delay(500);
