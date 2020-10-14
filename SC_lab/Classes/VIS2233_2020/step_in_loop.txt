@@ -1,0 +1,73 @@
+/* Unipolar Stepper Driver.
+
+ */
+int count = 0;
+int LED_pin = 13;
+boolean LED_state = 0;
+
+int motorPin1 = 8;
+int motorPin2 = 9;
+int motorPin3 = 10;
+int motorPin4 = 11;
+int delayTime = 5; //delay time in msec.
+
+void setup() {
+  pinMode(motorPin1, OUTPUT);
+  pinMode(motorPin2, OUTPUT);
+  pinMode(motorPin3, OUTPUT);
+  pinMode(motorPin4, OUTPUT);
+
+  pinMode(LED_pin, OUTPUT);
+}
+
+
+void step_once()    //the function that steps.  This function is called from the loop.
+{
+  if (count%4 == 0){
+  digitalWrite(motorPin1, HIGH);
+  digitalWrite(motorPin2, LOW);
+  digitalWrite(motorPin3, LOW);
+  digitalWrite(motorPin4, LOW);
+  }
+  if (count%4 == 1){
+  digitalWrite(motorPin1, LOW);
+  digitalWrite(motorPin2, HIGH);
+  digitalWrite(motorPin3, LOW);
+  digitalWrite(motorPin4, LOW);
+  }
+
+  if (count%4 == 2){
+  digitalWrite(motorPin1, LOW);
+  digitalWrite(motorPin2, LOW);
+  digitalWrite(motorPin3, HIGH);
+  digitalWrite(motorPin4, LOW);
+  }
+
+  if (count%4 == 3){
+  digitalWrite(motorPin1, LOW);
+  digitalWrite(motorPin2, LOW);
+  digitalWrite(motorPin3, LOW);
+  digitalWrite(motorPin4, HIGH);
+  }
+
+}
+
+
+void loop() {
+  
+  for(int i=0; i<500; i++){     //step forward in this loop, increment count.
+    count = count + 1;
+    step_once();
+    delay(delayTime);
+  }
+
+  for(int i=0; i<500; i++){     //step backward in this loop, decrement count.
+    count = count - 1;
+    step_once();
+    delay(delayTime);
+  }
+ 
+ LED_state = !(LED_state);
+ digitalWrite(LED_pin, LED_state);   //toggle LED.
+  
+}

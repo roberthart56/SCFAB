@@ -85,8 +85,26 @@
   - [Other](https://makeradvisor.com/tools/esp32-dev-board-wi-fi-bluetooth/)
  - [Tutorials on ESP32](https://randomnerdtutorials.com/getting-started-with-esp32/)
 
+###Unipolar stepper motor. Oct. 14, 2020.
 
+Here's the stepper motor board that comes in the Elegoo kit, with the motor itself behind.  This motor takes 2000 steps for one revolution.
 
+![motor](unipolar_board.jpg)
+
+Below is a photo of the connections to the Arduino.  The connections on the stepper board and the Arduino are listed:
+
+- orange - in1 - Pin 8
+- yellow - in2 - pin 9
+- green - in3 - pin 10
+- blue - in4 - pin 11
+- red - power plus - VIN or 5V.  (with 9V battery as in the picture, VIN = 9 Volts)
+- brown - power minus - ground
+
+![arduino](unipolar_arduino.jpg)
+
+Here is a link to a simple code that steps continuously.  [Unipolar_stepper.txt](Unipolar_stepper.txt)
+
+Here is a code that uses a function to step, and steps forward and backwards.  [step_in_loop.txt](step_in_loop.txt)
 
 </xmp>
 
