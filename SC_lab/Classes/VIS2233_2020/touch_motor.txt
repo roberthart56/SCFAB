@@ -1,0 +1,25 @@
+/* Touch-controlled motor speed.
+ */
+
+ #include <CapacitiveSensor.h>
+
+CapacitiveSensor Sensor = CapacitiveSensor(7,5);  //7 is charge pin.  5 is sense pin.
+
+int duty_cycle = 200;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+
+
+void loop() {
+   long sensorValue = Sensor.capacitiveSensor(1000);      //Change the number of samples to get the required timing and sensitivity.
+  Serial.println(sensorValue);
+  duty_cycle = sensorValue/100;
+  analogWrite(6,duty_cycle);
+  delay(100);
+    
+  }
+
+ 

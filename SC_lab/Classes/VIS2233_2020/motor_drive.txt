@@ -1,0 +1,19 @@
+/* 10/28/20
+ *  Code to run a motor using a transistor as a switch.
+ *  
+*/
+
+
+
+int duty_cycle = 200;
+
+void setup() {
+  // put your setup code here, to run once:
+}
+
+void loop() {
+  for (duty_cycle = 0; duty_cycle < 255; duty_cycle = duty_cycle + 50){
+  analogWrite(6, duty_cycle);
+  delay (100);
+  }
+}
