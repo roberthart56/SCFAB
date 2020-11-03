@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Rotating model for Penning Trap</title>
+<title>Rotating saddle as AC trap analogue</title>
 
 <xmp theme="bootstrap" style="display:none;">
 <br>
@@ -17,7 +17,7 @@ First, I needed to find a way to turn a function into sn stl for printing or mac
 
 [calculating an stl](../../Tools/3D_design/Calculating_stl/index.html)
 
-I printed out this stl using PET-G.  Sanded to remove most rough places.  Coated with xTC360 from Reynolds - epoxy conformal coat.  
+I printed out this stl using PET-G.  Sanded to remove most rough places.  Coated with xTC360 from Reynolds - epoxy conformal coat.
 
 
 
@@ -47,7 +47,7 @@ Tried liquid Nitrogen.  Some droplets are long-lived and execut stable orbits fo
 
 ###June 20
 
-Talked with Louis and Aidan  on 6/18/20.  We will try a model with h0 (where y=(x0/ho**2)*x**2) a factor of 2-3 smaller.  Then transfer technology to Aidan for making and measuring.  Also try to reproduce results of the [2002 paper](./Canadian_2002.pdf), using bearings and low friction Teflon lubricant.  
+Talked with Louis and Aidan  on 6/18/20.  We will try a model with h0 (where y=(x0/ho**2)*x**2) a factor of 2-3 smaller.  Then transfer technology to Aidan for making and measuring.  Also try to reproduce results of the [2002 paper](./Canadian_2002.pdf), using bearings and low friction Teflon lubricant.
 
 Replace stepper with gearmotor.  I have one that can spin at a few rps.  This will make control easier.  Use 19V supply, breadboarded Arduino with MOSFET, sensor for rotation speed.
 
@@ -63,6 +63,44 @@ Dimensions of first symmetric surface:
 
  ![drawing](Parabola_parameters.jpg)
 
+###Nov 2
+
+Another round.  Made a new saddle, with a net positive bias.  Discovered that the old saddle has a small net negative bias.
+The parameters are as shown in the sketch below (saddle no. 1 in parentheses):
+
+Saddle no. 1:  positive=21.3, negative = 22.1    Slightly negative.
+Saddle no. 2:  Positive = 20.2, negative = 19.4  Slightly positive.
+
+ ![drawing](./paremeters_nov2.jpg)
+
+####Stability measurements on 10/30/20.
+
+New saddle surface, PTEG.  Print parameters [here:](rotating_saddle/Calculating_stl/saddle_Oct27_2020.3mf).
+Surface is rough - no sanding yet.  Mounting is wobbly, and levelness is not
+yet well controlled.
+
+Use styrofoam ball:  r = 30mm ; m = 2.1g; Kinda lumpy.
+
+Video at 1.6 RPS.  [link to youtube video:](https://youtu.be/mmAFAaTljY4)
+
+[Python notebook for measurements of stability](./Measurements/Saddle_data_10.30.20.ipynb)  This notebook creates <thead>
+  figure below, where blue circles represent trapping times for the first saddle, and red circles for the second, slightly positively
+  biased saddle.
+</thead>
+
+ - Points in the graph at trapping time of 30 seconds are all actually >30 seconds.
+ -
+
+![results](./Measurements/Python_figure_10.30.20.png)
+
+Next:
+
+ - Make mounting system so that levelness is controlled. Check stability,
+ - Sand surface and compare stability.
+ - Find better ball?
+ - Make more permanent speed sensor setup.
+ - Make more careful measurements of surface.
+ - Consider machining surfaces in wood.
 
 
 </xmp>
