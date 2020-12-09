@@ -21,3 +21,5 @@ Next steps:
  - Go back and check 3D printed surfaces.  They may be adequate.  It would be nice to report in the paper that this method works.
  - Explore other low friction non-rolling alternatives.
  - Do a careful measurement of z(x,y) for all surfaces.
+ - Design a launcher, to minimize and/or characterize dependence on initial conditions.
+ 
