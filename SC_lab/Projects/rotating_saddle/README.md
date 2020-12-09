@@ -14,7 +14,7 @@ Data below uses:
 
 [Jupyter Notebook for Dec. 7, with data for the two cases.](./Measurements/Dec7_data_nb.ipynb)
 
-The difference at 2.5 RPS is probably significant.  Any theoretical reason for this?
+The difference at 2.5 RPS is probably significant.  Also consistent with earlier (10/30/20) results with a larger ball.  Any theoretical reason for this?
 
 Next steps:
  - Explore role of friction.  Teflon coating, teflon ball, coated wood, steel ball.  Compare lifetimes at ~1.5 RPS
