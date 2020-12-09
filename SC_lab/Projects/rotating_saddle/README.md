@@ -5,6 +5,7 @@ Prior work is documented [here](https://roberthart56.github.io/SCFAB/SC_lab/Proj
 **Dec 7-9.** 
 
 Data below uses:
+ - Five readings per data point.  Error bars give SD on the mean = SD/sqrt(5).
  - Bare sanded wood saddles.  One is slightly positive (red) and one slightly negative (blue).
  - Levelled saddles, on three bearings.
  - 19mm Polyethylene ball, released at center.
