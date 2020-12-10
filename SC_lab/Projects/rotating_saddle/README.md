@@ -23,3 +23,4 @@ Next steps:
  - Do a careful measurement of z(x,y) for all surfaces.
  - Design a launcher, to minimize and/or characterize dependence on initial conditions.
  
+To answer questions about friction and rolling, how about studying flat plates (acrylic, epoxy, 3D PLA, etc) rotating, with sliding and rolling particles?  Should be able to solve for this motion analytically.  Will that tell us anything about the connection between rolling data and unobtainable sliding data on curved surfaces?
