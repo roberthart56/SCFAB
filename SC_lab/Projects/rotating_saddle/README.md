@@ -24,3 +24,12 @@ Next steps:
  - Design a launcher, to minimize and/or characterize dependence on initial conditions.
  
 To answer questions about friction and rolling, how about studying flat plates (acrylic, epoxy, 3D PLA, etc) rotating, with sliding and rolling particles?  Should be able to solve for this motion analytically.  Will that tell us anything about the connection between rolling data and unobtainable sliding data on curved surfaces?
+
+**Dec 10.**
+
+Explored lubricants, cleaning, surface finish.  Kept to f=1.60-1.66 RPS
+ - Plain sanded wood (matches data from 12/7):
+  - Polyethylene 19mm: mean=8.6 SD=0.8
+  - PTFE 19mm:  8.4 +/- 1.1
+  - Steel 19mm: 10.2 +/- 1.3
+ - 
