@@ -28,6 +28,7 @@ To answer questions about friction and rolling, how about studying flat plates (
 **Dec 10.**
 
 Explored lubricants, cleaning, surface finish.  Kept to f=1.60-1.66 RPS
+ 
  - Plain sanded wood (matches data from 12/7):
   - Polyethylene 19mm: mean=8.6 SD=0.8
   - PTFE 19mm:  8.4 +/- 1.1
