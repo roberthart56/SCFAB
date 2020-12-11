@@ -58,4 +58,10 @@ Conclusion that residual lubricant when cleaned with IPA may help.  No order-of-
   
   
  
-Video link:  https://youtu.be/w8pZ9PfglKk
+Video link:  https://youtu.be/w8pZ9PfglKk  to movie of two  runs 20-30 seconds on clean surface, as at end of above list.
+
+Next steps, after discussion with Louis and Carey:
+* Reexamine points >= 2.5 for bare-wood alpha<1 surface.
+* Take a good movie, with marked ball with the bare wood surface.
+* coat the surface.
+* take data again with both surfaces.  Consider how to control initial conditions. Make a launcher.
