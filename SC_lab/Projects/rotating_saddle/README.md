@@ -66,8 +66,14 @@ Next steps, after discussion with Louis and Carey:
 * coat the surface.
 * take data again with both surfaces.  Consider how to control initial conditions. Make a launcher.
 
-** Dec11 **
+**Dec11**
 
 Reexamine points as suggested above, for alpha<1 surface. Figure below shows new points in yellow:
 
 ![graph](./Measurements/Dec7+Dec11.png)
+
+**Dec14**
+
+Now, take movies at 1.5 and at 3.0 with ball and plate marked.
+
+
