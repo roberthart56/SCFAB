@@ -65,3 +65,9 @@ Next steps, after discussion with Louis and Carey:
 * Take a good movie, with marked ball with the bare wood surface.
 * coat the surface.
 * take data again with both surfaces.  Consider how to control initial conditions. Make a launcher.
+
+** Dec11 **
+
+Reexamine points as suggested above, for alpha<1 surface. Figure below shows new points in yellow:
+
+![graph](./Measurements/Dec7+Dec11.png)
