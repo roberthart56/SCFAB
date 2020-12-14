@@ -68,7 +68,7 @@ Next steps, after discussion with Louis and Carey:
 
 **Dec11**
 
-Reexamine points as suggested above, for alpha<1 surface. Figure below shows new points in yellow:
+Reexamine points as suggested above, for alpha<1 surface. Figure below shows new points in yellow.  Compare with blue points, from earlier under same conditions.
 
 ![graph](./Measurements/Dec7+Dec11.png)
 
