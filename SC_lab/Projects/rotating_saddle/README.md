@@ -76,4 +76,9 @@ Reexamine points as suggested above, for alpha<1 surface. Figure below shows new
 
 Now, take movies at 1.5 and at 3.0 with ball and plate marked.
 
+**Dec27**
+
+Measure dimensions of two saddles, with ruler and calipers.  Below is a figure with numbers!
+
+![pic](./Measurements/data_dec27_dimensions.jpg)
 
