@@ -82,3 +82,13 @@ Measure dimensions of two saddles, with ruler and calipers.  Below is a figure w
 
 ![pic](./Measurements/data_dec27_dimensions.jpg)
 
+**Jan4, 2021**
+
+Work on getting both coated surfaces working, and making a better setup, including a launcher:
+
+![pic](./Measurements/launcher_down.jpg)
+![pic](./Measurements/launcher_down.jpg)
+
+
+
+
