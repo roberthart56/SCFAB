@@ -89,6 +89,19 @@ Work on getting both coated surfaces working, and making a better setup, includi
 ![pic](./Measurements/launcher_down.jpg)
 ![pic](./Measurements/launcher_up.jpg)
 
+**Jan 5, 2021**
 
+Talk with Louis.
+
+ * Do a careful measurement of surface dimensions of existing saddles.
+  * Mount up 3D printed saddles to account for warpage.
+  * Pay attention to area within about 3 cm from center.  Are we within a few x10 microns?
+  * Calculate parameters
+ * Move quickly to data needed to this paper!  I think that we should get good data for Beta=1, 0.6, and 2.6.  Distinctions betwen Beta=1 and Beta=1.12 are interesting, but too detailed for this early.  We need to see clear difference and match trapping behavior to stability plots. 
+ * I need to improve setup a bit - new part on launcher, and steel bolts on leveling.  Think about returning to stepper for ability to dial in speed.
+ 
+ *
+ * lkjlkj
+ 
 
 
