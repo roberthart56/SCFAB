@@ -100,8 +100,16 @@ Talk with Louis.
  * Move quickly to data needed to this paper!  I think that we should get good data for Beta=1, 0.6, and 2.6.  Distinctions betwen Beta=1 and Beta=1.12 are interesting, but too detailed for this early.  We need to see clear difference and match trapping behavior to stability plots. 
  * I need to improve setup a bit - new part on launcher, and steel bolts on leveling.  Think about returning to stepper for ability to dial in speed.
  
- *
- * lkjlkj
+ **Jan 9, 2021**
+ 
+ Below are results from measuring and fitting height data from four saddles NB 12/20 pp 6-9.
+ 
+ | Saddle  | beta|
+| ------------- | ------------- |
+| W1 | 1.16 |
+| W2 | 1.00  |
+| P1 | 0.91  |
+| P2 | 1.06  |
  
 
 
