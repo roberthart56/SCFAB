@@ -102,15 +102,18 @@ Talk with Louis.
  
  **Jan 9, 2021**
  
- Below are results from measuring and fitting height data from four saddles NB 12/20 pp 6-9.
+ Below are results from measuring and fitting height data from five saddles NB 12/20 pp 6-9 and p.13
  [link to python notebook html shapshot](./Measurements/Saddle_h_Jan7_2021.pdf)
  
- | Saddle  | beta|
+ [link to python notebook itself](./Measurements/Saddle_parameters/Saddle_heights.ipynb)
+ 
+ | Saddle  | Positive coeff. | Negative coeff. | Beta|
 | ------------- | ------------- |
-| W1 | 1.16 |
-| W2 | 1.00  |
-| P1 | 0.91  |
-| P2 | 1.06  |
+| W1 | 0.00290 (inverse mm)| -0.00249 (inverse mm)| 1.16 |
+| W2 | 0.00281 (inverse mm)| -0.00281 (inverse mm)|  1.00  |
+| P1 | 0.00270 (inverse mm)| -0.00297 (inverse mm)|  0.91  |
+| P2 | 0.00267 (inverse mm)| -0.00251 (inverse mm)|  1.06  |
+| P3 | 0.00267 (inverse mm)| -0.000997 (inverse mm)|  2.68  |
 
 **Jan 11 and 12, 2021**
  
