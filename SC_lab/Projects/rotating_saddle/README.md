@@ -111,6 +111,17 @@ Talk with Louis.
 | W2 | 1.00  |
 | P1 | 0.91  |
 | P2 | 1.06  |
+
+**Jan 11 and 12, 2021**
  
+Revised measuring apparatus and mounted two plastic saddles.  Took data sets with 19mm steel ball on each.
+ * Improved launcher.
+ * Mounted plastic (PETG) surfaces on plywood and used shims to level.  Will take a height data set on each to verify level.
+ * Made new (P3) surface on Jan10 with Beta=2.64, and verified that number.  (Still need detailed fit to curve).
+ * Replaced DC motor with stepper for better precision.  OK at 12V up to 3 RPS.
+ 
+ Link to a Markdown version of the Python jupyter notebook [here](./Measurements/Saddle_data_Jan_12_2021/Saddle_data_Jan_12_2021.md).
+ 
+ Looks like the transition frequencies end up inside the stable region on the q-a curve.  
 
 
