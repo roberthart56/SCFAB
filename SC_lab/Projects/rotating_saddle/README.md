@@ -108,7 +108,7 @@ Talk with Louis.
  [link to python notebook itself](./Measurements/Saddle_parameters/Saddle_heights.ipynb)
  
  | Saddle  | Positive coeff. | Negative coeff. | Beta|
-| ------------- | ------------- |
+| ---|-------------------- |-------------------- |---------- |
 | W1 | 0.00290 (inverse mm)| -0.00249 (inverse mm)| 1.16 |
 | W2 | 0.00281 (inverse mm)| -0.00281 (inverse mm)|  1.00  |
 | P1 | 0.00270 (inverse mm)| -0.00297 (inverse mm)|  0.91  |
