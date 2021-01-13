@@ -103,6 +103,7 @@ Talk with Louis.
  **Jan 9, 2021**
  
  Below are results from measuring and fitting height data from five saddles NB 12/20 pp 6-9 and p.13
+ 
  [link to python notebook html shapshot](./Measurements/Saddle_h_Jan7_2021.pdf)
  
  [link to python notebook itself](./Measurements/Saddle_parameters/Saddle_heights.ipynb)
