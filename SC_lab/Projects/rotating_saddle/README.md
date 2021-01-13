@@ -107,14 +107,13 @@ Talk with Louis.
  
  [link to python notebook itself](./Measurements/Saddle_parameters/Saddle_heights.ipynb)
  
- | Saddle  | Positive coeff. | Negative coeff. | Beta|
- | ------  | units | units | ----|
+ | Saddle  | Positive coeff. (mm-1) | Negative coeff. (mm-1) | Beta|
 | ---|-------------------- |-------------------- |---------- |
-| W1 | 0.00290 (inverse mm)| -0.00249 (inverse mm)| 1.16 |
-| W2 | 0.00281 (inverse mm)| -0.00281 (inverse mm)|  1.00  |
-| P1 | 0.00270 (inverse mm)| -0.00297 (inverse mm)|  0.91  |
-| P2 | 0.00267 (inverse mm)| -0.00251 (inverse mm)|  1.06  |
-| P3 | 0.00267 (inverse mm)| -0.000997 (inverse mm)|  2.68  |
+| W1 | 0.00290 | -0.00249 | 1.16 |
+| W2 | 0.00281 | -0.00281 |  1.00  |
+| P1 | 0.00270 | -0.00297|  0.91  |
+| P2 | 0.00267 | -0.00251 |  1.06  |
+| P3 | 0.00267 | -0.000997 |  2.68  |
 
 **Jan 11 and 12, 2021**
  
