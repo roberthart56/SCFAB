@@ -131,8 +131,10 @@ Revised measuring apparatus and mounted two plastic saddles.  Took data sets wit
  **Jan 18, 2021**
  
  Measured matching data for new saddles, P4 and P5, both with bets < 1.
+ 
  Jupyter Notebook is in the Jan_21 data file in the repo.
- The markdown version of the notebook is [here]((./Measurements/Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
+ 
+ The markdown version of the notebook is [here](./Measurements/Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
  
  Below is a plot.
  
