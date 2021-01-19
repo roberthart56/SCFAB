@@ -102,7 +102,7 @@ Talk with Louis.
  
  **Jan 9, 2021**
  
- Below are results from measuring and fitting height data from five saddles NB 12/20 pp 6-9 and p.13
+ Below are results from measuring and fitting height data from five saddles NB 12/20 pp 6-9 and p.13  and for P4 and P5, NB p.16.
  
  [link to python notebook html shapshot](./Measurements/Saddle_h_Jan7_2021.pdf)
  
@@ -115,6 +115,8 @@ Talk with Louis.
 | P1 | 0.00270 | -0.00297|  0.91  |
 | P2 | 0.00267 | -0.00251 |  1.06  |
 | P3 | 0.00267 | -0.000997 |  2.68  |
+| P4 | 0.00267 | -0.00466 |  0.57  |
+| P5 | 0.00268 | -0.00349 |  0.77  |
 
 **Jan 11 and 12, 2021**
  
