@@ -127,5 +127,15 @@ Revised measuring apparatus and mounted two plastic saddles.  Took data sets wit
  Link to a Markdown version of the Python jupyter notebook [here](./Measurements/Saddle_data_Jan_12_2021/Saddle_data_Jan_12_2021.md).
  
  Looks like the transition frequencies end up inside the stable region on the q-a curve.  
+ 
+ **Jan 18, 2021**
+ 
+ Measured matching data for new saddles, P4 and P5, both with bets < 1.
+ Jupyter Notebook is in the Jan_21 data file in the repo.
+ The markdown version of the notebook is [here]((./Measurements/Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
+ 
+ Below is a plot.
+ 
+ ![pic](./Measurements/Saddle_data_Jan_19_2021/dataplot.png)
 
 
