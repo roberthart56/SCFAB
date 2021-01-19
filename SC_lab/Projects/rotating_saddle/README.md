@@ -138,7 +138,7 @@ Revised measuring apparatus and mounted two plastic saddles.  Took data sets wit
  
  The markdown version of the notebook is [here](./Measurements/Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
  
- Below is a plot.
+ Below is a plot.  The title is a lie.  The parameters are Beta = 0.57 and Beta=0.77.
  
  ![pic](./Measurements/Saddle_data_Jan_19_2021/dataplot.png)
 
