@@ -145,7 +145,8 @@ Below is a figure from the notebook for the most negatively biased saddles. Beta
   
  **Jan 21, 2021**
 
-Plot all four datasets together.  Aidan will do this in his way, but I wanted to learn enough python plotting to make similar plots.  Below is a plot in which the low lifetime points are white, and longer lifetime black.
-
+Plot all four datasets together.  Aidan will do this in his way, but I wanted to learn enough python 
+plotting to make similar plots.  Below is a plot in which the low lifetime points are white, and longer lifetime black.
+This is done by normalizing and taking 1-value.  There should be a better way of doing this!  We can explore options.
  
 ![pic](./Measurements/Plotting/plot.png)
