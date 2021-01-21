@@ -149,6 +149,6 @@ Plot all four datasets together.  Aidan will do this in his way, but I wanted to
 plotting to make similar plots.  Below is a plot in which the low lifetime points are white, and longer lifetime black.
 This is done by normalizing and taking 1-value.  There should be a better way of doing this!  We can explore options.
 
-Notebok is [here](![pic](./Measurements/Plotting_example.ipynb)
+Notebok is [here](./Measurements/Plotting_example.ipynb)
 
 ![pic](./Measurements/Plotting/plot.png)
