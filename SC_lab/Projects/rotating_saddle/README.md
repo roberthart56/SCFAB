@@ -134,12 +134,18 @@ Revised measuring apparatus and mounted two plastic saddles.  Took data sets wit
  
  Measured matching data for new saddles, P4 and P5, both with bets < 1.
  
- Jupyter Notebook is in the Jan_21 data file in the repo.
+ Jupyter Notebook is in the Jan 19 data file in the repo.
  
  The markdown version of the notebook is [here](./Measurements/Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
  
 Below is a figure from the notebook for the most negatively biased saddles. Beta = 0.57 and Beta=0.77.
  
- ![pic](./Measurements/Saddle_data_Jan_19_2021/negative.png)
+![pic](./Measurements/Saddle_data_Jan_19_2021/negative.png)
 
+  
+ **Jan 21, 2021**
 
+Plot all four datasets together.  Aidan will do this in his way, but I wanted to learn enough python plotting to make similar plots.  Below is a plot in which the low lifetime points are white, and longer lifetime black.
+
+ 
+![pic](./Measurements/Plotting/plot.png)
