@@ -9,7 +9,7 @@ I'll put all the data here for an upcoming paper.  I'll keep a log of other stuf
 
 [link to md version, from which data can be harvested](Saddle_data_Jan_12_2021/Saddle_data_Jan_12_2021.md)
 
-![picture of plot j12](.Saddle_data_Jan_12_2021/output_0_0.png)
+![picture of plot j12](./Saddle_data_Jan_12_2021/output_0_0.png)
 
 
 
@@ -19,7 +19,7 @@ I'll put all the data here for an upcoming paper.  I'll keep a log of other stuf
 
 [link to md version, from which data can be harvested](Saddle_data_Jan_19_2021/Saddle_data_Jan_19_2021.md)
 
-![picture of plot j19](.Saddle_data_Jan_19_2021/output_0_0.png)
+![picture of plot j19](./Saddle_data_Jan_19_2021/output_0_0.png)
 
 
 ### Parameters for saddles, derived from height measurements.
