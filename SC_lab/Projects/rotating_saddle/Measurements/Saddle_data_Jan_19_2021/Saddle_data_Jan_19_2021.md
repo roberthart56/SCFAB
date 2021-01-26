@@ -51,7 +51,7 @@
     
     #fig = plt.figure()
     fig = plt.figure(figsize=(12, 8))
-    plt.title('Trapping time vs. frequency B=1.06(red) and B=2.64(blue)')
+    plt.title('Trapping time vs. frequency B=0.6(red) and B=0.8(blue)')
     plt.xlabel('Rotation speed (RPS)')
     plt.ylabel('Trapping time (s)')
     plt.errorbar(rps_1, mean_times_1,   yerr=error_bars_1, fmt='or')
@@ -67,6 +67,21 @@
     
 ![png](output_0_0.png)
     
+
+
+
+```python
+mean_times_1, mean_times_2
+```
+
+
+
+
+    (array([0.856, 0.724, 0.774, 0.89 , 1.244, 5.18 , 5.18 , 3.54 , 2.46 ,
+            2.14 , 2.16 , 1.84 , 2.   , 2.12 , 2.34 ]),
+     array([ 1.  ,  1.18,  1.5 ,  2.58, 15.54, 16.8 , 15.02, 12.98,  9.62,
+             8.12,  5.9 ,  4.52,  5.62,  6.54]))
+
 
 
 
