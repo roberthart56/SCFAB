@@ -152,3 +152,17 @@ This is done by normalizing and taking 1-value.  There should be a better way of
 Notebok is [here](./Measurements/Plotting_example.ipynb)
 
 ![pic](./Measurements/Plotting/plot.png)
+
+
+ **Jan 25, 2021**
+
+Several things needed:
+
+* Get data for four saddles in accessible place.  Right now there is confusion. I have some conflicting labels on plots.  Will fix that.
+* Understand where frequencies fall in a-q plots. For instance, natural frquency.  
+* Play with color maps.
+* Get another set of data for all four saddles, at least.
+* Quick exploration of LN2 drops?????
+* record some photos of saddles, videos of steel ball.
+
+
