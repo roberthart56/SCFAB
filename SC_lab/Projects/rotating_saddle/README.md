@@ -166,3 +166,9 @@ Several things needed:
 * record some photos of saddles, videos of steel ball.
 
 
+ **Jan 26, 2021**
+
+Now keeping this README as notes, and putting summary of data in [Measurements/README.md](./Measurements/README.md).
+
+
+
