@@ -46,11 +46,7 @@ Table below, with parameters derived from five plastic saddles.
 
 ### Data from Feb 1-2, 2021.
 
-All data is in Jupyter notebooks:
-
-* [Repeated data points (notebook)] and [text version]().
-* [Saddle data jnb]().  [Saddle data text version]().
-* [Plotting notebook]().  [and text version]().
+All data is in Jupyter notebooks.
 
 #### Showing data distribution.
 
