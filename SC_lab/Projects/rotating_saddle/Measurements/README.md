@@ -41,4 +41,5 @@ Table below, with parameters derived from five plastic saddles.
 | P3 | 0.00267 | -0.000997 |  2.68  |
 | P4 | 0.00267 | -0.00466 |  0.57  |
 | P5 | 0.00268 | -0.00349 |  0.77  |
+| P6 | 0.00717 |-0.00271 | 2.65   |
 
