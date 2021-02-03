@@ -61,16 +61,18 @@ This data set is taken with little pause, and the setup unchanged.  Some aspects
 * Using stepper motor with Arduino board driving an L298 h-bridge module.
 * Check NB for comments about points to examine.  Interesting changes in SD between adjacent readings.  Some nearly stable orbits.
 
+Below is data from the four plastic saddles: P2-red, P3-blue, P4-yellow, P5-green.
+
 ![raw data](./all_raw_data_Feb02.png)
 
-Plot on q-a diagram.  Note that color maps are normalized to each data set.  This is a bit shady.
+Plot on q-a diagram.  Note that color maps are normalized to each data set. This makes the transitions and regions of relative stability clear on the plot.  It may also be misleading - we need to be careful about presenting this data this way. 
 
 ![q-a plot](./all_data_Feb02.png)
 
 #### Superimposed data from Saddles P3 and P6
 
 
-* P6 and P3 have the same BETA (~2.65), But negative curvature of P6 matches positive curvature of P3 (nearly).  They have transitions at very different frequenct in real space.
+* P6 and P3 have the same BETA (~2.65), But negative curvature of P6 matches positive curvature of P3 (nearly).  They have transitions at very different frequencies in real space.
 
 ![superimposed raw]( ./P3_P6_together_raw.png)
 
