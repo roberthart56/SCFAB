@@ -46,6 +46,12 @@ Table below, with parameters derived from five plastic saddles.
 
 ### Data from Feb 1-2, 2021.
 
+All data is in Jupyter notebooks:
+
+* [Repeated data points (notebook)] and [text version]().
+* [Saddle data jnb]().  [Saddle data text version]().
+* [Plotting notebook]().  [and text version]().
+
 #### Showing data distribution.
 
 Took repeated measurements of lifetime for P2 and P3 at 1.50 rps.  Data shown in red for P3 and blue for P2.  
