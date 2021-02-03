@@ -46,30 +46,39 @@ Table below, with parameters derived from five plastic saddles.
 
 ### Data from Feb 1-2, 2021.
 
-####Showing data distribution.
+#### Showing data distribution.
+
+Took repeated measurements of lifetime for P2 and P3 at 1.50 rps.  Data shown in red for P3 and blue for P2.  
 
 ![repeated](./repeated_data.png)
 
-####New set of data from Feb 1-2.
+#### New set of data from Feb 1-2.
+
+This data set is taken with little pause, and the setup unchanged.  Some aspects of the setup that may be important:
+
+* Launcher is re-centered each time a saddle is changed by using a pencil to mark center of rotation, and then adjusting launcher to put ball at center.  To do this, tape a template to the saddle and adjust the ball holder to the ball position.
+* Saddle is levelled at each change.
+* Using stepper motor with Arduino board driving an L298 h-bridge module.
+* Check NB for comments about points to examine.  Interesting changes in SD between adjacent readings.  Some nearly stable orbits.
 
 ![raw data](./all_raw_data_Feb02.png)
 
+Plot on q-a diagram.  Note that color maps are normalized to each data set.  This is a bit shady.
+
 ![q-a plot](./all_data_Feb02.png)
 
-####Superimposed data from Saddles P3 and P6
+#### Superimposed data from Saddles P3 and P6
 
 
-* raw data.
+* P6 and P3 have the same BETA (~2.65), But negative curvature of P6 matches positive curvature of P3 (nearly).  They have transitions at very different frequenct in real space.
 
 ![superimposed raw]( ./P3_P6_together_raw.png)
 
-* plotted as a function of q, and normalized to maximum
+* Below, the same data is plotted as a function of q, and normalized to maximum.
 
 ![superimposed normalized](./P3_P6_together.png)
 
-* Plotted together on a-q plot.
+* Here, the data from P6 is included on the a-q plot, with the P6 data offset vertically.
 
-![added P6](./all_data_plus_p6_Feb02.png  ).
-
-
+![added P6](./all_data_plus_p6_Feb02.png).
 
