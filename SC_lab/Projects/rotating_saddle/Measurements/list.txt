@@ -1,0 +1,12 @@
+rotating_saddle/Measurements/all_data_Feb02.png
+rotating_saddle/Measurements/all_data_plus_p6_Feb02.png
+rotating_saddle/Measurements/all_raw_data_Feb02.png
+rotating_saddle/Measurements/Dec7+Dec11.png
+rotating_saddle/Measurements/Dec7_fig.png
+rotating_saddle/Measurements/P3_P6_together.png
+rotating_saddle/Measurements/P3_P6_together_raw.png
+rotating_saddle/Measurements/Python_fig_Dec_1.png
+rotating_saddle/Measurements/Python_figure_10.30.20.png
+rotating_saddle/Measurements/Python_figure_11_16.png
+rotating_saddle/Measurements/repeated_data.png
+rotating_saddle/Measurements/three_sets.png

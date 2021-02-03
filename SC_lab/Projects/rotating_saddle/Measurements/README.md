@@ -43,3 +43,33 @@ Table below, with parameters derived from five plastic saddles.
 | P5 | 0.00268 | -0.00349 |  0.77  |
 | P6 | 0.00717 |-0.00271 | 2.65   |
 
+
+### Data from Feb 1-2, 2021.
+
+####Showing data distribution.
+
+![repeated](./repeated_data.png)
+
+####New set of data from Feb 1-2.
+
+![raw data](./all_raw_data_Feb02.png)
+
+![q-a plot](./all_data_Feb02.png)
+
+####Superimposed data from Saddles P3 and P6
+
+
+* raw data.
+
+![superimposed raw]( ./P3_P6_together_raw.png)
+
+* plotted as a function of q, and normalized to maximum
+
+![superimposed normalized](./P3_P6_together.png)
+
+* Plotted together on a-q plot.
+
+![added P6](./all_data_plus_p6_Feb02.png  ).
+
+
+
