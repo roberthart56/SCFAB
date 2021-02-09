@@ -101,7 +101,7 @@ Below is the raw data with LN2 and steel ball on this surface.  For LN2, I recor
 
 ![raw](./Saddle_data_Feb_09_2021/Raw_data.png)
 
-Below, the data is normalized to the maxima in each set.  Not clear that this is fair, since the LN2 lifetime is probably limited to ~10 s. Droplets evaporate in that time.  So the top of that curve should be infinite?  Maybe the most that we can say is that the LN2 curve begins to rise before the ball curve, even on the raw data plot.  We have shown a difference in the behavior of LN2 drops.
+Below, the data is normalized to the maxima in each set.  Not clear that this is fair, since the LN2 lifetime is probably limited to ~15 s. Droplets evaporate in that time.  So the top of that curve should be infinite?  Maybe the most that we can say is that the LN2 curve begins to rise before the ball curve, even on the raw data plot.  We have shown a difference in the behavior of LN2 drops.  Since the drops can't live long enough to compare with abll data, this may be all that we can say.  Maybe enough?????
 
 ![norm](./Saddle_data_Feb_09_2021/norm_data.png)
 
