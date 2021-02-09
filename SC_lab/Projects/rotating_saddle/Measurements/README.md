@@ -86,3 +86,22 @@ Plot on q-a diagram.  Note that color maps are normalized to each data set. This
 
 ![added P6](./all_data_plus_p6_Feb02.png).
 
+
+#### Data with Liquid nitrogen.  Feb 9, 2021.
+
+Took data with liquid nitrogen and compared to steel ball.  I could not do this with the usual plastic surfaces, because the LN stuck to the surface.  I need a smoother surface to get nice drop levitation.  I used instead the wood saddle, W1, which has an epoxy coating.  Its parameters give a natural frequency for the positive curvature of 1.20 rps.  This saddle has Beta=1.16.  Note that the steel ball measurement has not been made before in a complete way on this surface.  We are still not comparing LN to data that we have already taken.
+
+[jupyter notebook](./Saddle_data_Feb_09_2021/Saddle_data_Feb_09_2021.ipynb)
+
+[jupyter notebook, markdown version](./Saddle_data_Feb_09_2021/Saddle_data_Feb_09_2021.md)
+
+Below is the raw data with LN2 and steel ball on this surface.  For LN2, I recorded movies, and estimated the length of time during which I could see droplets remaining on the saddle.  The steel ball data is taken in the usual way, with five points at each frequency.
+
+[links to movies will be here]
+
+![raw](./Saddle_data_Feb_09_2021/Raw_data.png)
+
+Below, the data is normalized to the maxima in each set.  Not clear that this is fair......
+
+![norm](./Saddle_data_Feb_09_2021/norm_data.png)
+
