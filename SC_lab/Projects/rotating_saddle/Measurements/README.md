@@ -105,3 +105,17 @@ Below, the data is normalized to the maxima in each set.  Not clear that this is
 
 ![norm](./Saddle_data_Feb_09_2021/norm_data.png)
 
+#### Feb 12-15, 2021.  Liquid Nitrogen Data for all four plastic saddles.
+
+I coated all four saddles with epoxy and polished with 600 grit, micromesh, pumice and rottenstone to a lumpy but reflective finish.  Nitrogen droplets can live several seconds (~<=15).
+
+Below is the raw data.
+
+![rawdata](./Saddle_data_Feb_13_2021/LN2_data.png)
+
+And the scatter plot, in which each dataset is normalized individually in the clormap.
+
+![scatterplot](./Saddle_data_Feb_13_2021/LN2_scatterplot.png)
+
+
+
