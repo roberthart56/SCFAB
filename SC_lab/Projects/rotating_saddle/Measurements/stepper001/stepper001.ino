@@ -60,7 +60,7 @@ void all_off() {
 
 void loop() {
   int int_val = analogRead(A2);
-  int freq = map (int_val,0,1023, 0, 4000);  //freq in rpsX1000
+  int freq = map (int_val,0,1023, 500, 2500);  //freq in rpsX1000
   int delay_time = 5000000/freq;
   all_off();                          //turn off coils before sending new step.
 
