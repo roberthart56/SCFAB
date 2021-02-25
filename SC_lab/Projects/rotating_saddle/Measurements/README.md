@@ -117,5 +117,19 @@ And the scatter plot, in which each dataset is normalized individually in the cl
 
 ![scatterplot](./Saddle_data_Feb_13_2021/LN2_scatterplot.png)
 
+#### Feb 24, 2021.  Transition data for balls of three diameters, compared to LN2.
+
+![LN2](./Saddle_data_Feb_24_2021/LN2.png)
+
+![6.3mm](./Saddle_data_Feb_24_2021/6.3mm.png)
+
+![19mm](./Saddle_data_Feb_24_2021/19mm.png)
+
+![28.5mm](./Saddle_data_Feb_24_2021/28.5mm.png)
+
+
+
+
+
 
 
