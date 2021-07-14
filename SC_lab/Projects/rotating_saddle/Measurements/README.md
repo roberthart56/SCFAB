@@ -127,8 +127,29 @@ And the scatter plot, in which each dataset is normalized individually in the cl
 
 ![28.5mm](./Saddle_data_Feb_24_2021/28.5mm.png)
 
+#### July 14, 2021.   Quick check on a couple of things.  See NB12/20 pp 52-3.
 
+All measurements on P2 at 1.50 RPS.  Steel ball 19mm diameter.  No special lubrication.  Error bars reported are SD.
 
+Use launcher apparatus to launch repeatably from:
+* r=0: lifetime = 27+/-2 seconds.
+* r=5mm: lifetime = 34+/-6 seconds
+* r=0mm: lifetime = 29+/-6 seconds
+* r=10mm: lifetime = 35+/-5 seconds
+* r=0: lifetime = 37+/-5 seconds
+Conclusion is that lifetime is not sensitive to stating r, within 10mm.  I recorded movies at 5mm and 0mm.  On phone, dated 7/8/21.
+
+Attempt to launch with non-zero velocity.  Launch from ramp, with a fall of 6mm, giving about 0.3m/s velocity at contact.  Ball escapes in ~one revolution.  I recorded a movie of this.  On my phone, date 7/8/21.  Very strong dependence on initial velocity.  Difficult to do this without a more clever launch method.
+
+Study effect of angle as saddle is tilted.
+* angle=0: lifetime = 32+/-5 seconds.
+* angle=4.5E-3: lifetime = 32+/-4 seconds.
+* angle=13E-3: lifetime = 24+/-10 seconds.
+* angle=19E-3: lifetime = 6.6+/-4.1 seconds.
+* angle=0: lifetime = 32+/-9 seconds.
+
+There is an agle dependence, at angles much larger than the experimental error in levelling the saddle.
+All data from this year are taken with saddle level to within ~3E-3.
 
 
 
