@@ -1,0 +1,28 @@
+//boolean state=0;  //for debugging.
+// Step response.  Charge pin is 5, sense pin is 8.  
+unsigned long int time=0;
+void setup() {
+ Serial.begin(0);
+ pinMode(5, OUTPUT);
+ //pinMode(9, OUTPUT);   //for debugging
+ pinMode(8, INPUT);
+ 
+}
+
+void loop() {
+  time=micros();
+  
+  //digitalWrite(9,state);  //for debug
+  for(int count=0; count<1000; count++){
+  digitalWrite(5, HIGH);
+  while(!digitalRead(8)){
+  }
+  
+  digitalWrite(5, LOW);
+  
+  while((digitalRead(8))){
+  }
+  }
+//state=!state;  //for debug
+Serial.println(micros() - time);
+}
